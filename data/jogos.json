@@ -647,6 +647,96 @@
 "1.ª Fase"
 ],
 [
+"Sub-14 Masc A",
+"Distrital Sub-14 · Grupo F",
+"ABP",
+672,
+1,
+"2026-11-01",
+"",
+"UAA Aroso A",
+"FC Gaia A",
+"Escola EB23 Manoel de Oliveira",
+"por marcar",
+"",
+"2.ª Fase"
+],
+[
+"Sub-14 Masc A",
+"Distrital Sub-14 · Grupo F",
+"ABP",
+674,
+2,
+"2026-11-07",
+"",
+"FC Gaia A",
+"CD Póvoa A",
+"Pavilhão Futebol Clube Gaia",
+"por marcar",
+"",
+"2.ª Fase"
+],
+[
+"Sub-14 Masc A",
+"Distrital Sub-14 · Grupo F",
+"ABP",
+675,
+3,
+"2026-11-08",
+"",
+"Maia Basket A",
+"FC Gaia A",
+"Pavilhão Mun. Nortecoope",
+"por marcar",
+"",
+"2.ª Fase"
+],
+[
+"Sub-14 Masc A",
+"Distrital Sub-14 · Grupo F",
+"ABP",
+678,
+4,
+"2026-11-15",
+"",
+"FC Gaia A",
+"UAA Aroso A",
+"Pavilhão Futebol Clube Gaia",
+"por marcar",
+"",
+"2.ª Fase"
+],
+[
+"Sub-14 Masc A",
+"Distrital Sub-14 · Grupo F",
+"ABP",
+680,
+5,
+"2026-11-22",
+"",
+"CD Póvoa A",
+"FC Gaia A",
+"Pavilhão do Clube Desportivo Póvoa",
+"por marcar",
+"",
+"2.ª Fase"
+],
+[
+"Sub-14 Masc A",
+"Distrital Sub-14 · Grupo F",
+"ABP",
+681,
+6,
+"2026-11-29",
+"",
+"FC Gaia A",
+"Maia Basket A",
+"Pavilhão Futebol Clube Gaia",
+"por marcar",
+"",
+"2.ª Fase"
+],
+[
 "Sub-14 Masc B",
 "Distrital Sub-14 · Grupo E2",
 "ABP",
@@ -938,7 +1028,7 @@
 266,
 1,
 "2026-10-25",
-"09:30",
+"10:30",
 "BC Marco",
 "FC Gaia B",
 "Esc. Sec. Marco de Canaveses",
@@ -1028,11 +1118,11 @@
 587,
 3,
 "2026-11-06",
-"",
+"21:30",
 "CDJ Régio",
 "FC Gaia A",
-"Pavilhão Desportos de Vila do Conde",
-"por marcar",
+"Pavilhão Desportivo de Mindelo",
+"marcado",
 "",
 "2.ª Fase"
 ],
@@ -1773,6 +1863,48 @@
 518
 ]
 ]
+},
+{
+"phase": "2.ª Fase",
+"name": "Distrital Sub-14 · Grupo F",
+"rows": [
+[
+"Maia Basket A",
+0,
+0,
+0,
+0,
+0,
+0
+],
+[
+"CD Póvoa A",
+0,
+0,
+0,
+0,
+0,
+0
+],
+[
+"UAA Aroso A",
+0,
+0,
+0,
+0,
+0,
+0
+],
+[
+"FC Gaia A",
+0,
+0,
+0,
+0,
+0,
+0
+]
+]
 }
 ],
 "Sub-14 Masc B": [
@@ -1868,7 +2000,8 @@
 "Académico/Ribadouro A": "https://sav2.fpb.pt/old_uploads/CLU/CLU_188_LOGO.png",
 "Bolacesto A/Farm. Gândara": "https://sav2.fpb.pt/uploads/clubes/logotipo/CLU_1791790001218.png",
 "Maia Basket A/Fisimaia": "https://sav2.fpb.pt/uploads/clubes/logotipo/CLU_7141746203247.png",
-"FC Porto A": "https://sav2.fpb.pt/old_uploads/CLU/CLU_120_LOGO.png"
+"FC Porto A": "https://sav2.fpb.pt/old_uploads/CLU/CLU_120_LOGO.png",
+"Maia Basket A": "https://sav2.fpb.pt/uploads/clubes/logotipo/CLU_7141746203247.png"
 },
 "groups": {
 "Sub-14 Masc A": [
@@ -2024,6 +2157,131 @@
 "Guifões SC A",
 "62-56",
 "Pavilhão Futebol Clube Gaia"
+]
+]
+},
+{
+"phase": "2.ª Fase",
+"rows": [
+[
+671,
+1,
+"2026-11-01",
+"",
+"CD Póvoa A",
+"Maia Basket A",
+"",
+"Pavilhão do Clube Desportivo Póvoa"
+],
+[
+672,
+1,
+"2026-11-01",
+"",
+"UAA Aroso A",
+"FC Gaia A",
+"",
+"Escola EB23 Manoel de Oliveira"
+],
+[
+673,
+2,
+"2026-11-07",
+"",
+"Maia Basket A",
+"UAA Aroso A",
+"",
+"Pavilhão Mun. Nortecoope"
+],
+[
+674,
+2,
+"2026-11-07",
+"",
+"FC Gaia A",
+"CD Póvoa A",
+"",
+"Pavilhão Futebol Clube Gaia"
+],
+[
+675,
+3,
+"2026-11-08",
+"",
+"Maia Basket A",
+"FC Gaia A",
+"",
+"Pavilhão Mun. Nortecoope"
+],
+[
+676,
+3,
+"2026-11-08",
+"",
+"CD Póvoa A",
+"UAA Aroso A",
+"",
+"Pavilhão do Clube Desportivo Póvoa"
+],
+[
+677,
+4,
+"2026-11-15",
+"",
+"Maia Basket A",
+"CD Póvoa A",
+"",
+"Pavilhão Mun. Nortecoope"
+],
+[
+678,
+4,
+"2026-11-15",
+"",
+"FC Gaia A",
+"UAA Aroso A",
+"",
+"Pavilhão Futebol Clube Gaia"
+],
+[
+679,
+5,
+"2026-11-22",
+"",
+"UAA Aroso A",
+"Maia Basket A",
+"",
+"Escola EB23 Manoel de Oliveira"
+],
+[
+680,
+5,
+"2026-11-22",
+"",
+"CD Póvoa A",
+"FC Gaia A",
+"",
+"Pavilhão do Clube Desportivo Póvoa"
+],
+[
+681,
+6,
+"2026-11-29",
+"",
+"FC Gaia A",
+"Maia Basket A",
+"",
+"Pavilhão Futebol Clube Gaia"
+],
+[
+682,
+6,
+"2026-11-29",
+"",
+"UAA Aroso A",
+"CD Póvoa A",
+"",
+"Escola EB23 Manoel de Oliveira"
 ]
 ]
 }
@@ -2475,7 +2733,7 @@
 266,
 1,
 "2026-10-25",
-"09:30",
+"10:30",
 "BC Marco",
 "FC Gaia B",
 "",
@@ -2565,7 +2823,7 @@
 275,
 5,
 "2026-10-31",
-"11:30",
+"09:00",
 "CBP B",
 "Bolacesto B",
 "",
@@ -2706,12 +2964,12 @@
 [
 587,
 3,
-"",
-"",
+"2026-11-06",
+"21:30",
 "CDJ Régio",
 "FC Gaia A",
 "",
-"Pavilhão Desportos de Vila do Conde"
+"Pavilhão Desportivo de Mindelo"
 ],
 [
 588,
@@ -2786,8 +3044,8 @@
 [
 595,
 5,
-"",
-"",
+"2026-11-21",
+"15:00",
 "CDJ Régio",
 "ACR Vigorosa",
 "",
@@ -2846,12 +3104,12 @@
 [
 601,
 7,
-"",
-"",
+"2026-12-05",
+"15:00",
 "CDJ Régio",
 "FC Porto 2",
 "",
-"Pavilhão Desportos de Vila do Conde"
+"Pavilhão Desportivo de Mindelo"
 ],
 [
 602,

@@ -1,0 +1,154 @@
+{
+  "calendario_clube": "https://www.fpb.pt/calendario/clube_119/",
+  "resultados_clube": "https://www.fpb.pt/resultados/clube_119/",
+  "competicoes": [
+    {
+      "id": 11442,
+      "nome": "CN1 1ª Divisão",
+      "equipa": "Seniores Masc",
+      "fonte": "FPB"
+    },
+    {
+      "id": 11448,
+      "nome": "Taça de Portugal",
+      "equipa": "Seniores Masc",
+      "fonte": "FPB",
+      "taca": true
+    },
+    {
+      "id": 11444,
+      "nome": "Esperanças",
+      "equipa": "Esperanças",
+      "fonte": "FPB"
+    },
+    {
+      "id": 11554,
+      "nome": "Distrital Sub-18",
+      "equipa": "Sub-18 Masc",
+      "fonte": "ABP",
+      "ab": true
+    },
+    {
+      "id": 11552,
+      "nome": "Distrital Sub-16",
+      "equipa": "Sub-16 Masc",
+      "fonte": "ABP",
+      "ab": true
+    },
+    {
+      "id": 11550,
+      "nome": "Distrital Sub-14",
+      "equipa": "Sub-14 Masc",
+      "fonte": "ABP",
+      "ab": true
+    }
+  ],
+  "equipas": [
+    {
+      "id": "Seniores Masc"
+    },
+    {
+      "id": "Esperanças"
+    },
+    {
+      "id": "Masters",
+      "mini": true
+    },
+    {
+      "id": "Sub-18 Masc A"
+    },
+    {
+      "id": "Sub-18 Masc B"
+    },
+    {
+      "id": "Sub-16 Masc A"
+    },
+    {
+      "id": "Sub-16 Masc B"
+    },
+    {
+      "id": "Sub-14 Masc A"
+    },
+    {
+      "id": "Sub-14 Masc B"
+    },
+    {
+      "id": "Sub-12",
+      "mini": true
+    },
+    {
+      "id": "Sub-10",
+      "mini": true
+    },
+    {
+      "id": "Sub-8",
+      "mini": true
+    },
+    {
+      "id": "Baby",
+      "mini": true
+    }
+  ],
+  "clube_fpb": 119,
+  "equipas_fpb": {
+    "Esperanças": 63495
+  },
+  "treinadores_fpb": {
+    "André Dara": 9817
+  },
+  "equipa_tecnica": {
+    "Seniores Masc": [
+      "César Domingues"
+    ],
+    "Esperanças": [
+      "Duarte Oliveira",
+      "Alexandre Silva"
+    ],
+    "Sub-18 Masc A": [
+      "Duarte Oliveira",
+      "Alexandre Silva"
+    ],
+    "Sub-18 Masc B": [
+      "Gustavo Valgode"
+    ],
+    "Sub-16 Masc A": [
+      "Rui Martins"
+    ],
+    "Sub-16 Masc B": [
+      "Davide Coelho"
+    ],
+    "Sub-14 Masc A": [
+      "Joaquim Oliveira",
+      "Helder Almeida"
+    ],
+    "Sub-14 Masc B": [
+      "Ivo Coutinho",
+      "José Nogueira"
+    ],
+    "Masters": [
+      "João Matos"
+    ],
+    "Sub-8": [
+      "Gustavo Ribeirão"
+    ],
+    "Sub-10": [
+      "Alexandre Silva"
+    ],
+    "Sub-12": [
+      "Ruben Costa"
+    ]
+  },
+  "coordenacao": [
+    {
+      "role": "Coordenador de Formação",
+      "name": "Joaquim Oliveira",
+      "email": "basquetebol.coordenacao.fcgaia@gmail.com"
+    },
+    {
+      "role": "Coordenador de Minibasquete",
+      "name": "André Dara",
+      "email": "minibasquete.fcgaia@gmail.com"
+    }
+  ],
+  "epoca_resultados": 65
+}

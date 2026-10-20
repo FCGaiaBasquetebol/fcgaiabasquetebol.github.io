@@ -1,0 +1,143 @@
+name: Atualizar jogos e publicar site
+
+on:
+  schedule:
+    # Horas em UTC (Portugal: +1h no verão, igual no inverno)
+    # resultados: de meia em meia hora; só vai buscar dados se houver jogos
+    # que começaram há 1h30 ou mais e ainda não têm resultado
+    - cron: "17,47 * * * *"
+    # calendário (horários, pavilhões, jogos novos): terças e quintas
+    - cron: "0 6 * * 2,4"
+    # plantel, fotos e carreiras dos treinadores: terças e sextas
+    - cron: "0 5 * * 2,5"
+  push:
+    branches: [main]      # publica quando alteras ficheiros à mão
+  workflow_dispatch:      # botão "Run workflow"
+    inputs:
+      modo:
+        description: "O que atualizar"
+        type: choice
+        default: calendario
+        options: [calendario, resultados, plantel, tudo]
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+# as publicações por alteração de ficheiros (push) têm fila própria,
+# para não serem substituídas pelas verificações automáticas
+concurrency:
+  group: atualizar-${{ github.event_name == 'push' && 'push' || 'dados' }}
+  cancel-in-progress: false
+
+jobs:
+  atualizar:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    outputs:
+      mudou: ${{ steps.guardar.outputs.mudou }}
+      modo: ${{ steps.modo.outputs.modo }}
+    steps:
+      - uses: actions/checkout@v4
+      - name: Escolher modo
+        id: modo
+        run: |
+          M="${{ github.event.inputs.modo }}"
+          case "${{ github.event.schedule }}" in
+            "17,47 * * * *") M=resultados ;;
+            "0 6 * * 2,4")   M=calendario ;;
+            "0 5 * * 2,5")   M=plantel ;;
+          esac
+          if [ "${{ github.event_name }}" = "push" ]; then M=nenhum; fi
+          echo "modo=${M:-calendario}" >> "$GITHUB_OUTPUT"
+          echo "Modo: ${M:-calendario}"
+      - uses: actions/setup-python@v5
+        if: steps.modo.outputs.modo != 'nenhum'
+        with:
+          python-version: "3.12"
+      - if: steps.modo.outputs.modo != 'nenhum'
+        run: pip install requests==2.32.3 beautifulsoup4==4.12.3
+      - name: Instalar browser (para as listas do fpb.pt)
+        if: steps.modo.outputs.modo == 'plantel' || steps.modo.outputs.modo == 'tudo'
+        run: |
+          pip install playwright==1.47.0
+          python -m playwright install --with-deps chromium
+      - name: Resultados (jogos acabados há 1h30 ou mais)
+        if: steps.modo.outputs.modo == 'resultados'
+        run: |
+          mkdir -p debug
+          python scripts/atualizar.py --modo resultados 2>&1 | tee debug/atualizar.log
+      - name: Calendário, resultados e classificações
+        if: steps.modo.outputs.modo == 'calendario' || steps.modo.outputs.modo == 'tudo'
+        run: |
+          mkdir -p debug
+          python scripts/atualizar.py --modo calendario 2>&1 | tee -a debug/atualizar.log
+      - name: Recolher planteis e treinadores
+        if: steps.modo.outputs.modo == 'plantel' || steps.modo.outputs.modo == 'tudo'
+        run: |
+          mkdir -p debug
+          python scripts/plantel.py 2>&1 | tee debug/plantel.log
+      - name: Guardar páginas lidas (para diagnóstico)
+        if: always() && (steps.modo.outputs.modo == 'plantel' || steps.modo.outputs.modo == 'tudo')
+        uses: actions/upload-artifact@v4
+        with:
+          name: debug-fpb
+          path: debug/
+          if-no-files-found: ignore
+      - name: Guardar diagnóstico no ramo "diagnostico"
+        if: always() && steps.modo.outputs.modo != 'nenhum'
+        run: |
+          [ -d debug ] || exit 0
+          rm -rf /tmp/diag && mkdir -p /tmp/diag && cp -r debug/. /tmp/diag/
+          cd /tmp/diag
+          git init -q -b diagnostico
+          git add -A
+          git -c user.name=fcgaia-bot -c user.email=fcgaia-bot@users.noreply.github.com commit -qm "Diagnóstico $(date -u +%Y-%m-%d\ %H:%M)"
+          git push -qf "https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}.git" diagnostico
+      - name: Guardar alterações
+        id: guardar
+        if: steps.modo.outputs.modo != 'nenhum'
+        run: |
+          git add data
+          if git diff --cached --quiet -- data; then echo "Sem alterações."; echo "mudou=false" >> "$GITHUB_OUTPUT"; exit 0; fi
+          git config user.name "fcgaia-bot"
+          git config user.email "fcgaia-bot@users.noreply.github.com"
+          git add data
+          git commit -m "Atualizar ${{ steps.modo.outputs.modo }} $(date -u +%Y-%m-%d\ %H:%M)"
+          git status --short > debug/git-status.txt 2>&1 || true
+          for i in 1 2 3; do
+            git pull --rebase --autostash 2>&1 | tee -a debug/git-pull.txt && git push 2>&1 | tee -a debug/git-push.txt && break
+            sleep 10
+          done
+          echo "mudou=true" >> "$GITHUB_OUTPUT"
+
+  publicar:
+    needs: atualizar
+    # publica se os dados mudaram, se alteraste ficheiros à mão ou se carregaste em "Run workflow"
+    if: needs.atualizar.outputs.mudou == 'true' || github.event_name == 'push' || github.event_name == 'workflow_dispatch'
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    concurrency:
+      group: publicar-site
+      cancel-in-progress: false
+    environment:
+      name: github-pages
+      url: ${{ steps.deploy.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+      - name: Preparar site
+        run: |
+          mkdir -p _site
+          cp index.html _site/
+          cp -r data _site/
+          python3 scripts/gerar_ics.py _site
+          touch _site/.nojekyll
+      - uses: actions/configure-pages@v5
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: _site
+      - id: deploy
+        uses: actions/deploy-pages@v4

@@ -44,8 +44,8 @@ jobs:
         run: |
           ARGS="--clubes ${{ github.event.inputs.clubes || 'todos' }}"
           if [ "${{ github.event.inputs.idades }}" = "false" ]; then ARGS="$ARGS --sem-idades"; fi
-          python scripts/atletas_inscritos.py $ARGS 2>&1 | tee atletas.log
-          cp atletas.log dados-atletas/
+          python scripts/atletas_inscritos.py $ARGS 2>&1 | tee /tmp/atletas.log
+          cp /tmp/atletas.log dados-atletas/
       - name: Mostrar resumo
         run: cat dados-atletas/resumo.md >> "$GITHUB_STEP_SUMMARY"
       - name: Guardar no ramo dados-atletas
@@ -54,7 +54,7 @@ jobs:
           cp ano-cache.json /tmp/ 2>/dev/null || true
           git config user.name "github-actions"
           git config user.email "github-actions@users.noreply.github.com"
-          git fetch origin dados-atletas && git checkout dados-atletas || git checkout --orphan dados-atletas
+          if git fetch origin dados-atletas; then git checkout -f -B dados-atletas FETCH_HEAD; else git checkout --orphan dados-atletas; fi
           git rm -rf . -q || true
           git clean -fdq
           cp /tmp/out/* .

@@ -110,6 +110,18 @@ tr.me .lgo{border-color:rgba(0,0,0,.3)}
 .mc.has .n{color:var(--gold)}
 .mc.today .n,.mc.has.today .n{background:var(--gold);color:var(--black)}
 .col.today{box-shadow:inset 0 0 0 2px var(--gold)}
+.mc.today{position:relative;border:2px solid var(--gold);background:color-mix(in srgb,var(--gold) 14%,transparent)}
+.mc.today::after{content:"Hoje";position:absolute;top:3px;right:5px;font-size:11px;font-weight:700;letter-spacing:.8px;text-transform:uppercase;color:var(--gold)}
+.mc.sel{box-shadow:0 0 0 2px var(--gold)}
+.mc.today.sel{box-shadow:0 0 0 3px color-mix(in srgb,var(--gold) 45%,transparent)}
+.col.today{background:color-mix(in srgb,var(--gold) 10%,transparent)}
+.col.today h4::after{content:"Hoje";margin-left:6px;font-size:12px;padding:1px 6px;border-radius:3px;background:var(--gold);color:var(--black);letter-spacing:.8px;text-transform:uppercase;vertical-align:middle}
+.daypanel.is-today{border-left:5px solid var(--gold)}
+.daypanel .tag{font-family:var(--f-cond);font-weight:700;font-size:14px;letter-spacing:1px;background:var(--gold);color:var(--black);border-radius:3px;padding:2px 8px;vertical-align:middle;margin-right:8px}
+@keyframes hojeflash{0%,100%{box-shadow:0 0 0 3px color-mix(in srgb,var(--gold) 45%,transparent)}50%{box-shadow:0 0 0 8px color-mix(in srgb,var(--gold) 70%,transparent)}}
+.flash{animation:hojeflash .5s ease-in-out 3}
+@media (prefers-reduced-motion:reduce){.flash{animation:none}}
+@media (max-width:560px){.mc.today::after{display:none}}
 .col h4{margin:0;display:flex;align-items:baseline;gap:6px;font-family:var(--f-disp);font-weight:400;text-transform:uppercase;font-size:22px;line-height:1}
 .col h4 small{font-family:var(--f-cond);font-weight:700;font-size:13px;letter-spacing:1px;color:var(--muted)}
 .empty{color:var(--dim);font-style:italic;font-size:14px}
@@ -282,7 +294,7 @@ footer{margin-top:28px;font-size:13px;color:var(--dim);border-top:1px solid #262
   .box,.trow,.daypanel,.card{background:#fff!important;border-color:#bbb}
   .box{break-inside:avoid}
   .month{gap:2px}.mc{min-height:80px;border:1px solid #ccc;background:#fff}.mc.we{background:#f4f4f4}.mc.out{opacity:.35}
-  .mc .mini{display:block!important;color:#000}.mc .dots{display:none!important}.mc.today .n{background:none;color:#000}
+  .mc .mini{display:block!important;color:#000}.mc .dots{display:none!important}.mc.today .n{background:none;color:#000}.mc.today{background:none!important}.mc.today::after,.col.today h4::after{display:none}
   .gm,.rs,.col{break-inside:avoid}
   .gm .vs,.trow .nm,.trow .big,.trow .ln{color:#000}
   tr.me td{background:var(--gold)!important;color:#000!important}
@@ -653,6 +665,8 @@ html.printing .mc.out{opacity:.35}
 html.printing .mc .mini{display:block!important;color:#000}
 html.printing .mc .dots{display:none!important}
 html.printing .mc.today .n{background:none;color:#000}
+html.printing .mc.today{background:none!important}
+html.printing .mc.today::after,html.printing .col.today h4::after{display:none}
 html.printing .gm,html.printing .rs,html.printing .col{break-inside:avoid}
 html.printing .gm .vs,html.printing .trow .nm,html.printing .trow .big,html.printing .trow .ln{color:#000}
 html.printing tr.me td{background:var(--gold)!important;color:#000!important}
@@ -802,7 +816,7 @@ function renderCal(){let eyebrow,title,body;
     // se hoje não há jogos, mostra logo o próximo dia com jogos deste mês (até a pessoa escolher outro)
     if(!S.dayPicked&&S.day===TODAY&&!onDay(S.day).length){const nx=[...Array(31)].map((_,n)=>ks(add(pd(TODAY),n+1))).find(k=>pd(k).getMonth()===mo&&onDay(k).length);if(nx){S.day=nx;return renderCal()}}
     const sd=pd(S.day),gs=onDay(S.day);
-    body+=`<section class="daypanel"><h3>${DWL[wd(sd)]}, ${sd.getDate()} de ${MES[sd.getMonth()]}${HOL[S.day]?` <span class="hol">${esc(HOL[S.day])}</span>`:""}</h3>${gs.length?gs.map(g=>line(g)).join(""):`<span class="empty">Sem jogos neste dia. Toca noutro dia do calendário.</span>`}</section>`}
+    body+=`<section class="daypanel${S.day===TODAY?" is-today":""}"><h3>${S.day===TODAY?`<span class="tag">Hoje</span>`:""}${DWL[wd(sd)]}, ${sd.getDate()} de ${MES[sd.getMonth()]}${HOL[S.day]?` <span class="hol">${esc(HOL[S.day])}</span>`:""}</h3>${gs.length?gs.map(g=>line(g)).join(""):`<span class="empty">Sem jogos neste dia. Toca noutro dia do calendário.</span>`}</section>`}
   else{const m=mon(S.cur),e=add(m,6);eyebrow=`${m.getDate()} ${MS[m.getMonth()]} a ${e.getDate()} ${MS[e.getMonth()]}`;title="Agenda";
     const tpl=[0,1,2,3,4,5,6].map(n=>{const k=ks(add(m,n));return onDay(k).length?"minmax(0,1fr)":"72px"}).join(" ");
     body=`<div class="cols c7" style="--wk:${tpl}">${[0,1,2,3,4,5,6].map(n=>col(add(m,n))).join("")}</div>`;
@@ -1184,7 +1198,7 @@ document.addEventListener("click",e=>{
   else if(b.id==="back"){S.team=null;setHash("#equipas");render();window.scrollTo(0,0)}
   else if(b.id==="prev"||b.id==="next"){const s=b.id==="next"?1:-1;
     if(S.view==="month"){S.cur=new Date(S.cur.getFullYear(),S.cur.getMonth()+s,1,12);S.day=ks(S.cur)}else S.cur=add(S.cur,7*s);render()}
-  else if(b.id==="today"){S.cur=pd(TODAY);S.day=TODAY;S.dayPicked=true;render()}});
+  else if(b.id==="today"){S.cur=pd(TODAY);S.day=TODAY;S.dayPicked=true;render();const t=document.querySelector(".mc.today,.col.today");if(t){t.classList.add("flash");t.addEventListener("animationend",()=>t.classList.remove("flash"),{once:true});const r=t.getBoundingClientRect();if(r.top<0||r.bottom>innerHeight)t.scrollIntoView({block:"center",behavior:"smooth"})}}});
 document.addEventListener("change",e=>{if(e.target.id==="fase"){S.phase[S.team]=e.target.value;render()}});
 document.addEventListener("keydown",e=>{if(e.key==="Enter"&&e.target.id==="home"){goHome();return}if((e.key==="Enter"||e.key===" ")&&e.target.dataset&&e.target.dataset.ath){e.preventDefault();const [tid,id]=e.target.dataset.ath.split("|");athletePanel(tid,id);return}if((e.key==="Enter"||e.key===" ")&&e.target.classList&&e.target.classList.contains("mine")){e.preventDefault();detail(G[+e.target.dataset.g]);return}if(e.key==="Escape"){closeSheet();closePop()}});
 document.addEventListener("load",e=>{const t=e.target;if(t.tagName==="IMG"&&t.parentNode&&t.parentNode.classList&&t.parentNode.classList.contains("av"))t.classList.add("ok");if(t.id==="capa")t.classList.add("ok")},true);

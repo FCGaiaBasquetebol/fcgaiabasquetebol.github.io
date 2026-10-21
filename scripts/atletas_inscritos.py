@@ -1,25 +1,28 @@
 #!/usr/bin/env python3
-"""Conta os atletas inscritos na FPB por clube, escalão, género e ano de nascimento.
+"""Atletas inscritos na FPB por clube, escalão, ano de nascimento e género.
 
-Não mexe no site: escreve só contagens (sem nomes) em dados-atletas/.
-Fonte: a pesquisa de atletas do fpb.pt (/atletas/clube_ID/), que usa
-admin-ajax.php com action=search_player e os filtros Época, Escalão e Género.
-
-Uso:  python scripts/atletas_inscritos.py [--clubes 119,120] [--sem-idades]
+Não mexe no site. Escreve só contagens (sem nomes) em dados-atletas/.
+Fontes (fpb.pt, admin-ajax.php):
+  - get_clubs_dropdown / get_clubes  -> lista de clubes
+  - search_player (idClube, género)  -> atletas de cada clube (a pesquisa corta em 500)
+  - /atletas/ID/                     -> ano de nascimento (cache fora do repositório)
+O escalão é calculado pelo ano de nascimento; Masters vem do filtro da FPB.
 """
-import argparse, concurrent.futures, csv, json, re, time, unicodedata, pathlib, datetime, collections
+import argparse, concurrent.futures, collections, datetime, json, pathlib, re, time, unicodedata
 import requests
 from bs4 import BeautifulSoup
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 OUT = ROOT / "dados-atletas"
+CACHE = ROOT / "ano-cache.json"
 FPB = "https://www.fpb.pt"
+AJAX = f"{FPB}/wp-admin/admin-ajax.php"
 UA = {"User-Agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0 Safari/537.36"}
 EPOCA = "2026/2027"
 GENEROS = ["masculino", "feminino"]
-# usada só se a página não mostrar a lista de escalões
-ESCALOES_RESERVA = ["Baby-Basket", "Mini 8", "Mini 10", "Mini 12", "Minis 12 Mistos", "Sub 14", "Sub 16",
-                    "Sub 18", "Sub 20", "Esperanças", "Sénior", "Masters / Veteranos"]
+LIMITE = 500
+S = requests.Session()
+S.headers.update(UA)
 
 
 def log(m):
@@ -34,200 +37,170 @@ def plain(s):
     return unicodedata.normalize("NFD", norm(s)).encode("ascii", "ignore").decode().lower()
 
 
-def redact(html, n=1500):
-    """Estrutura da resposta sem nomes (para o log público)."""
-    s = re.sub(r">([^<]*[A-Za-zÀ-ÿ][^<]*)<", lambda m: ">" + re.sub(r"[A-Za-zÀ-ÿ]", "x", m.group(1)) + "<", html)
-    return s[:n]
-
-
-def escaloes_do_site(clube):
-    try:
-        r = requests.get(f"{FPB}/atletas/clube_{clube}/", headers=UA, timeout=30)
-        s = BeautifulSoup(r.text, "html.parser")
-        for sel in s.find_all("select"):
-            ident = plain(" ".join([sel.get("name", ""), sel.get("id", "")]))
-            opts = [norm(o.get("value") or o.get_text()) for o in sel.find_all("option")]
-            log(f"   select '{ident}': {opts[:40]}")
-            if "escal" in ident:
-                vals = [o for o in opts if o and "todos" not in plain(o) and "selecion" not in plain(o)]
-                if vals:
-                    return vals
-    except Exception as e:  # noqa: BLE001
-        log(f"AVISO: não li a página de atletas: {e}")
-    log("AVISO: lista de escalões não encontrada na página; uso a lista de reserva.")
-    return ESCALOES_RESERVA
-
-
-def pesquisa(clube, escalao, genero, mostrar=False):
-    data = {"action": "search_player", "epoca": EPOCA, "escalao": escalao, "genero": genero,
-            "nome": "", "idAssociacao": "", "idClube": str(clube)}
-    for i in range(3):
+def pedido(method, data, tries=4, timeout=120):
+    for i in range(tries):
         try:
-            r = requests.post(f"{FPB}/wp-admin/admin-ajax.php", data=data, headers=UA, timeout=180)
+            r = S.request(method, AJAX, **({"data": data} if method == "POST" else {"params": data}), timeout=timeout)
             r.raise_for_status()
-            break
-        except Exception as e:  # noqa: BLE001
-            if i == 2:
+            try:
+                j = r.json()
+            except ValueError:
+                return r.text
+            if isinstance(j, list):
+                return "\n".join(x if isinstance(x, str) else json.dumps(x) for x in j)
+            return j if isinstance(j, str) else json.dumps(j, ensure_ascii=False)
+        except Exception:  # noqa: BLE001
+            if i == tries - 1:
                 raise
-            log(f"   nova tentativa ({e})")
-            time.sleep(4 + 4 * i)
-    try:
-        html = r.json()
-    except ValueError:
-        html = r.text
-    html = html if isinstance(html, str) else json.dumps(html, ensure_ascii=False)
-    if mostrar:
-        log("   ---- exemplo de resposta (nomes ocultados) ----")
-        log(redact(html))
-        log("   ----")
-    ids = linhas_atletas(html)
-    if re.search(r"pagina|paged|page-numbers|carregar mais|ver mais", plain(html)):
-        log("   AVISO: a resposta parece ter paginação; o total pode estar incompleto.")
-    return ids
+            time.sleep(5 * (i + 1))
 
 
-def linhas_atletas(html):
-    """{id_atleta: nome do clube} a partir das linhas 'team-row' da resposta."""
-    html = html.replace("\\/", "/")
+def escalao(ano, masters=False):
+    """Escalão pela idade na época (ano de início da época - ano de nascimento)."""
+    if masters:
+        return "Masters / Veteranos"
+    if not ano:
+        return "Sem ano"
+    i = int(EPOCA[:4]) - ano          # 2026/27: 2013 -> 13 -> Sub 14
+    for lim, nome in ((5, "Baby-Basket"), (7, "Mini 8"), (9, "Mini 10"), (11, "Mini 12"),
+                      (13, "Sub 14"), (15, "Sub 16"), (17, "Sub 18")):
+        if i <= lim:
+            return nome
+    return "Sénior"
+
+
+ORDEM = ["Baby-Basket", "Mini 8", "Mini 10", "Mini 12", "Sub 14", "Sub 16", "Sub 18", "Sénior",
+         "Masters / Veteranos", "Sem ano"]
+
+
+def clubes():
+    """{id: nome} de todos os clubes."""
     out = {}
-    blocos = re.split(r'class="team-row', html)
-    for b in blocos[1:] if len(blocos) > 1 else [html]:
-        m = re.search(r"/atletas/(\d+)", b)
-        if not m:
+    for method, data in (("POST", {"action": "get_clubs_dropdown", "associacao": "", "epoca": EPOCA}),
+                         ("GET", {"action": "get_clubes", "associacao": "0"}),
+                         ("GET", {"action": "get_clubes", "associacao": ""})):
+        try:
+            html = pedido(method, data)
+        except Exception as e:  # noqa: BLE001
+            log(f"AVISO: {data['action']}: {e}")
             continue
-        clube = ""
-        bs = BeautifulSoup(b if b.startswith("<") else "<div " + b, "html.parser")
-        logo = bs.find("img", alt=re.compile("logo equipa", re.I))
-        if logo:
-            c = logo.find_next(class_="athlete-char")
-            clube = norm(c.get_text(" ")) if c else ""
-        out.setdefault(int(m.group(1)), clube)
-    if not out:
-        for x in re.findall(r"/atletas/(\d+)", html):
-            out.setdefault(int(x), "")
+        s = BeautifulSoup(html.replace('\\"', '"').replace("\\/", "/"), "html.parser")
+        n0 = len(out)
+        for el in s.find_all(True):
+            cid = None
+            for att in ("data-value", "value", "data-id", "data-idclube"):
+                v = el.get(att)
+                if v and str(v).isdigit():
+                    cid = int(v)
+                    break
+            if cid is None and el.name == "a":
+                m = re.search(r"clube_(\d+)", el.get("href", ""))
+                cid = int(m.group(1)) if m else None
+            if cid:
+                nome = norm(el.get_text(" ")) or norm(el.get("title", ""))
+                if nome and (cid not in out or len(nome) < len(out[cid])):
+                    out[cid] = nome
+        log(f"{data['action']} ({data.get('associacao')!r}): {len(out) - n0} clubes novos · amostra: {html[:300]!r}")
+        if len(out) > 50:
+            break
     return out
 
 
+def atletas(cid, genero, esc=""):
+    html = pedido("POST", {"action": "search_player", "epoca": EPOCA, "escalao": esc, "genero": genero,
+                           "nome": "", "idAssociacao": "", "idClube": str(cid)})
+    return set(int(x) for x in re.findall(r"/atletas/(\d+)", html.replace("\\/", "/")))
+
+
+ESC_FILTRO = ["Baby-Basket", "Mini 8", "Mini 10", "Mini 12", "Minis 12 Mistos", "Sub 14", "Sub 16", "Sub 18",
+              "Sub 20", "Esperanças", "Sénior", "Masters / Veteranos"]
+
+
 def ano_nascimento(aid):
-    try:
-        r = requests.get(f"{FPB}/atletas/{aid}/", headers=UA, timeout=30)
-        lines = [norm(x) for x in BeautifulSoup(r.text, "html.parser").get_text("\n").split("\n") if norm(x)]
-        for i, l in enumerate(lines):
-            if plain(l).rstrip(":") == "data de nascimento" and i + 1 < len(lines):
-                m = re.search(r"(19|20)\d{2}", lines[i + 1])
-                return int(m.group(0)) if m else None
-    except Exception as e:  # noqa: BLE001
-        log(f"   AVISO: atleta {aid}: {e}")
+    for i in range(3):
+        try:
+            r = S.get(f"{FPB}/atletas/{aid}/", timeout=40)
+            r.raise_for_status()
+            lines = [norm(x) for x in BeautifulSoup(r.text, "html.parser").get_text("\n").split("\n") if norm(x)]
+            for j, l in enumerate(lines):
+                if plain(l).rstrip(":") == "data de nascimento" and j + 1 < len(lines):
+                    m = re.search(r"(19|20)\d{2}", lines[j + 1])
+                    return int(m.group(0)) if m else 0
+            return 0
+        except Exception:  # noqa: BLE001
+            time.sleep(3 * (i + 1))
     return None
 
 
-CACHE = ROOT / "ano-cache.json"   # guardado em cache das Actions, nunca no repositório (privacidade)
+def main():
+    ap = argparse.ArgumentParser()
+    ap.add_argument("--clubes", default="todos")
+    ap.add_argument("--threads", type=int, default=4)
+    a = ap.parse_args()
+    OUT.mkdir(exist_ok=True)
+    hoje = datetime.date.today().isoformat()
 
+    lista = clubes()
+    if a.clubes.strip().lower() != "todos":
+        ids = [int(x) for x in a.clubes.split(",") if x.strip()]
+        lista = {i: lista.get(i, f"Clube {i}") for i in ids}
+    log(f"{len(lista)} clubes a ler")
+    if not lista:
+        raise SystemExit("ERRO: lista de clubes vazia")
 
-def anos_de(ids, threads=4):
+    reg = {}                       # id atleta -> [id clube, género, masters?]
+    t0 = time.time()
+    for n, (cid, nome) in enumerate(sorted(lista.items()), 1):
+        for g in GENEROS:
+            try:
+                ids = atletas(cid, g)
+                if len(ids) >= LIMITE:      # corte da FPB: junta por escalão
+                    for e in ESC_FILTRO:
+                        ids |= atletas(cid, g, e)
+                        time.sleep(0.3)
+                mast = atletas(cid, g, "Masters / Veteranos") if ids else set()
+            except Exception as e:  # noqa: BLE001
+                log(f"AVISO: {nome} ({cid}) {g}: {e}")
+                continue
+            for aid in ids:
+                reg.setdefault(aid, [cid, g, aid in mast])
+            time.sleep(0.3)
+        if n % 25 == 0:
+            log(f"   {n}/{len(lista)} clubes · {len(reg)} atletas · {int(time.time() - t0)} s")
+    log(f"Total: {len(reg)} atletas")
+
     cache = {}
     try:
         cache = {int(k): v for k, v in json.loads(CACHE.read_text()).items()}
     except Exception:  # noqa: BLE001
         pass
-    falta = [i for i in ids if i not in cache or cache[i] is None]
-    log(f"Anos de nascimento: {len(ids) - len(falta)} já em cache, {len(falta)} por ler")
+    falta = [i for i in reg if cache.get(i) is None]
+    log(f"Anos de nascimento: {len(reg) - len(falta)} em cache, {len(falta)} por ler")
     t0 = time.time()
-    with concurrent.futures.ThreadPoolExecutor(threads) as ex:
+    with concurrent.futures.ThreadPoolExecutor(a.threads) as ex:
         for n, (aid, ano) in enumerate(zip(falta, ex.map(ano_nascimento, falta)), 1):
             cache[aid] = ano
-            if n % 500 == 0:
+            if n % 1000 == 0:
                 log(f"   {n}/{len(falta)} ({int(time.time() - t0)} s)")
                 CACHE.write_text(json.dumps(cache))
     CACHE.write_text(json.dumps(cache))
-    return cache
 
+    cont = collections.Counter()
+    for aid, (cid, g, mast) in reg.items():
+        ano = cache.get(aid) or 0
+        cont[(cid, escalao(ano, mast), ano, g)] += 1
+    dados = {"epoca": EPOCA, "data": hoje, "clubes": {str(k): v for k, v in lista.items()},
+             "linhas": [[cid, e, ano, g[0].upper(), n] for (cid, e, ano, g), n in
+                        sorted(cont.items(), key=lambda kv: (kv[0][0], ORDEM.index(kv[0][1]), kv[0][2], kv[0][3]))]}
+    (OUT / "atletas.json").write_text(json.dumps(dados, ensure_ascii=False, separators=(",", ":")), encoding="utf-8")
 
-def main():
-    ap = argparse.ArgumentParser()
-    ap.add_argument("--clubes", default="todos", help="'todos' ou IDs FPB separados por vírgula")
-    ap.add_argument("--sem-idades", action="store_true")
-    a = ap.parse_args()
-    alvo = [""] if a.clubes.strip().lower() == "todos" else [c.strip() for c in a.clubes.split(",") if c.strip()]
-    OUT.mkdir(exist_ok=True)
-    hoje = datetime.date.today().isoformat()
-    escaloes = escaloes_do_site(alvo[0] or 119)
-    log(f"Escalões: {escaloes}")
-
-    atleta = {}   # id -> [clube, escalão, género]
-    primeiro = True
-    for clube in alvo:
-        log(f"== {'Todos os clubes' if not clube else 'Clube ' + clube} · época {EPOCA}")
-        for g in GENEROS:
-            try:
-                total_g = pesquisa(clube, "", g)
-                log(f"{g}: {len(total_g)} atletas (sem filtro de escalão)")
-            except Exception as e:  # noqa: BLE001
-                total_g = {}
-                log(f"AVISO: total {g} falhou: {e}")
-            vistos = {}
-            for e in escaloes:
-                try:
-                    res = pesquisa(clube, e, g, mostrar=primeiro)
-                except Exception as ex:  # noqa: BLE001
-                    log(f"AVISO: {e}/{g} falhou: {ex}")
-                    continue
-                if res:
-                    primeiro = False
-                k = frozenset(res)
-                if res and k in vistos:
-                    log(f"AVISO: {e}/{g} devolveu a mesma lista que {vistos[k]}; ignorado.")
-                    continue
-                vistos[k] = e
-                for aid, cl in res.items():
-                    atleta.setdefault(aid, [cl or total_g.get(aid, "") or "?", e, g])
-                log(f"   {e:22s} {g:10s} {len(res):6d}")
-                time.sleep(0.5)
-            for aid, cl in total_g.items():
-                if aid not in atleta:
-                    atleta[aid] = [cl or "?", "Sem escalão no filtro", g]
-    log(f"Total: {len(atleta)} atletas em {len({v[0] for v in atleta.values()})} clubes")
-
-    anos = {} if a.sem_idades else anos_de(sorted(atleta))
-    ordem = {e: i for i, e in enumerate(escaloes + ["Sem escalão no filtro"])}
-
-    # por clube e escalão
-    t = collections.defaultdict(lambda: [0, 0])
-    for cl, e, g in atleta.values():
-        t[(cl, e)][GENEROS.index(g)] += 1
-    rows = sorted(t.items(), key=lambda kv: (kv[0][0].lower(), ordem.get(kv[0][1], 99)))
-    with open(OUT / "por-clube-escalao.csv", "w", newline="", encoding="utf-8-sig") as fh:
-        w = csv.writer(fh)
-        w.writerow(["data", "clube", "escalao", "masculino", "feminino", "total"])
-        for (cl, e), (m, f) in rows:
-            w.writerow([hoje, cl, e, m, f, m + f])
-
-    # por clube, ano de nascimento, género e escalão
-    if anos:
-        c = collections.Counter()
-        for aid, (cl, e, g) in atleta.items():
-            c[(cl, anos.get(aid) or "", g, e)] += 1
-        with open(OUT / "por-clube-ano.csv", "w", newline="", encoding="utf-8-sig") as fh:
-            w = csv.writer(fh)
-            w.writerow(["data", "clube", "ano_nascimento", "idade_em_31_dez", "genero", "escalao", "atletas"])
-            ano_ref = int(EPOCA[:4])
-            for (cl, ano, g, e), n in sorted(c.items(), key=lambda kv: (kv[0][0].lower(), str(kv[0][1]), kv[0][2])):
-                w.writerow([hoje, cl, ano, (ano_ref - ano) if ano else "", g, e, n])
-
-    # resumo nacional
     nat = collections.defaultdict(lambda: [0, 0])
-    for (cl, e), mf in t.items():
-        nat[e][0] += mf[0]
-        nat[e][1] += mf[1]
-    md = [f"# Atletas inscritos na FPB · época {EPOCA} · {hoje}\n",
-          f"{len(atleta)} atletas em {len({v[0] for v in atleta.values()})} clubes\n",
+    for (cid, e, ano, g), n in cont.items():
+        nat[e][GENEROS.index(g)] += n
+    md = [f"# Atletas inscritos na FPB · época {EPOCA} · {hoje}", "",
+          f"{len(reg)} atletas em {len({v[0] for v in reg.values()})} clubes", "",
           "| Escalão | Masculino | Feminino | Total |", "|---|---:|---:|---:|"]
-    for e in sorted(nat, key=lambda x: ordem.get(x, 99)):
-        m, f = nat[e]
-        md.append(f"| {e} | {m} | {f} | {m + f} |")
-    clubes_tot = collections.Counter(v[0] for v in atleta.values())
-    md += ["", "## Clubes com mais atletas", "", "| Clube | Atletas |", "|---|---:|"]
-    md += [f"| {cl} | {n} |" for cl, n in clubes_tot.most_common(30)]
+    md += [f"| {e} | {nat[e][0]} | {nat[e][1]} | {sum(nat[e])} |" for e in ORDEM if e in nat]
     (OUT / "resumo.md").write_text("\n".join(md) + "\n", encoding="utf-8")
     log("\n".join(md))
 

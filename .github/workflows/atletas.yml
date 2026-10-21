@@ -5,8 +5,8 @@ on:
   workflow_dispatch:
     inputs:
       clubes:
-        description: "IDs FPB dos clubes, separados por vírgula (FC Gaia = 119)"
-        default: "119"
+        description: "todos, ou IDs FPB dos clubes separados por vírgula (FC Gaia = 119)"
+        default: "todos"
       idades:
         description: "Ler também o ano de nascimento (mais lento)"
         type: boolean
@@ -27,16 +27,22 @@ concurrency:
 jobs:
   contar:
     runs-on: ubuntu-latest
-    timeout-minutes: 30
+    timeout-minutes: 240
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
       - run: pip install requests==2.32.3 beautifulsoup4==4.12.3
+      - name: Cache dos anos de nascimento (não fica no repositório)
+        uses: actions/cache@v4
+        with:
+          path: ano-cache.json
+          key: anos-${{ github.run_id }}
+          restore-keys: anos-
       - name: Contar atletas
         run: |
-          ARGS="--clubes ${{ github.event.inputs.clubes || '119' }}"
+          ARGS="--clubes ${{ github.event.inputs.clubes || 'todos' }}"
           if [ "${{ github.event.inputs.idades }}" = "false" ]; then ARGS="$ARGS --sem-idades"; fi
           python scripts/atletas_inscritos.py $ARGS 2>&1 | tee atletas.log
           cp atletas.log dados-atletas/
@@ -51,6 +57,7 @@ jobs:
           git rm -rf . -q || true
           git clean -fdq
           cp /tmp/out/* .
+          rm -f ano-cache.json
           git add -A
           git commit -m "Atletas inscritos $(date +%F)" || echo "Sem alterações"
           git push origin dados-atletas

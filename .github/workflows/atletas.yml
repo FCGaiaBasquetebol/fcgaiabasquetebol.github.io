@@ -51,6 +51,7 @@ jobs:
       - name: Guardar no ramo dados-atletas
         run: |
           cp -r dados-atletas /tmp/out
+          cp ano-cache.json /tmp/ 2>/dev/null || true
           git config user.name "github-actions"
           git config user.email "github-actions@users.noreply.github.com"
           git fetch origin dados-atletas && git checkout dados-atletas || git checkout --orphan dados-atletas
@@ -61,3 +62,4 @@ jobs:
           git add -A
           git commit -m "Atletas inscritos $(date +%F)" || echo "Sem alterações"
           git push origin dados-atletas
+          cp /tmp/ano-cache.json . 2>/dev/null || true

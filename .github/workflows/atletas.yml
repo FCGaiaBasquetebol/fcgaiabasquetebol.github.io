@@ -1,0 +1,56 @@
+name: Contar atletas inscritos (FPB)
+
+# Não publica nada no site. Guarda só contagens no ramo "dados-atletas".
+on:
+  workflow_dispatch:
+    inputs:
+      clubes:
+        description: "IDs FPB dos clubes, separados por vírgula (FC Gaia = 119)"
+        default: "119"
+      idades:
+        description: "Ler também o ano de nascimento (mais lento)"
+        type: boolean
+        default: true
+  push:
+    branches: [main]
+    paths:
+      - scripts/atletas_inscritos.py
+      - .github/workflows/atletas.yml
+
+permissions:
+  contents: write
+
+concurrency:
+  group: atletas
+  cancel-in-progress: false
+
+jobs:
+  contar:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install requests==2.32.3 beautifulsoup4==4.12.3
+      - name: Contar atletas
+        run: |
+          ARGS="--clubes ${{ github.event.inputs.clubes || '119' }}"
+          if [ "${{ github.event.inputs.idades }}" = "false" ]; then ARGS="$ARGS --sem-idades"; fi
+          python scripts/atletas_inscritos.py $ARGS 2>&1 | tee atletas.log
+          cp atletas.log dados-atletas/
+      - name: Mostrar resumo
+        run: cat dados-atletas/resumo.md >> "$GITHUB_STEP_SUMMARY"
+      - name: Guardar no ramo dados-atletas
+        run: |
+          cp -r dados-atletas /tmp/out
+          git config user.name "github-actions"
+          git config user.email "github-actions@users.noreply.github.com"
+          git fetch origin dados-atletas && git checkout dados-atletas || git checkout --orphan dados-atletas
+          git rm -rf . -q || true
+          git clean -fdq
+          cp /tmp/out/* .
+          git add -A
+          git commit -m "Atletas inscritos $(date +%F)" || echo "Sem alterações"
+          git push origin dados-atletas

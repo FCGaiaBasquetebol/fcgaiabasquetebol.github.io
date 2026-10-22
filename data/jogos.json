@@ -1,5 +1,5 @@
 {
-"updated": "2026-10-21",
+"updated": "2026-10-22",
 "games": [
 [
 "Esperanças",
@@ -836,7 +836,7 @@
 "11:15",
 "Bolacesto A/Farm. Gândara",
 "FC Gaia A",
-"Pavilhão Municipal de Vila Nova de Gaia",
+"Pav. Mun. Prof. Miranda de Carvalho (Vila DEste)",
 "marcado",
 "",
 "2.ª Fase"
@@ -1379,6 +1379,24 @@
 "name": "Esperanças · 1.ª Fase Série B",
 "rows": [
 [
+"Illiabum Clube",
+2,
+2,
+0,
+4,
+193,
+134
+],
+[
+"Olivais FC",
+2,
+1,
+1,
+3,
+126,
+164
+],
+[
 "CLIP Teams",
 1,
 1,
@@ -1397,15 +1415,6 @@
 69
 ],
 [
-"Illiabum Clube",
-1,
-1,
-0,
-2,
-99,
-79
-],
-[
 "Ovarense OLHO MARINHO",
 1,
 1,
@@ -1422,15 +1431,6 @@
 2,
 78,
 60
-],
-[
-"Olivais FC",
-1,
-1,
-0,
-2,
-71,
-70
 ],
 [
 "FC Gaia",
@@ -2171,7 +2171,7 @@
 "CD Póvoa A",
 "Maia Basket A",
 "",
-"Pavilhão do Clube Desportivo Póvoa"
+"Pavilhão Escola Secundária Eça de Queirós"
 ],
 [
 672,
@@ -2221,7 +2221,7 @@
 "CD Póvoa A",
 "UAA Aroso A",
 "",
-"Pavilhão do Clube Desportivo Póvoa"
+"Pavilhão Escola Secundária Eça de Queirós"
 ],
 [
 677,
@@ -2440,7 +2440,7 @@
 "Bolacesto A/Farm. Gândara",
 "FC Gaia A",
 "",
-"Pavilhão Municipal de Vila Nova de Gaia"
+"Pav. Mun. Prof. Miranda de Carvalho (Vila DEste)"
 ],
 [
 433,
@@ -2605,12 +2605,12 @@
 [
 449,
 7,
-"",
-"",
+"2026-12-01",
+"11:00",
 "Bolacesto A/Farm. Gândara",
 "Académico/Ribadouro A",
 "",
-"Pavilhão Municipal de Vila Nova de Gaia"
+"Pavilhão Municipal Fernando Gomes"
 ],
 [
 450,
@@ -3959,7 +3959,7 @@
 "21:30",
 "Illiabum Clube",
 "Olivais FC",
-"",
+"94-55",
 "Pavilhão Municipal Capitão Adriano Nordeste"
 ],
 [

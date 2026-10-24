@@ -1,5 +1,5 @@
 {
-"updated": "2026-10-23",
+"updated": "2026-10-24",
 "games": [
 [
 "Esperanças",
@@ -848,11 +848,11 @@
 436,
 2,
 "2026-10-31",
-"",
+"15:00",
 "FC Gaia A",
 "Maia Basket A/Fisimaia",
-"Pavilhão Futebol Clube Gaia",
-"por marcar",
+"Pavilhão Municipal das Pedras - Nelson Cardoso",
+"marcado",
 "",
 "2.ª Fase"
 ],
@@ -879,7 +879,7 @@
 4,
 "2026-11-15",
 "16:30",
-"Académico/Ribadouro A",
+"Académico A / Ribadouro",
 "FC Gaia A",
 "Pavilhão Mário Navega",
 "marcado",
@@ -892,12 +892,12 @@
 "ABP",
 444,
 5,
-"2026-11-21",
-"",
+"2026-11-22",
+"11:00",
 "FC Gaia A",
 "UAA Aroso A",
 "Pavilhão Futebol Clube Gaia",
-"por marcar",
+"marcado",
 "",
 "2.ª Fase"
 ],
@@ -908,11 +908,11 @@
 447,
 6,
 "2026-11-29",
-"",
+"11:00",
 "FC Gaia A",
 "Bolacesto A/Farm. Gândara",
 "Pavilhão Futebol Clube Gaia",
-"por marcar",
+"marcado",
 "",
 "2.ª Fase"
 ],
@@ -938,11 +938,11 @@
 454,
 8,
 "2026-12-05",
-"",
+"15:00",
 "FC Gaia A",
 "FC Porto A",
 "Pavilhão Futebol Clube Gaia",
-"por marcar",
+"marcado",
 "",
 "2.ª Fase"
 ],
@@ -952,12 +952,12 @@
 "ABP",
 455,
 9,
-"2026-12-12",
-"",
+"2026-12-13",
+"11:00",
 "FC Gaia A",
-"Académico/Ribadouro A",
+"Académico A / Ribadouro",
 "Pavilhão Futebol Clube Gaia",
-"por marcar",
+"marcado",
 "",
 "2.ª Fase"
 ],
@@ -1017,8 +1017,8 @@
 "FC Gaia B",
 "Maia Basket B",
 "Pavilhão Municipal das Pedras - Nelson Cardoso",
-"marcado",
-"",
+"realizado",
+"37-45",
 "1.ª Fase"
 ],
 [
@@ -1060,7 +1060,7 @@
 "2026-10-02",
 "21:45",
 "FC Gaia A",
-"CPN A ANTARTE",
+"CPN A / Antarte",
 "Pavilhão Futebol Clube Gaia",
 "realizado",
 "86-45",
@@ -1092,8 +1092,8 @@
 "CLIP Teams",
 "FC Gaia A",
 "Colégio Luso Internacional do Porto",
-"marcado",
-"",
+"realizado",
+"44-80",
 "2.ª Fase"
 ],
 [
@@ -1103,11 +1103,11 @@
 584,
 2,
 "2026-10-30",
-"",
+"22:00",
 "FC Gaia A",
 "ACR Vigorosa",
 "Pavilhão Futebol Clube Gaia",
-"por marcar",
+"marcado",
 "",
 "2.ª Fase"
 ],
@@ -1133,11 +1133,11 @@
 590,
 4,
 "2026-11-13",
-"",
+"22:00",
 "FC Gaia A",
 "FC Porto 2",
 "Pavilhão Futebol Clube Gaia",
-"por marcar",
+"marcado",
 "",
 "2.ª Fase"
 ],
@@ -1163,11 +1163,11 @@
 596,
 6,
 "2026-11-27",
-"",
+"22:00",
 "FC Gaia A",
 "CLIP Teams",
 "Pavilhão Futebol Clube Gaia",
-"por marcar",
+"marcado",
 "",
 "2.ª Fase"
 ],
@@ -1193,11 +1193,11 @@
 602,
 8,
 "2026-12-11",
-"",
+"22:00",
 "FC Gaia A",
 "CDJ Régio",
 "Pavilhão Futebol Clube Gaia",
-"por marcar",
+"marcado",
 "",
 "2.ª Fase"
 ],
@@ -1222,12 +1222,12 @@
 "ABP",
 608,
 10,
-"2027-01-08",
-"",
+"2027-01-09",
+"18:00",
 "FC Gaia A",
 "UAA Aroso A",
 "Pavilhão Futebol Clube Gaia",
-"por marcar",
+"marcado",
 "",
 "2.ª Fase"
 ],
@@ -1513,7 +1513,7 @@
 169
 ],
 [
-"CPN A ANTARTE",
+"CPN A / Antarte",
 3,
 1,
 2,
@@ -1537,58 +1537,58 @@
 "name": "Distrital Sub-18 · Grupo I",
 "rows": [
 [
+"UAA Aroso A",
+1,
+1,
+0,
+2,
+78,
+38
+],
+[
 "FC Gaia A",
+1,
+1,
 0,
-0,
-0,
-0,
-0,
-0
-],
-[
-"CLIP Teams",
-0,
-0,
-0,
-0,
-0,
-0
-],
-[
-"ACR Vigorosa",
-0,
-0,
-0,
-0,
-0,
-0
-],
-[
-"CDJ Régio",
-0,
-0,
-0,
-0,
-0,
-0
+2,
+80,
+44
 ],
 [
 "FC Porto 2",
+1,
+1,
 0,
-0,
-0,
-0,
-0,
-0
+2,
+73,
+47
 ],
 [
-"UAA Aroso A",
+"ACR Vigorosa",
+1,
 0,
+1,
+1,
+47,
+73
+],
+[
+"CLIP Teams",
+1,
 0,
+1,
+1,
+44,
+80
+],
+[
+"CDJ Régio",
+1,
 0,
-0,
-0,
-0
+1,
+1,
+38,
+78
 ]
 ]
 }
@@ -1599,6 +1599,15 @@
 "name": "Distrital Sub-18 · Grupo G2",
 "rows": [
 [
+"SC Vasco da Gama B",
+3,
+2,
+1,
+5,
+181,
+206
+],
+[
 "UAA Aroso B",
 2,
 2,
@@ -1606,15 +1615,6 @@
 4,
 159,
 82
-],
-[
-"CD Aves",
-3,
-1,
-2,
-4,
-149,
-196
 ],
 [
 "FC Gaia B",
@@ -1627,21 +1627,21 @@
 ],
 [
 "Powertogether B",
-2,
-1,
-1,
 3,
-111,
-113
+1,
+2,
+4,
+169,
+181
 ],
 [
-"SC Vasco da Gama B",
-2,
-1,
-1,
+"CD Aves",
 3,
-113,
-148
+1,
+2,
+4,
+149,
+196
 ]
 ]
 }
@@ -1694,7 +1694,7 @@
 "name": "Distrital Sub-16 · Grupo H",
 "rows": [
 [
-"Académico/Ribadouro A",
+"Académico A / Ribadouro",
 0,
 0,
 0,
@@ -1757,21 +1757,21 @@
 "rows": [
 [
 "Maia Basket B",
-2,
-2,
+3,
+3,
 0,
-4,
-130,
-67
+6,
+175,
+104
 ],
 [
 "FC Gaia B",
+3,
 2,
-2,
-0,
-4,
-125,
-79
+1,
+5,
+162,
+124
 ],
 [
 "Bolacesto B",
@@ -1784,21 +1784,21 @@
 ],
 [
 "CBP B",
+3,
+1,
 2,
-0,
-2,
-2,
-67,
-154
+4,
+116,
+195
 ],
 [
 "BC Marco",
-1,
+2,
 0,
-1,
-1,
-18,
-82
+2,
+2,
+59,
+131
 ]
 ]
 }
@@ -2001,7 +2001,9 @@
 "Bolacesto A/Farm. Gândara": "https://sav2.fpb.pt/uploads/clubes/logotipo/CLU_1791790001218.png",
 "Maia Basket A/Fisimaia": "https://sav2.fpb.pt/uploads/clubes/logotipo/CLU_7141746203247.png",
 "FC Porto A": "https://sav2.fpb.pt/old_uploads/CLU/CLU_120_LOGO.png",
-"Maia Basket A": "https://sav2.fpb.pt/uploads/clubes/logotipo/CLU_7141746203247.png"
+"Maia Basket A": "https://sav2.fpb.pt/uploads/clubes/logotipo/CLU_7141746203247.png",
+"CPN A / Antarte": "https://sav2.fpb.pt/uploads/clubes/logotipo/Clube_Propaganda_de_Natacao1603657754.png",
+"Académico A / Ribadouro": "https://sav2.fpb.pt/old_uploads/CLU/CLU_188_LOGO.png"
 },
 "groups": {
 "Sub-14 Masc A": [
@@ -2428,7 +2430,7 @@
 "2026-10-25",
 "16:30",
 "UAA Aroso A",
-"Académico/Ribadouro A",
+"Académico A / Ribadouro",
 "",
 "Escola EB23 Manoel de Oliveira"
 ],
@@ -2457,7 +2459,7 @@
 2,
 "2026-10-31",
 "14:30",
-"Académico/Ribadouro A",
+"Académico A / Ribadouro",
 "Bolacesto A/Farm. Gândara",
 "",
 "Pavilhão Lima \"B\""
@@ -2475,12 +2477,12 @@
 [
 436,
 2,
-"",
-"",
+"2026-10-31",
+"15:00",
 "FC Gaia A",
 "Maia Basket A/Fisimaia",
 "",
-"Pavilhão Futebol Clube Gaia"
+"Pavilhão Municipal das Pedras - Nelson Cardoso"
 ],
 [
 437,
@@ -2488,7 +2490,7 @@
 "2026-11-08",
 "16:15",
 "Maia Basket A/Fisimaia",
-"Académico/Ribadouro A",
+"Académico A / Ribadouro",
 "",
 "Pavilhão Mun. Nortecoope"
 ],
@@ -2517,7 +2519,7 @@
 4,
 "2026-11-15",
 "16:30",
-"Académico/Ribadouro A",
+"Académico A / Ribadouro",
 "FC Gaia A",
 "",
 "Pavilhão Mário Navega"
@@ -2548,15 +2550,15 @@
 "2026-11-22",
 "15:00",
 "FC Porto A",
-"Académico/Ribadouro A",
+"Académico A / Ribadouro",
 "",
 "Gim. do Lagarteiro"
 ],
 [
 444,
 5,
-"",
-"",
+"2026-11-22",
+"11:00",
 "FC Gaia A",
 "UAA Aroso A",
 "",
@@ -2577,7 +2579,7 @@
 6,
 "2026-11-29",
 "14:15",
-"Académico/Ribadouro A",
+"Académico A / Ribadouro",
 "UAA Aroso A",
 "",
 "Pavilhão Mário Navega"
@@ -2585,8 +2587,8 @@
 [
 447,
 6,
-"",
-"",
+"2026-11-29",
+"11:00",
 "FC Gaia A",
 "Bolacesto A/Farm. Gândara",
 "",
@@ -2608,7 +2610,7 @@
 "2026-12-01",
 "11:00",
 "Bolacesto A/Farm. Gândara",
-"Académico/Ribadouro A",
+"Académico A / Ribadouro",
 "",
 "Pavilhão Municipal Fernando Gomes"
 ],
@@ -2637,7 +2639,7 @@
 8,
 "2026-12-06",
 "11:30",
-"Académico/Ribadouro A",
+"Académico A / Ribadouro",
 "Maia Basket A/Fisimaia",
 "",
 "Pavilhão Mário Navega"
@@ -2655,8 +2657,8 @@
 [
 454,
 8,
-"",
-"",
+"2026-12-05",
+"15:00",
 "FC Gaia A",
 "FC Porto A",
 "",
@@ -2665,22 +2667,22 @@
 [
 455,
 9,
-"",
-"",
+"2026-12-13",
+"11:00",
 "FC Gaia A",
-"Académico/Ribadouro A",
+"Académico A / Ribadouro",
 "",
 "Pavilhão Futebol Clube Gaia"
 ],
 [
 456,
 9,
-"",
-"",
+"2026-12-12",
+"18:45",
 "Maia Basket A/Fisimaia",
 "UAA Aroso A",
 "",
-"Pavilhão Mun. Nortecoope"
+"Pavilhão Municipal Nogueira da Maia"
 ],
 [
 457,
@@ -2697,7 +2699,7 @@
 10,
 "2026-01-10",
 "11:30",
-"Académico/Ribadouro A",
+"Académico A / Ribadouro",
 "FC Porto A",
 "",
 "Pavilhão Mário Navega"
@@ -2796,7 +2798,7 @@
 "15:00",
 "FC Gaia B",
 "Maia Basket B",
-"",
+"37-45",
 "Pavilhão Municipal das Pedras - Nelson Cardoso"
 ],
 [
@@ -2806,7 +2808,7 @@
 "11:30",
 "BC Marco",
 "CBP B",
-"",
+"41-49",
 "Esc. Sec. Marco de Canaveses"
 ],
 [
@@ -2841,7 +2843,7 @@
 1,
 "2026-09-26",
 "21:30",
-"CPN A ANTARTE",
+"CPN A / Antarte",
 "SC Vasco da Gama A",
 "50-75",
 "Pavilhão Municipal Ermesinde"
@@ -2872,7 +2874,7 @@
 "2026-10-02",
 "21:45",
 "FC Gaia A",
-"CPN A ANTARTE",
+"CPN A / Antarte",
 "86-45",
 "Pavilhão Futebol Clube Gaia"
 ],
@@ -2891,7 +2893,7 @@
 3,
 "2026-10-11",
 "11:30",
-"CPN A ANTARTE",
+"CPN A / Antarte",
 "Bolacesto",
 "76-47",
 "Pavilhão Municipal Ermesinde"
@@ -2908,7 +2910,7 @@
 "15:30",
 "CLIP Teams",
 "FC Gaia A",
-"",
+"44-80",
 "Colégio Luso Internacional do Porto"
 ],
 [
@@ -2918,7 +2920,7 @@
 "21:15",
 "ACR Vigorosa",
 "FC Porto 2",
-"",
+"47-73",
 "Pavilhão Escola EB23 Prof. Napoleão de Sousa Marques"
 ],
 [
@@ -2928,14 +2930,14 @@
 "21:30",
 "CDJ Régio",
 "UAA Aroso A",
-"",
+"38-78",
 "Pavilhão Desportivo de Mindelo"
 ],
 [
 584,
 2,
-"",
-"",
+"2026-10-30",
+"22:00",
 "FC Gaia A",
 "ACR Vigorosa",
 "",
@@ -2994,8 +2996,8 @@
 [
 590,
 4,
-"",
-"",
+"2026-11-13",
+"22:00",
 "FC Gaia A",
 "FC Porto 2",
 "",
@@ -3054,8 +3056,8 @@
 [
 596,
 6,
-"",
-"",
+"2026-11-27",
+"22:00",
 "FC Gaia A",
 "CLIP Teams",
 "",
@@ -3114,8 +3116,8 @@
 [
 602,
 8,
-"",
-"",
+"2026-12-11",
+"22:00",
 "FC Gaia A",
 "CDJ Régio",
 "",
@@ -3174,8 +3176,8 @@
 [
 608,
 10,
-"",
-"",
+"2027-01-09",
+"18:00",
 "FC Gaia A",
 "UAA Aroso A",
 "",
@@ -3285,7 +3287,7 @@
 "21:00",
 "Powertogether B",
 "SC Vasco da Gama B",
-"",
+"58-68",
 "Pav. Mun. Prof. Miranda de Carvalho (Vila DEste)"
 ],
 [

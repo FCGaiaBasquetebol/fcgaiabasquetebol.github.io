@@ -372,8 +372,8 @@
 "Juvemaia ACDC/Mecprec",
 "FC Gaia",
 "Pavilhão Municipal Nogueira da Maia",
-"marcado",
-"",
+"realizado",
+"73-66",
 "1.ª Fase"
 ],
 [
@@ -1299,13 +1299,22 @@
 "name": "CN1 · 1.ª Fase Série B",
 "rows": [
 [
-"SC Beira-Mar",
+"Olivais FC",
 2,
-1,
-1,
-3,
-146,
-122
+2,
+0,
+4,
+186,
+156
+],
+[
+"Juvemaia ACDC/Mecprec",
+2,
+2,
+0,
+4,
+142,
+132
 ],
 [
 "AD Sanjoanense",
@@ -1317,58 +1326,49 @@
 158
 ],
 [
-"FC Gaia",
-1,
-1,
-0,
+"SC Beira-Mar",
 2,
-84,
-69
-],
-[
-"Olivais FC",
 1,
 1,
-0,
-2,
-90,
-76
-],
-[
-"Juvemaia ACDC/Mecprec",
-1,
-1,
-0,
-2,
-69,
-66
+3,
+146,
+122
 ],
 [
 "Académico FC",
 2,
-0,
 1,
 1,
-78,
-86
+3,
+165,
+153
+],
+[
+"FC Gaia",
+2,
+1,
+1,
+3,
+150,
+142
 ],
 [
 "Gafanha Rascunhos Urbano",
 2,
 0,
-1,
-1,
-76,
-90
+2,
+2,
+143,
+177
 ],
 [
 "FIDES",
-1,
+2,
 0,
-1,
-1,
-69,
-84
+2,
+2,
+149,
+180
 ]
 ]
 }
@@ -3364,7 +3364,7 @@
 "18:30",
 "Juvemaia ACDC/Mecprec",
 "FC Gaia",
-"",
+"73-66",
 "Pavilhão Municipal Nogueira da Maia"
 ],
 [
@@ -3394,7 +3394,7 @@
 "20:45",
 "FIDES",
 "Olivais FC",
-"",
+"80-96",
 "Escola Secundária de Valbom"
 ],
 [

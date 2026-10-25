@@ -1,5 +1,5 @@
 {
-"updated": "2026-10-24",
+"updated": "2026-10-25",
 "games": [
 [
 "Esperanças",
@@ -837,8 +837,8 @@
 "Bolacesto A/Farm. Gândara",
 "FC Gaia A",
 "Pav. Mun. Prof. Miranda de Carvalho (Vila DEste)",
-"marcado",
-"",
+"realizado",
+"67-58",
 "2.ª Fase"
 ],
 [
@@ -1032,8 +1032,8 @@
 "BC Marco",
 "FC Gaia B",
 "Esc. Sec. Marco de Canaveses",
-"marcado",
-"",
+"realizado",
+"28-55",
 "1.ª Fase"
 ],
 [
@@ -1694,31 +1694,22 @@
 "name": "Distrital Sub-16 · Grupo H",
 "rows": [
 [
-"Académico A / Ribadouro",
-0,
-0,
-0,
-0,
-0,
-0
-],
-[
-"UAA Aroso A",
-0,
-0,
-0,
-0,
-0,
-0
-],
-[
 "Bolacesto A/Farm. Gândara",
+1,
+1,
 0,
+2,
+67,
+58
+],
+[
+"FC Gaia A",
+1,
 0,
-0,
-0,
-0,
-0
+1,
+1,
+58,
+67
 ],
 [
 "Maia Basket A/Fisimaia",
@@ -1730,7 +1721,16 @@
 0
 ],
 [
-"FC Gaia A",
+"Académico A / Ribadouro",
+0,
+0,
+0,
+0,
+0,
+0
+],
+[
+"UAA Aroso A",
 0,
 0,
 0,
@@ -1756,6 +1756,15 @@
 "name": "Distrital Sub-16 · Grupo G3",
 "rows": [
 [
+"FC Gaia B",
+4,
+3,
+1,
+7,
+217,
+152
+],
+[
 "Maia Basket B",
 3,
 3,
@@ -1763,15 +1772,6 @@
 6,
 175,
 104
-],
-[
-"FC Gaia B",
-3,
-2,
-1,
-5,
-162,
-124
 ],
 [
 "Bolacesto B",
@@ -1793,12 +1793,12 @@
 ],
 [
 "BC Marco",
-2,
+3,
 0,
-2,
-2,
-59,
-131
+3,
+3,
+87,
+186
 ]
 ]
 }
@@ -2441,7 +2441,7 @@
 "11:15",
 "Bolacesto A/Farm. Gândara",
 "FC Gaia A",
-"",
+"67-58",
 "Pav. Mun. Prof. Miranda de Carvalho (Vila DEste)"
 ],
 [
@@ -2738,7 +2738,7 @@
 "10:30",
 "BC Marco",
 "FC Gaia B",
-"",
+"28-55",
 "Esc. Sec. Marco de Canaveses"
 ],
 [

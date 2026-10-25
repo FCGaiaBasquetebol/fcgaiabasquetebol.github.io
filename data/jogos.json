@@ -1388,6 +1388,15 @@
 134
 ],
 [
+"Ovarense OLHO MARINHO",
+2,
+2,
+0,
+4,
+164,
+128
+],
+[
 "CLIP Teams",
 2,
 1,
@@ -1442,15 +1451,6 @@
 164
 ],
 [
-"Ovarense OLHO MARINHO",
-1,
-1,
-0,
-2,
-83,
-64
-],
-[
 "SC Beira-Mar",
 1,
 1,
@@ -1458,6 +1458,15 @@
 2,
 78,
 60
+],
+[
+"Sangalhos DC",
+2,
+0,
+2,
+2,
+143,
+180
 ],
 [
 "ACA-Perfil Independente",
@@ -1476,15 +1485,6 @@
 1,
 70,
 71
-],
-[
-"Sangalhos DC",
-1,
-0,
-1,
-1,
-79,
-99
 ]
 ]
 }
@@ -3971,7 +3971,7 @@
 "20:15",
 "Ovarense OLHO MARINHO",
 "Sangalhos DC",
-"",
+"81-64",
 "Arena de Ovar"
 ],
 [

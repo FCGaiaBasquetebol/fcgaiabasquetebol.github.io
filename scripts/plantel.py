@@ -4,7 +4,7 @@
 Fontes (fpb.pt):
   - /equipas/clube_119/ e /treinadores/clube_119/  -> listas (carregadas por JavaScript; lidas com Playwright)
   - /equipa/equipa_ID/   -> atletas de cada equipa
-  - /atletas/ID/         -> número, posição, altura, ano de nascimento (sem foto nem data completa)
+  - /atletas/ID/         -> número, posição, altura, ano de nascimento; foto só de maiores de 18 anos das equipas em FOTOS_EQUIPAS (a data completa nunca é guardada)
   - /treinadores/ID/     -> grau, foto e carreira
 
 Regras:
@@ -21,6 +21,8 @@ DATA = ROOT / "data" / "jogos.json"
 DEBUG = ROOT / "debug"
 CONFIG = json.loads((ROOT / "scripts" / "config.json").read_text(encoding="utf-8"))
 FPB = "https://www.fpb.pt"
+# equipas com fotos dos atletas (só maiores de 18 anos; as restantes ficam sem foto)
+FOTOS_EQUIPAS = {"Seniores Masc", "Esperanças", "Masters"}
 CLUBE = CONFIG.get("clube_fpb", 119)
 UA = {"User-Agent": "Mozilla/5.0 (FC Gaia site; atualizacao mensal do plantel)"}
 TEAMS = [t["id"] for t in CONFIG["equipas"]]
@@ -333,6 +335,9 @@ def athlete(aid, fallback):
     s = get(f"{FPB}/atletas/{aid}/")
     lines = [norm(x) for x in s.get_text("\n").split("\n") if norm(x)]
     img = s.find("img", alt=re.compile("perfil", re.I))
+    photo = img.get("src", "") if img else ""
+    if "uploads/utilizadores" not in photo:
+        photo = ""
     num, name = None, fallback
     if img:
         h = img.find_next(["h1", "h2", "h3"])
@@ -353,10 +358,18 @@ def athlete(aid, fallback):
     nac_flag = flag.get("src", "") if flag else ""
     if nac_flag.startswith("/"):
         nac_flag = FPB + nac_flag
-    # só o ano: a data completa e a foto dos atletas não são guardadas (privacidade)
+    # só o ano fica guardado; a data completa serve apenas para saber se é maior de idade
     nasc_txt = label_value(lines, "Data de Nascimento")
     m = re.search(r"(19|20)\d{2}", nasc_txt)
     ano = int(m.group(0)) if m else None
+    adulto = False
+    m = re.search(r"(\d{1,2})[/\-.](\d{1,2})[/\-.]((?:19|20)\d{2})", nasc_txt)
+    if m:
+        try:
+            dn, hoje = datetime.date(int(m.group(3)), int(m.group(2)), int(m.group(1))), datetime.date.today()
+            adulto = (hoje.year - dn.year - ((hoje.month, hoje.day) < (dn.month, dn.day))) >= 18
+        except ValueError:
+            pass
     # histórico de inscrições: tabela com Época / Clube
     insc = []
     for tb in s.find_all("table"):
@@ -371,7 +384,7 @@ def athlete(aid, fallback):
             insc.append([td[0], td[1], " · ".join(extra)])
         break
     return {"name": short(name), "num": num, "pos": pos, "h": int(alt) if alt and 140 <= int(alt) <= 240 else None,
-            "id": aid, "ano": ano, "insc": insc, "nac": nac, "nac_cc": nac_cc, "nac_flag": nac_flag}
+            "photo": photo, "_adulto": adulto, "id": aid, "ano": ano, "insc": insc, "nac": nac, "nac_cc": nac_cc, "nac_flag": nac_flag}
 
 
 ROLE = re.compile(r"^\(?(principal|adjunto|treinador.*|estagi.*)\)?$", re.I)
@@ -447,6 +460,9 @@ def main():
             for aid, (nm, tnum) in ath.items():
                 try:
                     a = athlete(aid, nm)
+                    if not (tid in FOTOS_EQUIPAS and a.pop("_adulto", False) and a.get("photo")):
+                        a.pop("photo", None)
+                    a.pop("_adulto", None)
                     if tnum is not None:
                         a["num"] = tnum  # o número da equipa tem prioridade sobre o da ficha
                     rows.append(a)

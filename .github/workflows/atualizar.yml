@@ -6,8 +6,9 @@ on:
     # resultados: de meia em meia hora; só vai buscar dados se houver jogos
     # que começaram há 1h30 ou mais e ainda não têm resultado
     - cron: "17,47 * * * *"
-    # calendário (horários, pavilhões, jogos novos): terças e quintas
-    - cron: "0 6 * * 2,4"
+    # calendário (horários, pavilhões, jogos novos): todos os dias às 7h e às 19h (Portugal, inverno);
+    # só grava e publica se houver alterações
+    - cron: "0 7,19 * * *"
     # plantel, fotos e carreiras dos treinadores: terças e sextas
     - cron: "0 5 * * 2,5"
   push:
@@ -46,7 +47,7 @@ jobs:
           M="${{ github.event.inputs.modo }}"
           case "${{ github.event.schedule }}" in
             "17,47 * * * *") M=resultados ;;
-            "0 6 * * 2,4")   M=calendario ;;
+            "0 7,19 * * *")   M=calendario ;;
             "0 5 * * 2,5")   M=plantel ;;
           esac
           if [ "${{ github.event_name }}" = "push" ]; then M=nenhum; fi

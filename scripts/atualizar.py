@@ -51,6 +51,13 @@ def is_gaia(name):
     return norm(name).lower().startswith("fc gaia")
 
 
+def nome_equipa(name):
+    """A fonte às vezes escreve o clube em maiúsculas ('FC GAIA'): normaliza para 'FC Gaia'
+    (mantendo o resto, ex.: 'FC GAIA A' -> 'FC Gaia A'). Os outros nomes ficam como vêm."""
+    n = norm(name)
+    return re.sub(r"^fc gaia\b", "FC Gaia", n, flags=re.I) if is_gaia(n) else n
+
+
 def phase_and_group(title, cup=False):
     """'1ª Fase - Série B' -> ('1.ª Fase', 'Série B'); Taça -> ('Taça de Portugal', ...)."""
     t = norm(title)
@@ -124,7 +131,7 @@ def schedule_games(comp_id, phase_id):
         date = d if re.fullmatch(r"\d{4}-\d{2}-\d{2}", d) else ""
         hora = h if re.fullmatch(r"\d{1,2}:\d{2}", h) else ""
         r = re.fullmatch(r"(\d+)\s*[:\-]\s*(\d+)", res or "")
-        out.append(dict(num=int(num), jor=jor, date=date, time=hora, home=home, away=away,
+        out.append(dict(num=int(num), jor=jor, date=date, time=hora, home=nome_equipa(home), away=nome_equipa(away),
                         venue=venue, res=f"{r.group(1)}-{r.group(2)}" if r else ""))
     return out
 
@@ -152,7 +159,7 @@ def standings_full(comp_id, phase_id, group):
             name = next((x for x in c if re.search(r"[A-Za-zÀ-ÿ]", x)), None)
             if not name:
                 continue
-            name = re.sub(r"^\d+\s+", "", name)
+            name = nome_equipa(re.sub(r"^\d+\s+", "", name))
             if img and not is_gaia(name):
                 logos[name] = img["src"]
             if any("EXCLU" in x.upper() for x in c):

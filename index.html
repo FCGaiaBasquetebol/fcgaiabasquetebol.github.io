@@ -754,7 +754,7 @@ const mon=d=>add(d,-((d.getDay()+6)%7));
 const wd=d=>(d.getDay()+6)%7;
 const TODAY=ks(new Date());
 const esc=s=>String(s??"").replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
-let G=GAMES.map((r,i)=>{const [team,comp,src,num,jor,date,time,home,away,venue,status,res,phase]=r;const isHome=home.includes("FC Gaia");
+let G=GAMES.map((r,i)=>{const [team,comp,src,num,jor,date,time,home,away,venue,status,res,phase]=r;const isHome=/^fc gaia/i.test(home);
   return {i,team,comp,src,num,jor,date,time,home,away,venue,status,res,phase,isHome,opp:isHome?away:home}});
 const pend=g=>g.status==="por marcar";
 const hh=t=>t?t.replace(":","H"):"";
@@ -1229,7 +1229,7 @@ render();openFromHash();
 (function(){if(location.protocol==="file:")return;
 fetch("data/jogos.json?t="+Date.now(),{cache:"no-store"}).then(r=>r.ok?r.json():null).then(d=>{if(!d||!Array.isArray(d.games))return;
   GAMES=d.games;STAND=d.stand||STAND;GROUPS=d.groups||GROUPS;if(d.plantel){PLANTEL=d.plantel;Object.values(PLANTEL).forEach(l=>l.forEach(p=>{p.name=pname(p.name).replace(/[\s\-–]+$/,"")}))}if(d.coaches)COACHES=d.coaches;if(d.staff)STAFF=d.staff;if(d.coord)COORD=d.coord;if(d.tm&&typeof TMGR!=="undefined")TMGR=d.tm;if(d.dirs&&typeof DIRS!=="undefined")DIRS=d.dirs;if(d.apoio&&typeof APOIO!=="undefined")APOIO=d.apoio;Object.assign(LOGOS,d.logos||{});
-  G=GAMES.map((r,i)=>{const [team,comp,src,num,jor,date,time,home,away,venue,status,res,phase]=r;const isHome=home.includes("FC Gaia");return {i,team,comp,src,num,jor,date,time,home,away,venue,status,res,phase,isHome,opp:isHome?away:home}});
+  G=GAMES.map((r,i)=>{const [team,comp,src,num,jor,date,time,home,away,venue,status,res,phase]=r;const isHome=/^fc gaia/i.test(home);return {i,team,comp,src,num,jor,date,time,home,away,venue,status,res,phase,isHome,opp:isHome?away:home}});
   if(d.updated){const x=pd(d.updated),u=document.getElementById("upd");if(u)u.textContent=`${x.getDate()} ${MS[x.getMonth()]} ${x.getFullYear()}`}
   if(typeof syncMasters==="function")syncMasters();render();if(typeof openFromHash==='function')openFromHash()}).catch(()=>{})})();
 </script>

@@ -1,5 +1,5 @@
 {
-"updated": "2026-10-25",
+"updated": "2026-10-26",
 "games": [
 [
 "Esperanças",
@@ -332,6 +332,96 @@
 "1.ª Fase"
 ],
 [
+"Masters",
+"Liga 2 Masters Masculina Masters / Veteranos",
+"FPB",
+3107,
+1,
+"2026-10-31",
+"",
+"FC GAIA",
+"GDB Leça",
+"Pavilhão Futebol Clube Gaia",
+"por marcar",
+"",
+"Fase Regular - Grupo A"
+],
+[
+"Masters",
+"Liga 2 Masters Masculina Masters / Veteranos",
+"FPB",
+3108,
+2,
+"2026-11-14",
+"",
+"Guarda UP",
+"FC GAIA",
+"Pavilhão Escola Secundária da Sé - Guarda",
+"por marcar",
+"",
+"Fase Regular - Grupo A"
+],
+[
+"Masters",
+"Liga 2 Masters Masculina Masters / Veteranos",
+"FPB",
+3111,
+3,
+"2026-11-28",
+"",
+"ACADÉMICO",
+"FC GAIA",
+"Pavilhão Mário Navega",
+"por marcar",
+"",
+"Fase Regular - Grupo A"
+],
+[
+"Masters",
+"Liga 2 Masters Masculina Masters / Veteranos",
+"FPB",
+3113,
+4,
+"2026-12-12",
+"",
+"GDB Leça",
+"FC GAIA",
+"Pav. Mun. Leça Palmeira",
+"por marcar",
+"",
+"Fase Regular - Grupo A"
+],
+[
+"Masters",
+"Liga 2 Masters Masculina Masters / Veteranos",
+"FPB",
+3114,
+5,
+"2027-01-09",
+"",
+"FC GAIA",
+"Guarda UP",
+"Pavilhão Futebol Clube Gaia",
+"por marcar",
+"",
+"Fase Regular - Grupo A"
+],
+[
+"Masters",
+"Liga 2 Masters Masculina Masters / Veteranos",
+"FPB",
+3117,
+6,
+"2027-01-23",
+"",
+"FC GAIA",
+"ACADÉMICO",
+"Pavilhão Futebol Clube Gaia",
+"por marcar",
+"",
+"Fase Regular - Grupo A"
+],
+[
 "Seniores Masc",
 "Taça de Portugal · 2ª Elim. Norte",
 "FPB",
@@ -653,11 +743,11 @@
 672,
 1,
 "2026-11-01",
-"",
+"14:30",
 "UAA Aroso A",
 "FC Gaia A",
 "Escola EB23 Manoel de Oliveira",
-"por marcar",
+"marcado",
 "",
 "2.ª Fase"
 ],
@@ -668,11 +758,11 @@
 674,
 2,
 "2026-11-07",
-"",
+"15:00",
 "FC Gaia A",
 "CD Póvoa A",
 "Pavilhão Futebol Clube Gaia",
-"por marcar",
+"marcado",
 "",
 "2.ª Fase"
 ],
@@ -683,11 +773,11 @@
 675,
 3,
 "2026-11-08",
-"",
+"14:15",
 "Maia Basket A",
 "FC Gaia A",
 "Pavilhão Mun. Nortecoope",
-"por marcar",
+"marcado",
 "",
 "2.ª Fase"
 ],
@@ -698,11 +788,11 @@
 678,
 4,
 "2026-11-15",
-"",
+"09:00",
 "FC Gaia A",
 "UAA Aroso A",
 "Pavilhão Futebol Clube Gaia",
-"por marcar",
+"marcado",
 "",
 "2.ª Fase"
 ],
@@ -713,11 +803,11 @@
 680,
 5,
 "2026-11-22",
-"",
+"09:00",
 "CD Póvoa A",
 "FC Gaia A",
 "Pavilhão do Clube Desportivo Póvoa",
-"por marcar",
+"marcado",
 "",
 "2.ª Fase"
 ],
@@ -728,11 +818,11 @@
 681,
 6,
 "2026-11-29",
-"",
+"09:00",
 "FC Gaia A",
 "Maia Basket A",
 "Pavilhão Futebol Clube Gaia",
-"por marcar",
+"marcado",
 "",
 "2.ª Fase"
 ],
@@ -775,7 +865,7 @@
 "2026-10-18",
 "09:00",
 "FC Gaia B",
-"Académico/Ribadouro B",
+"Académico B / Ribadouro",
 "Pavilhão Futebol Clube Gaia",
 "realizado",
 "66-54",
@@ -1694,6 +1784,15 @@
 "name": "Distrital Sub-16 · Grupo H",
 "rows": [
 [
+"UAA Aroso A",
+1,
+1,
+0,
+2,
+83,
+39
+],
+[
 "Bolacesto A/Farm. Gândara",
 1,
 1,
@@ -1712,25 +1811,16 @@
 67
 ],
 [
-"Maia Basket A/Fisimaia",
-0,
-0,
-0,
-0,
-0,
-0
-],
-[
 "Académico A / Ribadouro",
+1,
 0,
-0,
-0,
-0,
-0,
-0
+1,
+1,
+39,
+83
 ],
 [
-"UAA Aroso A",
+"Maia Basket A/Fisimaia",
 0,
 0,
 0,
@@ -1922,7 +2012,16 @@
 119
 ],
 [
-"Académico/Ribadouro B",
+"FC Porto B",
+2,
+1,
+1,
+3,
+116,
+88
+],
+[
+"Académico B / Ribadouro",
 2,
 1,
 1,
@@ -1932,25 +2031,60 @@
 ],
 [
 "5Basket B",
-2,
+3,
 0,
-2,
-2,
-68,
-128
-],
-[
-"FC Porto B",
-1,
-0,
-1,
-1,
-36,
-51
+3,
+3,
+105,
+208
 ],
 [
 "BC Marco",
 "exc"
+]
+]
+}
+],
+"Masters": [
+{
+"phase": "Fase Regular - Grupo A",
+"name": "Liga 2 Masters Masculina Masters / Veteranos",
+"rows": [
+[
+"Guarda UP",
+0,
+0,
+0,
+0,
+0,
+0
+],
+[
+"ACADÉMICO",
+0,
+0,
+0,
+0,
+0,
+0
+],
+[
+"FC GAIA",
+0,
+0,
+0,
+0,
+0,
+0
+],
+[
+"GDB Leça",
+0,
+0,
+0,
+0,
+0,
+0
 ]
 ]
 }
@@ -2003,7 +2137,10 @@
 "FC Porto A": "https://sav2.fpb.pt/old_uploads/CLU/CLU_120_LOGO.png",
 "Maia Basket A": "https://sav2.fpb.pt/uploads/clubes/logotipo/CLU_7141746203247.png",
 "CPN A / Antarte": "https://sav2.fpb.pt/uploads/clubes/logotipo/Clube_Propaganda_de_Natacao1603657754.png",
-"Académico A / Ribadouro": "https://sav2.fpb.pt/old_uploads/CLU/CLU_188_LOGO.png"
+"Académico A / Ribadouro": "https://sav2.fpb.pt/old_uploads/CLU/CLU_188_LOGO.png",
+"Académico B / Ribadouro": "https://sav2.fpb.pt/old_uploads/CLU/CLU_188_LOGO.png",
+"Guarda UP": "https://sav2.fpb.pt/uploads/clubes/logotipo/Escola_Desportiva_-_Guarda_UP1614772479.png",
+"ACADÉMICO": "https://sav2.fpb.pt/old_uploads/CLU/CLU_188_LOGO.png"
 },
 "groups": {
 "Sub-14 Masc A": [
@@ -2168,8 +2305,8 @@
 [
 671,
 1,
-"2026-11-01",
-"",
+"2026-10-31",
+"17:30",
 "CD Póvoa A",
 "Maia Basket A",
 "",
@@ -2179,7 +2316,7 @@
 672,
 1,
 "2026-11-01",
-"",
+"14:30",
 "UAA Aroso A",
 "FC Gaia A",
 "",
@@ -2189,17 +2326,17 @@
 673,
 2,
 "2026-11-07",
-"",
+"14:15",
 "Maia Basket A",
 "UAA Aroso A",
 "",
-"Pavilhão Mun. Nortecoope"
+"Pavilhão Municipal de Pedrouços 13"
 ],
 [
 674,
 2,
 "2026-11-07",
-"",
+"15:00",
 "FC Gaia A",
 "CD Póvoa A",
 "",
@@ -2209,7 +2346,7 @@
 675,
 3,
 "2026-11-08",
-"",
+"14:15",
 "Maia Basket A",
 "FC Gaia A",
 "",
@@ -2219,7 +2356,7 @@
 676,
 3,
 "2026-11-08",
-"",
+"16:00",
 "CD Póvoa A",
 "UAA Aroso A",
 "",
@@ -2229,17 +2366,17 @@
 677,
 4,
 "2026-11-15",
-"",
+"16:30",
 "Maia Basket A",
 "CD Póvoa A",
 "",
-"Pavilhão Mun. Nortecoope"
+"Pavilhão Municipal Nogueira da Maia"
 ],
 [
 678,
 4,
 "2026-11-15",
-"",
+"09:00",
 "FC Gaia A",
 "UAA Aroso A",
 "",
@@ -2249,7 +2386,7 @@
 679,
 5,
 "2026-11-22",
-"",
+"16:30",
 "UAA Aroso A",
 "Maia Basket A",
 "",
@@ -2259,7 +2396,7 @@
 680,
 5,
 "2026-11-22",
-"",
+"09:00",
 "CD Póvoa A",
 "FC Gaia A",
 "",
@@ -2269,7 +2406,7 @@
 681,
 6,
 "2026-11-29",
-"",
+"09:00",
 "FC Gaia A",
 "Maia Basket A",
 "",
@@ -2279,7 +2416,7 @@
 682,
 6,
 "2026-11-29",
-"",
+"16:30",
 "UAA Aroso A",
 "CD Póvoa A",
 "",
@@ -2297,7 +2434,7 @@
 1,
 "2026-10-04",
 "18:30",
-"Académico/Ribadouro B",
+"Académico B / Ribadouro",
 "5Basket B",
 "73-39",
 "Pavilhão Lima \"B\""
@@ -2328,7 +2465,7 @@
 "2026-10-18",
 "09:00",
 "FC Gaia B",
-"Académico/Ribadouro B",
+"Académico B / Ribadouro",
 "66-54",
 "Pavilhão Futebol Clube Gaia"
 ],
@@ -2339,7 +2476,7 @@
 "14:30",
 "5Basket B",
 "FC Porto B",
-"",
+"37-80",
 "Pavilhão Municipal São Pedro da Cova"
 ],
 [
@@ -2348,7 +2485,7 @@
 "2026-11-01",
 "11:00",
 "FC Porto B",
-"Académico/Ribadouro B",
+"Académico B / Ribadouro",
 "",
 "Gim. do Lagarteiro"
 ]
@@ -2431,7 +2568,7 @@
 "16:30",
 "UAA Aroso A",
 "Académico A / Ribadouro",
-"",
+"83-39",
 "Escola EB23 Manoel de Oliveira"
 ],
 [
@@ -2697,7 +2834,7 @@
 [
 458,
 10,
-"2026-01-10",
+"2027-01-10",
 "11:30",
 "Académico A / Ribadouro",
 "FC Porto A",
@@ -3156,8 +3293,8 @@
 [
 606,
 9,
-"",
-"",
+"2026-12-16",
+"21:30",
 "CDJ Régio",
 "CLIP Teams",
 "",
@@ -5203,6 +5340,133 @@
 "Olivais FC",
 "",
 "Pavilhão da Escola Básica 2,3 João Afonso"
+]
+]
+}
+],
+"Masters": [
+{
+"phase": "Fase Regular - Grupo A",
+"rows": [
+[
+3106,
+1,
+"2026-10-31",
+"",
+"ACADÉMICO",
+"Guarda UP",
+"",
+"Pavilhão Mário Navega"
+],
+[
+3107,
+1,
+"2026-10-31",
+"",
+"FC GAIA",
+"GDB Leça",
+"",
+"Pavilhão Futebol Clube Gaia"
+],
+[
+3108,
+2,
+"2026-11-14",
+"",
+"Guarda UP",
+"FC GAIA",
+"",
+"Pavilhão Escola Secundária da Sé - Guarda"
+],
+[
+3109,
+2,
+"2026-11-14",
+"",
+"GDB Leça",
+"ACADÉMICO",
+"",
+"Pav. Mun. Leça Palmeira"
+],
+[
+3110,
+3,
+"2026-11-28",
+"",
+"Guarda UP",
+"GDB Leça",
+"",
+"Pavilhão Escola Secundária da Sé - Guarda"
+],
+[
+3111,
+3,
+"2026-11-28",
+"",
+"ACADÉMICO",
+"FC GAIA",
+"",
+"Pavilhão Mário Navega"
+],
+[
+3112,
+4,
+"2026-12-12",
+"",
+"Guarda UP",
+"ACADÉMICO",
+"",
+"Pavilhão Escola Secundária da Sé - Guarda"
+],
+[
+3113,
+4,
+"2026-12-12",
+"",
+"GDB Leça",
+"FC GAIA",
+"",
+"Pav. Mun. Leça Palmeira"
+],
+[
+3114,
+5,
+"2027-01-09",
+"",
+"FC GAIA",
+"Guarda UP",
+"",
+"Pavilhão Futebol Clube Gaia"
+],
+[
+3115,
+5,
+"2027-01-09",
+"",
+"ACADÉMICO",
+"GDB Leça",
+"",
+"Pavilhão Mário Navega"
+],
+[
+3116,
+6,
+"2027-01-23",
+"",
+"GDB Leça",
+"Guarda UP",
+"",
+"Pav. Mun. Leça Palmeira"
+],
+[
+3117,
+6,
+"2027-01-23",
+"",
+"FC GAIA",
+"ACADÉMICO",
+"",
+"Pavilhão Futebol Clube Gaia"
 ]
 ]
 }
@@ -16581,6 +16845,18 @@
 {
 "id": 11498,
 "nome": "Supertaça Masters Masculina Masters / Veteranos",
+"equipa": "Masters",
+"fonte": "FPB"
+},
+{
+"id": 11494,
+"nome": "Liga Masters Masculina Masters / Veteranos",
+"equipa": "Masters",
+"fonte": "FPB"
+},
+{
+"id": 11649,
+"nome": "Liga 2 Masters Masculina Masters / Veteranos",
 "equipa": "Masters",
 "fonte": "FPB"
 }

@@ -1,5 +1,5 @@
 {
-"updated": "2026-10-27",
+"updated": "2026-10-28",
 "games": [
 [
 "Esperanças",
@@ -1239,7 +1239,7 @@
 5,
 "2026-11-20",
 "21:30",
-"UAA Aroso A",
+"UAAA A / Realvitur Angola",
 "FC Gaia A",
 "Escola EB23 Manoel de Oliveira",
 "marcado",
@@ -1315,7 +1315,7 @@
 "2027-01-09",
 "18:00",
 "FC Gaia A",
-"UAA Aroso A",
+"UAAA A / Realvitur Angola",
 "Pavilhão Futebol Clube Gaia",
 "marcado",
 "",
@@ -1627,7 +1627,7 @@
 "name": "Distrital Sub-18 · Grupo I",
 "rows": [
 [
-"UAA Aroso A",
+"UAAA A / Realvitur Angola",
 1,
 1,
 0,
@@ -2140,7 +2140,8 @@
 "Académico A / Ribadouro": "https://sav2.fpb.pt/old_uploads/CLU/CLU_188_LOGO.png",
 "Académico B / Ribadouro": "https://sav2.fpb.pt/old_uploads/CLU/CLU_188_LOGO.png",
 "Guarda UP": "https://sav2.fpb.pt/uploads/clubes/logotipo/Escola_Desportiva_-_Guarda_UP1614772479.png",
-"ACADÉMICO": "https://sav2.fpb.pt/old_uploads/CLU/CLU_188_LOGO.png"
+"ACADÉMICO": "https://sav2.fpb.pt/old_uploads/CLU/CLU_188_LOGO.png",
+"UAAA A / Realvitur Angola": "https://sav2.fpb.pt/uploads/clubes/logotipo/CLU_181.png"
 },
 "groups": {
 "Sub-14 Masc A": [
@@ -3066,7 +3067,7 @@
 "2026-10-23",
 "21:30",
 "CDJ Régio",
-"UAA Aroso A",
+"UAAA A / Realvitur Angola",
 "38-78",
 "Pavilhão Desportivo de Mindelo"
 ],
@@ -3085,7 +3086,7 @@
 2,
 "2026-10-30",
 "21:30",
-"UAA Aroso A",
+"UAAA A / Realvitur Angola",
 "CLIP Teams",
 "",
 "Escola EB23 Manoel de Oliveira"
@@ -3125,7 +3126,7 @@
 3,
 "2026-11-06",
 "21:30",
-"UAA Aroso A",
+"UAAA A / Realvitur Angola",
 "FC Porto 2",
 "",
 "Escola EB23 Manoel de Oliveira"
@@ -3156,7 +3157,7 @@
 "2026-11-13",
 "21:15",
 "ACR Vigorosa",
-"UAA Aroso A",
+"UAAA A / Realvitur Angola",
 "",
 "Pavilhão Escola EB23 Prof. Napoleão de Sousa Marques"
 ],
@@ -3165,7 +3166,7 @@
 5,
 "2026-11-20",
 "21:30",
-"UAA Aroso A",
+"UAAA A / Realvitur Angola",
 "FC Gaia A",
 "",
 "Escola EB23 Manoel de Oliveira"
@@ -3215,7 +3216,7 @@
 6,
 "2026-11-27",
 "21:30",
-"UAA Aroso A",
+"UAAA A / Realvitur Angola",
 "CDJ Régio",
 "",
 "Escola EB23 Manoel de Oliveira"
@@ -3236,7 +3237,7 @@
 "2026-12-02",
 "22:00",
 "CLIP Teams",
-"UAA Aroso A",
+"UAAA A / Realvitur Angola",
 "",
 "Colégio Luso Internacional do Porto"
 ],
@@ -3276,7 +3277,7 @@
 "2026-12-10",
 "20:00",
 "FC Porto 2",
-"UAA Aroso A",
+"UAAA A / Realvitur Angola",
 "",
 "Gim. do Lagarteiro"
 ],
@@ -3305,7 +3306,7 @@
 9,
 "2026-12-18",
 "21:30",
-"UAA Aroso A",
+"UAAA A / Realvitur Angola",
 "ACR Vigorosa",
 "",
 "Escola EB23 Manoel de Oliveira"
@@ -3316,7 +3317,7 @@
 "2027-01-09",
 "18:00",
 "FC Gaia A",
-"UAA Aroso A",
+"UAAA A / Realvitur Angola",
 "",
 "Pavilhão Futebol Clube Gaia"
 ],

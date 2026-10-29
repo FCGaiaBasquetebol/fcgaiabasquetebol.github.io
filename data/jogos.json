@@ -1,5 +1,5 @@
 {
-"updated": "2026-10-28",
+"updated": "2026-10-29",
 "games": [
 [
 "Esperanças",
@@ -1469,6 +1469,33 @@
 "name": "Esperanças · 1.ª Fase Série B",
 "rows": [
 [
+"Ovarense OLHO MARINHO",
+3,
+2,
+1,
+5,
+248,
+215
+],
+[
+"Olivais FC",
+3,
+2,
+1,
+5,
+213,
+248
+],
+[
+"UD Oliveirense",
+3,
+2,
+1,
+5,
+206,
+177
+],
+[
 "Illiabum Clube",
 2,
 2,
@@ -1478,40 +1505,31 @@
 134
 ],
 [
-"Ovarense OLHO MARINHO",
+"SC Beira-Mar",
 2,
 2,
 0,
 4,
-164,
-128
+160,
+119
 ],
 [
 "CLIP Teams",
-2,
-1,
-1,
 3,
-153,
-124
+1,
+2,
+4,
+212,
+206
 ],
 [
-"Académica Coimbra",
-2,
-1,
-1,
+"CAAS WISIFY",
 3,
-142,
-146
-],
-[
-"UD Oliveirense",
+1,
 2,
-1,
-1,
-3,
-123,
-137
+4,
+154,
+214
 ],
 [
 "FIDES",
@@ -1523,31 +1541,13 @@
 128
 ],
 [
-"CAAS WISIFY",
+"Académica Coimbra",
 2,
 1,
 1,
 3,
-114,
-131
-],
-[
-"Olivais FC",
-2,
-1,
-1,
-3,
-126,
-164
-],
-[
-"SC Beira-Mar",
-1,
-1,
-0,
-2,
-78,
-60
+142,
+146
 ],
 [
 "Sangalhos DC",
@@ -1689,6 +1689,15 @@
 "name": "Distrital Sub-18 · Grupo G2",
 "rows": [
 [
+"SC Vasco da Gama B",
+4,
+3,
+1,
+7,
+251,
+248
+],
+[
 "FC Gaia B",
 4,
 2,
@@ -1707,13 +1716,13 @@
 152
 ],
 [
-"SC Vasco da Gama B",
-3,
-2,
+"CD Aves",
+4,
 1,
+3,
 5,
-181,
-206
+191,
+266
 ],
 [
 "Powertogether B",
@@ -1723,15 +1732,6 @@
 4,
 169,
 181
-],
-[
-"CD Aves",
-3,
-1,
-2,
-4,
-149,
-196
 ]
 ]
 }
@@ -2007,36 +2007,28 @@
 3,
 3,
 0,
-6,
-172,
-119
+6
 ],
 [
 "FC Porto B",
 2,
 1,
 1,
-3,
-116,
-88
+3
 ],
 [
 "Académico B / Ribadouro",
 2,
 1,
 1,
-3,
-127,
-105
+3
 ],
 [
 "5Basket B",
 3,
 0,
 3,
-3,
-105,
-208
+3
 ],
 [
 "BC Marco",
@@ -3445,7 +3437,7 @@
 "21:30",
 "SC Vasco da Gama B",
 "CD Aves",
-"",
+"70-42",
 "Parque das Camélias"
 ]
 ]
@@ -4159,7 +4151,7 @@
 "21:00",
 "Olivais FC",
 "Ovarense OLHO MARINHO",
-"",
+"87-84",
 "Pav. Engº Augusto Correia"
 ],
 [
@@ -4179,7 +4171,7 @@
 "21:45",
 "UD Oliveirense",
 "CAAS WISIFY",
-"",
+"83-40",
 "Simoldes Arena"
 ],
 [
@@ -4199,7 +4191,7 @@
 "21:45",
 "SC Beira-Mar",
 "CLIP Teams",
-"",
+"82-59",
 "Pavilhão da Escola Básica 2,3 João Afonso"
 ],
 [

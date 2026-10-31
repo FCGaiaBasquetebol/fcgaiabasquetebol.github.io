@@ -342,8 +342,8 @@
 "FC Gaia",
 "GDB Leça",
 "Pavilhão Futebol Clube Gaia",
-"marcado",
-"",
+"realizado",
+"60-32",
 "Fase Regular - Grupo A"
 ],
 [
@@ -2051,6 +2051,24 @@
 "name": "Liga 2 Masters Masculina Masters / Veteranos",
 "rows": [
 [
+"FC Gaia",
+1,
+1,
+0,
+2,
+60,
+32
+],
+[
+"GDB Leça",
+1,
+0,
+1,
+1,
+32,
+60
+],
+[
 "Guarda UP",
 0,
 0,
@@ -2061,24 +2079,6 @@
 ],
 [
 "ACADÉMICO",
-0,
-0,
-0,
-0,
-0,
-0
-],
-[
-"FC Gaia",
-0,
-0,
-0,
-0,
-0,
-0
-],
-[
-"GDB Leça",
 0,
 0,
 0,
@@ -5367,7 +5367,7 @@
 "21:00",
 "FC Gaia",
 "GDB Leça",
-"",
+"60-32",
 "Pavilhão Futebol Clube Gaia"
 ],
 [

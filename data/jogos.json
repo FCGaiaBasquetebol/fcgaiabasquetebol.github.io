@@ -1,5 +1,5 @@
 {
-"updated": "2026-10-30",
+"updated": "2026-10-31",
 "games": [
 [
 "Esperanças",
@@ -1197,8 +1197,8 @@
 "FC Gaia A",
 "ACR Vigorosa",
 "Pavilhão Municipal das Pedras - Nelson Cardoso",
-"marcado",
-"",
+"realizado",
+"84-37",
 "2.ª Fase"
 ],
 [
@@ -1627,58 +1627,58 @@
 "name": "Distrital Sub-18 · Grupo I",
 "rows": [
 [
-"Aroso A Realvitur Angola",
-1,
-1,
-0,
-2,
-78,
-38
-],
-[
 "FC Gaia A",
-1,
-1,
-0,
 2,
-80,
-44
+2,
+0,
+4,
+164,
+81
 ],
 [
 "FC Porto 2",
-1,
-1,
-0,
 2,
-73,
-47
+2,
+0,
+4,
+158,
+84
 ],
 [
-"ACR Vigorosa",
-1,
+"Aroso A Realvitur Angola",
+2,
+2,
 0,
-1,
-1,
-47,
-73
+4,
+151,
+92
 ],
 [
 "CLIP Teams",
-1,
+2,
 0,
-1,
-1,
-44,
-80
+2,
+2,
+98,
+153
+],
+[
+"ACR Vigorosa",
+2,
+0,
+2,
+2,
+84,
+157
 ],
 [
 "CDJ Régio",
-1,
+2,
 0,
-1,
-1,
-38,
-78
+2,
+2,
+75,
+163
 ]
 ]
 }
@@ -3079,7 +3079,7 @@
 "21:45",
 "FC Gaia A",
 "ACR Vigorosa",
-"",
+"84-37",
 "Pavilhão Municipal das Pedras - Nelson Cardoso"
 ],
 [
@@ -3089,7 +3089,7 @@
 "21:30",
 "Aroso A Realvitur Angola",
 "CLIP Teams",
-"",
+"73-54",
 "Escola EB23 Manoel de Oliveira"
 ],
 [
@@ -3099,7 +3099,7 @@
 "21:00",
 "FC Porto 2",
 "CDJ Régio",
-"",
+"85-37",
 "Gim. do Lagarteiro"
 ],
 [

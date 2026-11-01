@@ -1398,15 +1398,6 @@
 231
 ],
 [
-"Juvemaia ACDC/Mecprec",
-3,
-2,
-1,
-5,
-217,
-230
-],
-[
 "SC Beira-Mar",
 3,
 2,
@@ -1414,6 +1405,24 @@
 5,
 225,
 199
+],
+[
+"AD Sanjoanense",
+3,
+2,
+1,
+5,
+227,
+229
+],
+[
+"Juvemaia ACDC/Mecprec",
+3,
+2,
+1,
+5,
+217,
+230
 ],
 [
 "Académico FC",
@@ -1434,13 +1443,13 @@
 221
 ],
 [
-"AD Sanjoanense",
-2,
-1,
-1,
+"Gafanha Rascunhos Urbano",
 3,
-139,
-158
+0,
+3,
+3,
+214,
+265
 ],
 [
 "FIDES",
@@ -1450,15 +1459,6 @@
 3,
 232,
 286
-],
-[
-"Gafanha Rascunhos Urbano",
-2,
-0,
-2,
-2,
-143,
-177
 ]
 ]
 }
@@ -1793,6 +1793,15 @@
 155
 ],
 [
+"UAA Aroso A",
+2,
+1,
+1,
+3,
+129,
+112
+],
+[
 "Bolacesto A/Farm. Gândara",
 2,
 1,
@@ -1811,13 +1820,13 @@
 35
 ],
 [
-"UAA Aroso A",
+"FC Porto A",
 1,
 1,
 0,
 2,
-83,
-39
+73,
+46
 ],
 [
 "FC Gaia A",
@@ -1827,15 +1836,6 @@
 2,
 93,
 152
-],
-[
-"FC Porto A",
-0,
-0,
-0,
-0,
-0,
-0
 ]
 ]
 }
@@ -2610,7 +2610,7 @@
 "15:00",
 "FC Porto A",
 "UAA Aroso A",
-"",
+"73-46",
 "Gim. do Lagarteiro"
 ],
 [
@@ -3573,7 +3573,7 @@
 "15:30",
 "AD Sanjoanense",
 "Gafanha Rascunhos Urbano",
-"",
+"88-71",
 "Pavilhão Municipal Paulo Pinto"
 ],
 [

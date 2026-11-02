@@ -1,5 +1,5 @@
 {
-"updated": "2026-11-01",
+"updated": "2026-11-02",
 "games": [
 [
 "Esperanças",
@@ -700,7 +700,7 @@
 "2026-10-05",
 "11:00",
 "FC Gaia A",
-"Bolacesto",
+"Bolacesto A",
 "Pavilhão Futebol Clube Gaia",
 "realizado",
 "97-42",
@@ -1917,7 +1917,7 @@
 199
 ],
 [
-"Bolacesto",
+"Bolacesto A",
 5,
 3,
 2,
@@ -2142,7 +2142,8 @@
 "Guarda UP": "https://sav2.fpb.pt/uploads/clubes/logotipo/Escola_Desportiva_-_Guarda_UP1614772479.png",
 "ACADÉMICO": "https://sav2.fpb.pt/old_uploads/CLU/CLU_188_LOGO.png",
 "UAAA A / Realvitur Angola": "https://sav2.fpb.pt/uploads/clubes/logotipo/CLU_181.png",
-"Aroso A Realvitur Angola": "https://sav2.fpb.pt/uploads/clubes/logotipo/CLU_181.png"
+"Aroso A Realvitur Angola": "https://sav2.fpb.pt/uploads/clubes/logotipo/CLU_181.png",
+"Bolacesto A": "https://sav2.fpb.pt/uploads/clubes/logotipo/CLU_1791792511219.png"
 },
 "groups": {
 "Sub-14 Masc A": [
@@ -2155,7 +2156,7 @@
 "2026-09-27",
 "09:00",
 "AC Alfenense",
-"Bolacesto",
+"Bolacesto A",
 "23-113",
 "Pavilhão Gimnodesportivo Alfenense"
 ],
@@ -2184,7 +2185,7 @@
 2,
 "2026-10-03",
 "14:30",
-"Bolacesto",
+"Bolacesto A",
 "Guifões SC A",
 "55-76",
 "Pav. Mun. Prof. Miranda de Carvalho (Vila DEste)"
@@ -2215,7 +2216,7 @@
 "2026-10-05",
 "11:00",
 "FC Gaia A",
-"Bolacesto",
+"Bolacesto A",
 "97-42",
 "Pavilhão Futebol Clube Gaia"
 ],
@@ -2244,7 +2245,7 @@
 4,
 "2026-10-11",
 "11:00",
-"Bolacesto",
+"Bolacesto A",
 "CD Aves",
 "117-41",
 "Pavilhão Municipal Salvador Guedes"
@@ -2275,7 +2276,7 @@
 "2026-10-17",
 "11:30",
 "GDB Leça",
-"Bolacesto",
+"Bolacesto A",
 "49-82",
 "Pav. Mun. Leça Palmeira"
 ],

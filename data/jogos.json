@@ -1,5 +1,5 @@
 {
-"updated": "2026-11-04",
+"updated": "2026-11-05",
 "games": [
 [
 "Esperanças",
@@ -1664,6 +1664,42 @@
 "name": "Esperanças · 1.ª Fase Série B",
 "rows": [
 [
+"Académica Coimbra",
+4,
+3,
+1,
+7,
+320,
+240
+],
+[
+"SC Beira-Mar",
+3,
+3,
+0,
+6,
+244,
+187
+],
+[
+"UD Oliveirense",
+4,
+2,
+2,
+6,
+258,
+233
+],
+[
+"ILLIABUM CLUBE/EXITCASA",
+4,
+2,
+2,
+6,
+314,
+295
+],
+[
 "Olivais FC",
 3,
 2,
@@ -1680,42 +1716,6 @@
 5,
 248,
 215
-],
-[
-"ILLIABUM CLUBE/EXITCASA",
-3,
-2,
-1,
-5,
-246,
-211
-],
-[
-"UD Oliveirense",
-3,
-2,
-1,
-5,
-206,
-177
-],
-[
-"Académica Coimbra",
-3,
-2,
-1,
-5,
-264,
-188
-],
-[
-"SC Beira-Mar",
-2,
-2,
-0,
-4,
-160,
-119
 ],
 [
 "CLIP Teams",
@@ -4822,7 +4822,7 @@
 "21:30",
 "ILLIABUM CLUBE/EXITCASA",
 "SC Beira-Mar",
-"",
+"68-84",
 "Pavilhão Municipal Capitão Adriano Nordeste"
 ],
 [
@@ -4862,7 +4862,7 @@
 "21:30",
 "Académica Coimbra",
 "UD Oliveirense",
-"",
+"56-52",
 "Pavilhão Multidesportos Dr. Mário Mexia"
 ],
 [

@@ -1347,8 +1347,8 @@
 "CDJ Régio",
 "FC Gaia A",
 "Pavilhão Desportivo de Mindelo",
-"marcado",
-"",
+"realizado",
+"46-76",
 "2.ª Fase"
 ],
 [
@@ -1823,57 +1823,57 @@
 "rows": [
 [
 "FC Gaia A",
-2,
-2,
+3,
+3,
 0,
-4,
-164,
-81
-],
-[
-"FC Porto 2",
-2,
-2,
-0,
-4,
-158,
-84
+6,
+240,
+127
 ],
 [
 "Aroso A Realvitur Angola",
-2,
-2,
+3,
+3,
 0,
-4,
-151,
-92
+6,
+222,
+137
+],
+[
+"FC Porto 2",
+3,
+2,
+1,
+5,
+203,
+155
 ],
 [
 "CLIP Teams",
+3,
+1,
 2,
-0,
-2,
-2,
-98,
-153
+4,
+170,
+203
 ],
 [
 "ACR Vigorosa",
-2,
+3,
 0,
-2,
-2,
-84,
-157
+3,
+3,
+134,
+229
 ],
 [
 "CDJ Régio",
-2,
+3,
 0,
-2,
-2,
-75,
-163
+3,
+3,
+121,
+239
 ]
 ]
 }
@@ -3656,7 +3656,7 @@
 "21:30",
 "CDJ Régio",
 "FC Gaia A",
-"",
+"46-76",
 "Pavilhão Desportivo de Mindelo"
 ],
 [
@@ -3666,7 +3666,7 @@
 "21:15",
 "ACR Vigorosa",
 "CLIP Teams",
-"",
+"50-72",
 "Pavilhão Escola EB23 Prof. Napoleão de Sousa Marques"
 ],
 [
@@ -3676,7 +3676,7 @@
 "21:30",
 "Aroso A Realvitur Angola",
 "FC Porto 2",
-"",
+"71-45",
 "Escola EB23 Manoel de Oliveira"
 ],
 [

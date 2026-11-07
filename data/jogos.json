@@ -1,5 +1,5 @@
 {
-"updated": "2026-11-06",
+"updated": "2026-11-07",
 "games": [
 [
 "Esperanças",
@@ -762,8 +762,8 @@
 "FC Gaia A",
 "CD Póvoa A",
 "Pavilhão Futebol Clube Gaia",
-"marcado",
-"",
+"realizado",
+"68-48",
 "2.ª Fase"
 ],
 [
@@ -2220,40 +2220,40 @@
 "name": "Distrital Sub-14 · Grupo F",
 "rows": [
 [
-"Maia Basket A",
-1,
-1,
-0,
+"UAA Aroso A",
 2,
-70,
-40
+2,
+0,
+4,
+122,
+113
 ],
 [
-"UAA Aroso A",
-1,
-1,
-0,
+"Maia Basket A",
 2,
-62,
-57
+1,
+1,
+3,
+126,
+100
 ],
 [
 "FC Gaia A",
+2,
 1,
-0,
 1,
-1,
-57,
-62
+3,
+125,
+110
 ],
 [
 "CD Póvoa A",
-1,
+2,
 0,
-1,
-1,
-40,
-70
+2,
+2,
+88,
+138
 ]
 ]
 }
@@ -2658,7 +2658,7 @@
 "14:15",
 "Maia Basket A",
 "UAA Aroso A",
-"",
+"56-60",
 "Pavilhão Municipal de Pedrouços 13"
 ],
 [
@@ -2668,7 +2668,7 @@
 "14:15",
 "FC Gaia A",
 "CD Póvoa A",
-"",
+"68-48",
 "Pavilhão Futebol Clube Gaia"
 ],
 [

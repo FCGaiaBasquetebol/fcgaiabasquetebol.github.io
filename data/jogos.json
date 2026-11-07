@@ -492,8 +492,8 @@
 "FC Gaia",
 "AD Sanjoanense",
 "Pavilhão Futebol Clube Gaia",
-"marcado",
-"",
+"realizado",
+"86-48",
 "1.ª Fase"
 ],
 [
@@ -1584,40 +1584,40 @@
 "name": "CN1 · 1.ª Fase Série B",
 "rows": [
 [
-"Olivais FC",
+"SC Beira-Mar",
+4,
 3,
-3,
-0,
-6,
-284,
-231
+1,
+7,
+299,
+268
 ],
 [
-"SC Beira-Mar",
+"Olivais FC",
+4,
 3,
-2,
 1,
-5,
-225,
-199
+7,
+353,
+305
+],
+[
+"FC Gaia",
+4,
+2,
+2,
+6,
+313,
+269
 ],
 [
 "AD Sanjoanense",
-3,
+4,
 2,
-1,
-5,
-227,
-229
-],
-[
-"Juvemaia ACDC/Mecprec",
-3,
 2,
-1,
-5,
-217,
-230
+6,
+275,
+315
 ],
 [
 "Académico FC",
@@ -1629,13 +1629,13 @@
 236
 ],
 [
-"FC Gaia",
+"Juvemaia ACDC/Mecprec",
 3,
-1,
 2,
-4,
-227,
-221
+1,
+5,
+217,
+230
 ],
 [
 "Gafanha Rascunhos Urbano",
@@ -4205,7 +4205,7 @@
 "18:30",
 "SC Beira-Mar",
 "Olivais FC",
-"",
+"74-69",
 "Pavilhão Aristides Hall - Universidade de Aveiro"
 ],
 [
@@ -4225,7 +4225,7 @@
 "18:00",
 "FC Gaia",
 "AD Sanjoanense",
-"",
+"86-48",
 "Pavilhão Futebol Clube Gaia"
 ],
 [

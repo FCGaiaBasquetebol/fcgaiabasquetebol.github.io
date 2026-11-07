@@ -1584,15 +1584,6 @@
 "name": "CN1 · 1.ª Fase Série B",
 "rows": [
 [
-"SC Beira-Mar",
-4,
-3,
-1,
-7,
-299,
-268
-],
-[
 "Olivais FC",
 4,
 3,
@@ -1602,13 +1593,22 @@
 305
 ],
 [
-"FC Gaia",
+"SC Beira-Mar",
 4,
-2,
-2,
-6,
-313,
-269
+3,
+1,
+7,
+299,
+268
+],
+[
+"Juvemaia ACDC/Mecprec",
+4,
+3,
+1,
+7,
+294,
+305
 ],
 [
 "AD Sanjoanense",
@@ -1620,22 +1620,22 @@
 315
 ],
 [
-"Académico FC",
-3,
+"FC Gaia",
+4,
 2,
-1,
-5,
-271,
-236
+2,
+6,
+313,
+269
 ],
 [
-"Juvemaia ACDC/Mecprec",
-3,
+"Académico FC",
+4,
 2,
-1,
-5,
-217,
-230
+2,
+6,
+346,
+313
 ],
 [
 "Gafanha Rascunhos Urbano",
@@ -1691,6 +1691,15 @@
 187
 ],
 [
+"CLIP Teams",
+4,
+2,
+2,
+6,
+312,
+240
+],
+[
 "UD Oliveirense",
 4,
 2,
@@ -1718,15 +1727,6 @@
 248
 ],
 [
-"CLIP Teams",
-3,
-1,
-2,
-4,
-212,
-206
-],
-[
 "Sangalhos DC",
 3,
 1,
@@ -1745,15 +1745,6 @@
 229
 ],
 [
-"CAAS WISIFY",
-3,
-1,
-2,
-4,
-154,
-214
-],
-[
 "FC Gaia",
 3,
 1,
@@ -1763,13 +1754,22 @@
 219
 ],
 [
+"CAAS WISIFY",
+3,
+1,
+2,
+4,
+154,
+214
+],
+[
 "ACA-Perfil Independente",
-3,
+4,
 0,
-3,
-3,
-157,
-285
+4,
+4,
+191,
+385
 ]
 ]
 }
@@ -4195,7 +4195,7 @@
 "18:30",
 "Juvemaia ACDC/Mecprec",
 "Académico FC",
-"",
+"77-75",
 "Pavilhão Municipal Nogueira da Maia"
 ],
 [
@@ -4872,7 +4872,7 @@
 "18:30",
 "CLIP Teams",
 "ACA-Perfil Independente",
-"",
+"100-34",
 "Colégio Luso Internacional do Porto"
 ],
 [

@@ -1556,7 +1556,7 @@
 "",
 "FC Gaia B",
 "CPN B / Antarte",
-"Pavilhão Futebol Clube Gaia",
+"Pavilhão Municipal das Pedras - Nelson Cardoso",
 "por marcar",
 "",
 "2.ª Fase"
@@ -1664,13 +1664,13 @@
 "name": "Esperanças · 1.ª Fase Série B",
 "rows": [
 [
-"Académica Coimbra",
+"Olivais FC",
 4,
 3,
 1,
 7,
-320,
-240
+289,
+316
 ],
 [
 "Ovarense OLHO MARINHO",
@@ -1682,6 +1682,15 @@
 268
 ],
 [
+"Académica Coimbra",
+4,
+3,
+1,
+7,
+320,
+240
+],
+[
 "SC Beira-Mar",
 3,
 3,
@@ -1689,6 +1698,24 @@
 6,
 244,
 187
+],
+[
+"ILLIABUM CLUBE/EXITCASA",
+4,
+2,
+2,
+6,
+314,
+295
+],
+[
+"Sangalhos DC",
+4,
+2,
+2,
+6,
+321,
+301
 ],
 [
 "CLIP Teams",
@@ -1709,40 +1736,22 @@
 233
 ],
 [
-"ILLIABUM CLUBE/EXITCASA",
-4,
-2,
-2,
-6,
-314,
-295
-],
-[
-"Olivais FC",
-3,
-2,
-1,
-5,
-213,
-248
-],
-[
-"Sangalhos DC",
-3,
-1,
-2,
-4,
-244,
-257
-],
-[
 "FIDES",
-3,
-1,
-2,
 4,
-222,
-229
+1,
+3,
+5,
+290,
+305
+],
+[
+"CAAS WISIFY",
+4,
+1,
+3,
+5,
+198,
+291
 ],
 [
 "FC Gaia",
@@ -1752,15 +1761,6 @@
 4,
 200,
 219
-],
-[
-"CAAS WISIFY",
-3,
-1,
-2,
-4,
-154,
-214
 ],
 [
 "ACA-Perfil Independente",
@@ -4040,7 +4040,7 @@
 "FC Gaia B",
 "CPN B / Antarte",
 "",
-"Pavilhão Futebol Clube Gaia"
+"Pavilhão Municipal das Pedras - Nelson Cardoso"
 ],
 [
 1026,
@@ -4843,7 +4843,7 @@
 "15:30",
 "FIDES",
 "Olivais FC",
-"",
+"68-76",
 "Escola Secundária de Valbom"
 ],
 [
@@ -4853,7 +4853,7 @@
 "16:30",
 "CAAS WISIFY",
 "Sangalhos DC",
-"",
+"44-77",
 "Pavilhão Salesianos do Porto"
 ],
 [

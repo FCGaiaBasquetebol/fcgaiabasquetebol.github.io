@@ -1,5 +1,5 @@
 {
-"updated": "2026-11-07",
+"updated": "2026-11-08",
 "games": [
 [
 "Esperanças",
@@ -459,7 +459,7 @@
 2,
 "2026-10-24",
 "18:30",
-"Juvemaia ACDC/Mecprec",
+"Juvemaia Mecprec",
 "FC Gaia",
 "Pavilhão Municipal Nogueira da Maia",
 "realizado",
@@ -580,7 +580,7 @@
 "2026-12-12",
 "18:00",
 "FC Gaia",
-"Juvemaia ACDC/Mecprec",
+"Juvemaia Mecprec",
 "Pavilhão Futebol Clube Gaia",
 "marcado",
 "",
@@ -1602,7 +1602,7 @@
 268
 ],
 [
-"Juvemaia ACDC/Mecprec",
+"Juvemaia Mecprec",
 4,
 3,
 1,
@@ -1638,22 +1638,22 @@
 313
 ],
 [
-"Gafanha Rascunhos Urbano",
+"FIDES",
+4,
+1,
 3,
-0,
-3,
-3,
-214,
-265
+5,
+315,
+368
 ],
 [
-"FIDES",
-3,
+"Gafanha Rascunhos Urbano",
+4,
 0,
-3,
-3,
-232,
-286
+4,
+4,
+296,
+348
 ]
 ]
 }
@@ -2012,6 +2012,24 @@
 "name": "Distrital Sub-16 · Grupo H",
 "rows": [
 [
+"UAA Aroso A",
+3,
+2,
+1,
+5,
+204,
+156
+],
+[
+"Bolacesto A/Farm. Gândara",
+3,
+1,
+2,
+4,
+183,
+231
+],
+[
 "Académico A / Ribadouro",
 2,
 1,
@@ -2019,24 +2037,6 @@
 3,
 137,
 155
-],
-[
-"UAA Aroso A",
-2,
-1,
-1,
-3,
-129,
-112
-],
-[
-"Bolacesto A/Farm. Gândara",
-2,
-1,
-1,
-3,
-139,
-156
 ],
 [
 "Maia Basket A/Fisimaia",
@@ -2469,7 +2469,8 @@
 "CDJ Régio B": "https://sav2.fpb.pt/uploads/clubes/logotipo/CLU_3041717586387.png",
 "Guifões SC B": "https://sav2.fpb.pt/uploads/clubes/logotipo/CLU_1741733586027.png",
 "NCRV B / Longuscar": "https://sav2.fpb.pt/uploads/clubes/logotipo/CLU_1721693497331.png",
-"ILLIABUM CLUBE/EXITCASA": "https://sav2.fpb.pt/uploads/clubes/logotipo/Illiabum_Clube1602333892.png"
+"ILLIABUM CLUBE/EXITCASA": "https://sav2.fpb.pt/uploads/clubes/logotipo/Illiabum_Clube1602333892.png",
+"Juvemaia Mecprec": "https://sav2.fpb.pt/uploads/clubes/logotipo/CLU_1601704477075.png"
 },
 "groups": {
 "Sub-14 Masc A": [
@@ -3068,8 +3069,8 @@
 [
 433,
 1,
-"",
-"",
+"2026-11-18",
+"22:00",
 "Maia Basket A/Fisimaia",
 "FC Porto A",
 "",
@@ -3122,7 +3123,7 @@
 "09:15",
 "Bolacesto A/Farm. Gândara",
 "UAA Aroso A",
-"",
+"44-75",
 "Pavilhão Municipal Salvador Guedes"
 ],
 [
@@ -4074,7 +4075,7 @@
 "2026-10-17",
 "18:30",
 "SC Beira-Mar",
-"Juvemaia ACDC/Mecprec",
+"Juvemaia Mecprec",
 "66-69",
 "Pavilhão Aristides Hall - Universidade de Aveiro"
 ],
@@ -4113,7 +4114,7 @@
 2,
 "2026-10-24",
 "18:30",
-"Juvemaia ACDC/Mecprec",
+"Juvemaia Mecprec",
 "FC Gaia",
 "73-66",
 "Pavilhão Municipal Nogueira da Maia"
@@ -4154,7 +4155,7 @@
 "2026-10-31",
 "18:30",
 "Olivais FC",
-"Juvemaia ACDC/Mecprec",
+"Juvemaia Mecprec",
 "98-75",
 "Pav. Engº Augusto Correia"
 ],
@@ -4193,7 +4194,7 @@
 4,
 "2026-11-07",
 "18:30",
-"Juvemaia ACDC/Mecprec",
+"Juvemaia Mecprec",
 "Académico FC",
 "77-75",
 "Pavilhão Municipal Nogueira da Maia"
@@ -4215,7 +4216,7 @@
 "20:45",
 "FIDES",
 "Gafanha Rascunhos Urbano",
-"",
+"83-82",
 "Escola Secundária de Valbom"
 ],
 [
@@ -4234,7 +4235,7 @@
 "2026-11-14",
 "18:30",
 "Gafanha Rascunhos Urbano",
-"Juvemaia ACDC/Mecprec",
+"Juvemaia Mecprec",
 "",
 "Pavilhão Desportivo da Gafanha Nazaré"
 ],
@@ -4273,7 +4274,7 @@
 6,
 "2026-11-21",
 "18:30",
-"Juvemaia ACDC/Mecprec",
+"Juvemaia Mecprec",
 "FIDES",
 "",
 "Pavilhão Municipal Nogueira da Maia"
@@ -4314,7 +4315,7 @@
 "2026-11-28",
 "15:30",
 "AD Sanjoanense",
-"Juvemaia ACDC/Mecprec",
+"Juvemaia Mecprec",
 "",
 "Pavilhão Municipal Paulo Pinto"
 ],
@@ -4353,7 +4354,7 @@
 8,
 "2026-12-05",
 "18:30",
-"Juvemaia ACDC/Mecprec",
+"Juvemaia Mecprec",
 "SC Beira-Mar",
 "",
 "Pavilhão Municipal Nogueira da Maia"
@@ -4394,7 +4395,7 @@
 "2026-12-12",
 "18:00",
 "FC Gaia",
-"Juvemaia ACDC/Mecprec",
+"Juvemaia Mecprec",
 "",
 "Pavilhão Futebol Clube Gaia"
 ],
@@ -4433,7 +4434,7 @@
 10,
 "2026-12-19",
 "18:30",
-"Juvemaia ACDC/Mecprec",
+"Juvemaia Mecprec",
 "Olivais FC",
 "",
 "Pavilhão Municipal Nogueira da Maia"
@@ -4474,7 +4475,7 @@
 "2027-01-09",
 "18:30",
 "Académico FC",
-"Juvemaia ACDC/Mecprec",
+"Juvemaia Mecprec",
 "",
 "Pavilhão Mário Navega"
 ],
@@ -4513,7 +4514,7 @@
 12,
 "2027-01-16",
 "18:30",
-"Juvemaia ACDC/Mecprec",
+"Juvemaia Mecprec",
 "Gafanha Rascunhos Urbano",
 "",
 "Pavilhão Municipal Nogueira da Maia"
@@ -4554,7 +4555,7 @@
 "2027-01-23",
 "20:45",
 "FIDES",
-"Juvemaia ACDC/Mecprec",
+"Juvemaia Mecprec",
 "",
 "Escola Secundária de Valbom"
 ],
@@ -4593,7 +4594,7 @@
 14,
 "2027-01-30",
 "18:30",
-"Juvemaia ACDC/Mecprec",
+"Juvemaia Mecprec",
 "AD Sanjoanense",
 "",
 "Pavilhão Municipal Nogueira da Maia"

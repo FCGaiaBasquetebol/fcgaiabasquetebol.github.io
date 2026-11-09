@@ -807,6 +807,9 @@ html[data-theme="light"] .tl li{background:var(--panel-2)}
 .spons h3{font-family:var(--f-disp);font-weight:400;text-transform:uppercase;color:var(--gold);letter-spacing:.5px;font-size:26px;margin:0 0 12px}
 .sp-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px}
 .sp-slot{height:84px;border:2px dashed var(--line);border-radius:4px}
+.sp-slot.on{border:1px solid var(--line);background:var(--panel-2);display:flex;align-items:center;justify-content:center;padding:10px}
+.sp-slot.on span{font-family:var(--f-disp);font-size:30px;text-transform:uppercase;letter-spacing:1px;color:var(--ink)}
+.sp-slot.on img{max-width:100%;max-height:100%;object-fit:contain}
 .spons p{margin:12px 0 0;color:var(--muted);font-size:15px}.spons p a{color:var(--gold);font-weight:700}
 .flinks{display:flex;flex-wrap:wrap;gap:8px 22px;margin-top:10px}
 .flinks a{color:var(--gold);font-weight:700;text-decoration:none}.flinks a:hover{text-decoration:underline}
@@ -1066,7 +1069,9 @@ const FAQ=[
 function faqDocsHtml(){return `<section class="box xbox" id="faq"><h3>Perguntas frequentes</h3><p class="xsub">Resumo do Regulamento Interno 2026/27. Em caso de dúvida, prevalece o ${doc(0)}.</p>
   <div class="faq">${FAQ.map(f=>`<details><summary>${esc(f[0])}</summary><div class="fa">${f[1].startsWith("<")?f[1]:`<p>${f[1]}</p>`}</div></details>`).join("")}</div></section>
  <section class="box xbox" id="documentos"><h3>Documentos</h3><ul class="doclist">${DOCS.map(d=>`<li><a href="${d[2]}" target="_blank" rel="noopener"><span class="di">PDF</span><span><b>${esc(d[0])}</b><small>${esc(d[1])}</small></span></a></li>`).join("")}</ul></section>`}
-function sponsorsHtml(){return `<section class="spons" aria-label="Patrocinadores"><h3>Os nossos patrocinadores</h3><div class="sp-grid">${"<div class=\"sp-slot\"></div>".repeat(4)}</div>
+/* patrocinadores: nome e, quando houver, logo (logo:"docs/…") e site (url) */
+const SPONS=[{n:"Seabra"},{n:"Tavares"}];
+function sponsorsHtml(){return `<section class="spons" aria-label="Patrocinadores"><h3>Os nossos patrocinadores</h3><div class="sp-grid">${SPONS.map(x=>x.logo?`<div class="sp-slot on"><img src="${esc(x.logo)}" alt="${esc(x.n)}"></div>`:`<div class="sp-slot on"><span>${esc(x.n)}</span></div>`).join("")}${"<div class=\"sp-slot\"></div>".repeat(Math.max(0,4-SPONS.length))}</div>
   <p>Queres apoiar o basquetebol do FC Gaia? <a href="mailto:${CONTACT.email}?subject=${encodeURIComponent("Patrocínio FC Gaia Basquetebol")}">Fala connosco</a>.</p></section>`}
 function goContacts(id){S.tab="ct";S.team=null;setHash("#"+id);render();const el=document.getElementById(id);if(el){if(id==="faq")el.querySelector("details")?.setAttribute("open","");el.scrollIntoView({block:"start"})}}
 document.addEventListener("click",e=>{const a=e.target.closest&&e.target.closest("[data-goct]");if(!a)return;e.preventDefault();goContacts(a.dataset.goct)});

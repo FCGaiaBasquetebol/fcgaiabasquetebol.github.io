@@ -805,7 +805,14 @@ html[data-theme="light"] .tl li{background:var(--panel-2)}
 .doclist b{display:block;font-size:17px}.doclist small{color:var(--muted);font-size:14.5px}
 .spons{margin-top:14px;padding:16px 18px;border:1px solid var(--line);border-radius:4px;background:var(--hrbg)}
 .spons h3{font-family:var(--f-disp);font-weight:400;text-transform:uppercase;color:var(--gold);letter-spacing:.5px;font-size:26px;margin:0 0 12px}
-.sp-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px}
+.sp-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+@media (max-width:520px){.sp-grid{grid-template-columns:1fr}}
+.sp-card{display:flex;flex-direction:column;gap:3px;text-decoration:none;color:var(--ink);border:1px solid var(--line);border-radius:4px;padding:10px;background:var(--panel-2)}
+.sp-card:hover{border-color:var(--gold)}
+.sp-logo{height:90px;border-radius:3px;display:flex;align-items:center;justify-content:center;padding:10px;margin-bottom:6px;overflow:hidden}
+.sp-logo img{max-width:100%;max-height:100%;object-fit:contain}
+.sp-txt{font-family:var(--f-disp);font-size:26px;text-transform:uppercase;color:#777}
+.sp-card b{font-size:17px}.sp-card small{color:var(--muted);font-size:14px}
 .sp-slot{height:84px;border:2px dashed var(--line);border-radius:4px}
 .sp-slot.on{border:1px solid var(--line);background:var(--panel-2);display:flex;align-items:center;justify-content:center;padding:10px}
 .sp-slot.on span{font-family:var(--f-disp);font-size:30px;text-transform:uppercase;letter-spacing:1px;color:var(--ink)}
@@ -1070,8 +1077,10 @@ function faqDocsHtml(){return `<section class="box xbox" id="faq"><h3>Perguntas 
   <div class="faq">${FAQ.map(f=>`<details><summary>${esc(f[0])}</summary><div class="fa">${f[1].startsWith("<")?f[1]:`<p>${f[1]}</p>`}</div></details>`).join("")}</div></section>
  <section class="box xbox" id="documentos"><h3>Documentos</h3><ul class="doclist">${DOCS.map(d=>`<li><a href="${d[2]}" target="_blank" rel="noopener"><span class="di">PDF</span><span><b>${esc(d[0])}</b><small>${esc(d[1])}</small></span></a></li>`).join("")}</ul></section>`}
 /* patrocinadores: nome e, quando houver, logo (logo:"docs/…") e site (url) */
-const SPONS=[{n:"Seabra"},{n:"Tavares"}];
-function sponsorsHtml(){return `<section class="spons" aria-label="Patrocinadores"><h3>Os nossos patrocinadores</h3><div class="sp-grid">${SPONS.map(x=>x.logo?`<div class="sp-slot on"><img src="${esc(x.logo)}" alt="${esc(x.n)}"></div>`:`<div class="sp-slot on"><span>${esc(x.n)}</span></div>`).join("")}${"<div class=\"sp-slot\"></div>".repeat(Math.max(0,4-SPONS.length))}</div>
+const SPONS=[{n:"Seabra Tavares",sub:"ST Papelarias",logo:"https://stpapelarias.com/wp-content/uploads/2022/01/logost.jpg",bg:"#fff",url:"https://stpapelarias.com/"},
+ {n:"EQX",sub:"Empower Solutions",logo:"https://eqx.pt/wp-content/uploads/2022/12/empower_s.jpg",bg:"#fff",url:"https://eqx.pt/"},
+ {n:"Vigion",sub:"Segurança e automação",logo:"https://vigion.com/wp-content/uploads/2024/08/VigionLogoWhite.svg",bg:"#000",url:"https://vigion.com/"}];
+function sponsorsHtml(){return `<section class="spons" aria-label="Patrocinadores"><h3>Os nossos patrocinadores</h3><div class="sp-grid">${SPONS.map(x=>`<a class="sp-card" href="${esc(x.url)}" target="_blank" rel="noopener sponsored"><span class="sp-logo" style="background:${esc(x.bg||"#fff")}"><img src="${esc(x.logo)}" alt="${esc(x.n)}" loading="lazy" referrerpolicy="no-referrer" onerror="this.replaceWith(Object.assign(document.createElement('span'),{className:'sp-txt',textContent:this.alt}))"></span><b>${esc(x.n)}</b><small>${esc(x.sub||"")}</small></a>`).join("")}</div>
   <p>Queres apoiar o basquetebol do FC Gaia? <a href="mailto:${CONTACT.email}?subject=${encodeURIComponent("Patrocínio FC Gaia Basquetebol")}">Fala connosco</a>.</p></section>`}
 function goContacts(id){S.tab="ct";S.team=null;setHash("#"+id);render();const el=document.getElementById(id);if(el){if(id==="faq")el.querySelector("details")?.setAttribute("open","");el.scrollIntoView({block:"start"})}}
 document.addEventListener("click",e=>{const a=e.target.closest&&e.target.closest("[data-goct]");if(!a)return;e.preventDefault();goContacts(a.dataset.goct)});

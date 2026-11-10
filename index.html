@@ -735,6 +735,7 @@ html.printing .pv-r{font-weight:700;text-align:right;width:70px}
 .hr-tm.b i{background:transparent;box-shadow:inset 0 0 0 2px var(--tc)}
 .hr-pv{font-size:15px;color:var(--muted)}
 .hr-pv a{color:var(--muted);text-decoration:none;border-bottom:1px dotted var(--dim)}
+.hr-cp{display:inline-block;font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.5px;color:var(--gold);border:1px solid var(--gold);border-radius:3px;padding:0 5px;margin-left:4px;vertical-align:1px}
 .hr-pv a:hover{color:var(--gold);border-color:var(--gold)}
 /* semana */
 .hr-boards{display:flex;flex-wrap:wrap;gap:14px;align-items:flex-start}
@@ -1100,8 +1101,6 @@ const HR_T={
  masters:{n:"Masters",cls:"mst",hex:"#c9c9d1",ids:["Masters"]}};
 const HR_K=Object.keys(HR_T);
 const HR_V={
- "Pedras 1":{nm:"Pav. Municipal das Pedras (campo 1)",q:"Pavilhão Municipal das Pedras Vila Nova de Gaia"},
- "Pedras 2":{nm:"Pav. Municipal das Pedras (campo 2)",q:"Pavilhão Municipal das Pedras Vila Nova de Gaia"},
  "Pedras":{nm:"Pav. Municipal das Pedras",q:"Pavilhão Municipal das Pedras Vila Nova de Gaia"},
  "Baiza":{nm:"Pav. Escola Básica Anes de Cernache (Baiza)",q:"Escola Básica Anes de Cernache Vila Nova de Gaia"},
  "FC Gaia":{nm:"Pav. FC Gaia",fcg:1},
@@ -1110,10 +1109,10 @@ const HR_V={
  "Maia Brenha":{nm:"Pav. Municipal Maia / Brenha",q:"Pavilhão Municipal Maia Brenha Vila Nova de Gaia"}};
 const HR_VO=Object.keys(HR_V);
 const HR=[];
-{const add=(d,v,t,a,b,l)=>HR.push({d,v,t,a,b,l:l||HR_T[t].n});
- [1,3,5].forEach(d=>{add(d,"Pedras 1","sub14a","18:30","20:00");add(d,"Pedras 2","sub14b","18:30","20:00");
-  add(d,"Pedras 1","sub16a","20:00","21:30");add(d,"Pedras 2","sub16b","20:00","21:30");
-  add(d,"Pedras 1","sub18a","21:30","23:00");add(d,"Pedras 2","sub18b","21:30","23:00")});
+{const add=(d,v,t,a,b,l,c)=>HR.push({d,v,t,a,b,l:l||HR_T[t].n,c:c||0});
+ [1,3,5].forEach(d=>{add(d,"Pedras","sub14a","18:30","20:00",0,1);add(d,"Pedras","sub14b","18:30","20:00",0,2);
+  add(d,"Pedras","sub16a","20:00","21:30",0,1);add(d,"Pedras","sub16b","20:00","21:30",0,2);
+  add(d,"Pedras","sub18a","21:30","23:00",0,1);add(d,"Pedras","sub18b","21:30","23:00",0,2)});
  [1,3].forEach(d=>add(d,"Baiza","sub12","18:30","20:00"));
  add(1,"FC Gaia","seniores","21:30","23:00");add(1,"Salvador Guedes","masters","21:00","23:00");
  add(2,"FC Gaia","sub8_10","18:30","20:00");add(2,"FC Gaia","seniores","20:00","21:30");add(2,"Baiza","sub16a","21:00","22:30");
@@ -1125,44 +1124,44 @@ S.hv=S.hv||"semana";S.ht=S.ht||null;
 const hrMin=t=>{const p=t.split(":");return +p[0]*60+ +p[1]};
 const hrHM=m=>String(Math.floor(m/60)).padStart(2,"0")+":"+String(m%60).padStart(2,"0");
 const hrF=(a,b)=>a+"–"+b;
-const hrCmp=(x,y)=>x.d-y.d||x.a.localeCompare(y.a)||HR_VO.indexOf(x.v)-HR_VO.indexOf(y.v)||HR_K.indexOf(x.t)-HR_K.indexOf(y.t);
+const hrCmp=(x,y)=>x.d-y.d||x.a.localeCompare(y.a)||HR_VO.indexOf(x.v)-HR_VO.indexOf(y.v)||x.c-y.c||HR_K.indexOf(x.t)-HR_K.indexOf(y.t);
 const hrToday=()=>{const w=wd(new Date())+1;return w<=6?w:0};
 const hrDay=d=>DWL[d-1];
 function hrMap(v){const x=HR_V[v];if(!x)return "#";return x.fcg?"https://www.google.com/maps/search/?api=1&query=41.1280245%2C-8.6085688&query_place_id=ChIJcSpv7dBkJA0RBqLMhBpR_4Y":"https://www.google.com/maps/search/?api=1&query="+encodeURIComponent(x.q)}
-const hrPv=v=>`<a href="${hrMap(v)}" target="_blank" rel="noopener">Pav. <b>${esc(v)}</b></a>`;
+const hrPv=(v,c)=>`<a href="${hrMap(v)}" target="_blank" rel="noopener">Pav. <b>${esc(v)}</b></a>${c?` <span class="hr-cp">Campo ${c}</span>`:""}`;
 const hrTm=s=>`<span class="hr-tm ${HR_T[s.t].cls}${HR_T[s.t].b?" b":""}"><i></i>${esc(s.l)}</span>`;
 function hrRows(){return HR.filter(s=>!S.ht||s.t===S.ht).sort(hrCmp)}
 function hrDia(rows){const td=hrToday();let h="";
   for(let d=1;d<=6;d++){const day=rows.filter(s=>s.d===d);if(!day.length)continue;const sl=[],ix={};
     day.forEach(s=>{const k=s.a+"-"+s.b;if(!(k in ix)){ix[k]=sl.length;sl.push({a:s.a,b:s.b,it:[]})}sl[ix[k]].it.push(s)});
     h+=`<section class="hr-card${d===td?" today":""}"><h3><span>${hrDay(d)}</span>${d===td?`<span class="tag">Hoje</span>`:""}</h3>`+
-      sl.map(x=>`<div class="hr-row slot"><span class="t">${hrF(x.a,x.b)}</span><div class="ls">${x.it.map(s=>`<div class="li">${hrTm(s)}<span class="hr-pv">${hrPv(s.v)}</span></div>`).join("")}</div></div>`).join("")+`</section>`}
+      sl.map(x=>`<div class="hr-row slot"><span class="t">${hrF(x.a,x.b)}</span><div class="ls">${x.it.map(s=>`<div class="li">${hrTm(s)}<span class="hr-pv">${hrPv(s.v,s.c)}</span></div>`).join("")}</div></div>`).join("")+`</section>`}
   return h?`<div class="hr-grid">${h}</div>`:""}
 function hrEquipa(rows){let h="";
   HR_K.forEach(k=>{const r=rows.filter(s=>s.t===k);if(!r.length)return;const T=HR_T[k];
     h+=`<section class="hr-card ${T.cls}"><h3><span class="nm"><span class="sw"${T.b?' style="background:transparent;box-shadow:inset 0 0 0 2px var(--tc)"':""}></span>${esc(T.n)}</span>${T.ids.length===1&&TM[T.ids[0]]?`<button class="go" data-goteam="${esc(T.ids[0])}">Ver equipa ›</button>`:""}</h3>`+
-      r.map(s=>`<div class="hr-row"><span class="d">${DW[s.d-1]}</span><span class="t">${hrF(s.a,s.b)}</span><span class="w hr-pv">${hrPv(s.v)}${s.l!==T.n?" · "+esc(s.l):""}</span></div>`).join("")+`</section>`});
+      r.map(s=>`<div class="hr-row"><span class="d">${DW[s.d-1]}</span><span class="t">${hrF(s.a,s.b)}</span><span class="w hr-pv">${hrPv(s.v,s.c)}${s.l!==T.n?" · "+esc(s.l):""}</span></div>`).join("")+`</section>`});
   return h?`<div class="hr-grid">${h}</div>`:""}
 function hrPav(rows){let h="";
   HR_VO.forEach(v=>{const r=rows.filter(s=>s.v===v);if(!r.length)return;
     h+=`<section class="hr-card"><h3><span class="nm">${esc(v)}</span><span class="cnt">${r.length} ${r.length===1?"treino":"treinos"}</span></h3><div class="hr-row" style="grid-template-columns:1fr;padding-block:6px 8px"><span class="hr-pv"><a href="${hrMap(v)}" target="_blank" rel="noopener">${IC.pin?IC.pin+" ":""}${esc(HR_V[v].nm)}</a></span></div>`+
-      r.map(s=>`<div class="hr-row"><span class="d">${DW[s.d-1]}</span><span class="t">${hrF(s.a,s.b)}</span><span class="w">${hrTm(s)}</span></div>`).join("")+`</section>`});
+      r.map(s=>`<div class="hr-row"><span class="d">${DW[s.d-1]}</span><span class="t">${hrF(s.a,s.b)}</span><span class="w">${hrTm(s)}${s.c?` <span class="hr-cp">Campo ${s.c}</span>`:""}</span></div>`).join("")+`</section>`});
   return h?`<div class="hr-grid">${h}</div>`:""}
 function hrSheet(cols,start,n){const STEP=30,tr=["var(--hr-tw,58px)"],pos=[],bars=[];let c=1,h="";const td=hrToday();
   cols.forEach((col,k)=>{if(k&&col.d!==cols[k-1].d){tr.push("16px");c++;bars.push(c)}tr.push("minmax(0,1fr)");c++;pos.push(c)});
   h+=`<div class="hr-board" style="flex:${cols.length} 1 ${cols.length*72+58}px"><div class="hr-sheet" style="grid-template-columns:${tr.join(" ")};grid-template-rows:auto auto repeat(${n},var(--hr-rh,52px))"><div class="cr" style="grid-row:1/3;grid-column:1"></div>`;
   for(let i=0;i<cols.length;){const d=cols[i].d;let j=i;while(j<cols.length&&cols[j].d===d)j++;
     h+=`<div class="dy${d===td?" today":""}" style="grid-row:1;grid-column:${pos[i]}/${pos[j-1]+1}">${hrDay(d)}</div>`;i=j}
-  cols.forEach((col,k)=>{h+=`<div class="vn" style="grid-row:2;grid-column:${pos[k]}">${esc(col.v)}</div>`});
+  for(let i=0;i<cols.length;){let j=i;while(j<cols.length&&cols[j].d===cols[i].d&&cols[j].v===cols[i].v)j++;h+=`<div class="vn" style="grid-row:2;grid-column:${pos[i]}/${pos[j-1]+1}">${esc(cols[i].v)}</div>`;i=j}
   bars.forEach(b=>{h+=`<div class="br" style="grid-column:${b};grid-row:1/span ${n+2}"></div>`});
   for(let r=0;r<n;r++){h+=`<div class="tm" style="grid-row:${r+3};grid-column:1">${hrHM(start+r*STEP)}</div>`;cols.forEach((col,k)=>{h+=`<div class="cl" style="grid-row:${r+3};grid-column:${pos[k]}"></div>`})}
-  HR.forEach(s=>{const k=cols.findIndex(col=>col.d===s.d&&col.v===s.v);if(k<0)return;const T=HR_T[s.t];
+  HR.forEach(s=>{const k=cols.findIndex(col=>col.d===s.d&&col.v===s.v&&(col.c||0)===s.c);if(k<0)return;const T=HR_T[s.t];
     const r0=(hrMin(s.a)-start)/STEP,sp=(hrMin(s.b)-hrMin(s.a))/STEP;
-    h+=`<button class="hr-blk ${T.cls}${T.b?" b":""}${S.ht&&s.t!==S.ht?" dim":""}" data-hteam="${s.t}" title="${esc(s.l)} · ${hrDay(s.d)} ${hrF(s.a,s.b)} · ${esc(HR_V[s.v].nm)}" style="grid-row:${r0+3}/span ${sp};grid-column:${pos[k]}"><span>${esc(s.l).replace(" / ","<br>").replace(" · ","<br>")}</span><small>${hrF(s.a,s.b)}</small></button>`});
+    h+=`<button class="hr-blk ${T.cls}${T.b?" b":""}${S.ht&&s.t!==S.ht?" dim":""}" data-hteam="${s.t}" title="${esc(s.l)} · ${hrDay(s.d)} ${hrF(s.a,s.b)} · ${esc(HR_V[s.v].nm)}${s.c?" · Campo "+s.c:""}" style="grid-row:${r0+3}/span ${sp};grid-column:${pos[k]}"><span>${esc(s.l).replace(" / ","<br>").replace(" · ","<br>")}</span><small>${s.c?"Campo "+s.c+"<br>":""}${hrF(s.a,s.b)}</small></button>`});
   return h+`</div></div>`}
 function hrSemana(){const cols=[],seen={};
-  HR.filter(s=>s.d<=5).forEach(s=>{const k=s.d+"|"+s.v;if(!seen[k]){seen[k]=1;cols.push({d:s.d,v:s.v})}});
-  cols.sort((x,y)=>x.d-y.d||HR_VO.indexOf(x.v)-HR_VO.indexOf(y.v));
+  HR.filter(s=>s.d<=5).forEach(s=>{const k=s.d+"|"+s.v+"|"+s.c;if(!seen[k]){seen[k]=1;cols.push({d:s.d,v:s.v,c:s.c})}});
+  cols.sort((x,y)=>x.d-y.d||HR_VO.indexOf(x.v)-HR_VO.indexOf(y.v)||x.c-y.c);
   const days=[...new Set(cols.map(c=>c.d))];
   return `<div class="hr-boards">${days.map(d=>hrSheet(cols.filter(c=>c.d===d),hrMin("18:30"),10)).join("")}${hrSheet([{d:6,v:"FC Gaia"}],hrMin("08:30"),9)}</div>
   <div class="hr-leg">${HR_K.map(k=>`<span class="${HR_T[k].cls}"><i${HR_T[k].b?' class="b"':""}></i>${esc(HR_T[k].n)}</span>`).join("")}</div>`}
@@ -1184,21 +1183,21 @@ function hrPdfHead(doc,w,title,col,b){doc.setFillColor(0,0,0);doc.rect(0,0,w,24,
   doc.setTextColor(226,184,18);doc.setFontSize(18);doc.text(title.toUpperCase(),x,19);doc.setTextColor(255,255,255);doc.setFontSize(11);doc.text("ÉPOCA 2026 / 2027",w-10,19,{align:"right"})}
 function hrPdfFoot(doc,h){doc.setFont("helvetica","normal");doc.setFontSize(7.5);doc.setTextColor(120,118,108);doc.text("Futebol Clube de Gaia - Secção de Basquetebol - Versão de "+HR_VER+" - fcgaiabasquetebol.github.io",10,h-7)}
 function hrPdfAll(J){const doc=new J({orientation:"landscape",unit:"mm",format:"a4"}),W=297,H=210;hrPdfHead(doc,W,"Horários de treino");
-  const cols=[],seen={};HR.filter(s=>s.d<=5).forEach(s=>{const k=s.d+"|"+s.v;if(!seen[k]){seen[k]=1;cols.push({d:s.d,v:s.v})}});
-  cols.sort((x,y)=>x.d-y.d||HR_VO.indexOf(x.v)-HR_VO.indexOf(y.v));
+  const cols=[],seen={};HR.filter(s=>s.d<=5).forEach(s=>{const k=s.d+"|"+s.v+"|"+s.c;if(!seen[k]){seen[k]=1;cols.push({d:s.d,v:s.v,c:s.c})}});
+  cols.sort((x,y)=>x.d-y.d||HR_VO.indexOf(x.v)-HR_VO.indexOf(y.v)||x.c-y.c);
   const TW=11,SEP=3,GAP=6,SATW=15,M=10,CW=(W-2*M-TW-4*SEP-GAP-TW-SATW)/cols.length,top=32,HD=7,HV=9,RH=11.5;
   function grid(specs,xT,start,rows){const y0=top+HD+HV,last=specs[specs.length-1],xE=last.x+CW;doc.setDrawColor(222,220,210);doc.setLineWidth(.15);
     for(let r=0;r<rows;r++){const yy=y0+r*RH;doc.line(xT+TW,yy,xE,yy);doc.setFont("helvetica","normal");doc.setFontSize(6.5);doc.setTextColor(110,108,98);doc.text(hrHM(start+r*30),xT+TW-1.5,yy+RH/2+.9,{align:"right"})}
     doc.line(xT+TW,y0+rows*RH,xE,y0+rows*RH);
     for(let i=0;i<specs.length;){const d=specs[i].d;let j=i;while(j<specs.length&&specs[j].d===d)j++;const b0=specs[i].x+.5,b1=specs[j-1].x+CW-.5;
       doc.setFillColor(226,184,18);doc.roundedRect(b0,top,b1-b0,HD-1,1.5,1.5,"F");doc.setFont("helvetica","bold");doc.setFontSize(7.5);doc.setTextColor(0,0,0);doc.text(hrPlain(hrDay(d)).toUpperCase(),(b0+b1)/2,top+4.2,{align:"center"});i=j}
-    specs.forEach(sp=>{doc.setFont("helvetica","bold");doc.setFontSize(5.8);doc.setTextColor(30,30,28);const ls=doc.splitTextToSize(hrPlain(sp.v),CW-1);doc.text(ls,sp.x+CW/2,top+HD+3.2-(ls.length-1)*1.2,{align:"center"})});
+    for(let i=0;i<specs.length;){let j=i;while(j<specs.length&&specs[j].d===specs[i].d&&specs[j].v===specs[i].v)j++;const w=specs[j-1].x+CW-specs[i].x;doc.setFont("helvetica","bold");doc.setFontSize(5.8);doc.setTextColor(30,30,28);const ls=doc.splitTextToSize(hrPlain(specs[i].v),w-1);doc.text(ls,specs[i].x+w/2,top+HD+3.2-(ls.length-1)*1.2,{align:"center"});i=j}
     for(let k=1;k<specs.length;k++)if(specs[k].d!==specs[k-1].d){const lx=specs[k].x-SEP/2;doc.setDrawColor(150,148,136);doc.setLineWidth(.4);doc.line(lx,top,lx,y0+rows*RH)}
-    HR.forEach(s=>{const sp=specs.find(c=>c.d===s.d&&c.v===s.v);if(!sp)return;const T=HR_T[s.t],by0=y0+(hrMin(s.a)-start)/30*RH+.6,by1=y0+(hrMin(s.b)-start)/30*RH-.6,c=hrRgb(T.hex,T.b);
+    HR.forEach(s=>{const sp=specs.find(c=>c.d===s.d&&c.v===s.v&&(c.c||0)===s.c);if(!sp)return;const T=HR_T[s.t],by0=y0+(hrMin(s.a)-start)/30*RH+.6,by1=y0+(hrMin(s.b)-start)/30*RH-.6,c=hrRgb(T.hex,T.b);
       doc.setFillColor(c[0],c[1],c[2]);doc.roundedRect(sp.x+.5,by0,CW-1,by1-by0,1.4,1.4,"F");doc.setTextColor(0,0,0);doc.setFont("helvetica","bold");doc.setFontSize(6.6);
       let l=hrPlain(s.l).toUpperCase(),ls=l.includes(" / ")?l.split(" / "):l.includes(" - ")?l.split(" - "):(/^(SUB \d+) ([AB])$/.exec(l)||[0,l]).slice(1).filter(Boolean);
-      doc.text(ls,sp.x+CW/2,(by0+by1)/2-1.2-(ls.length-1)*1.5+.9,{align:"center",lineHeightFactor:1.15});doc.setFont("helvetica","normal");doc.setFontSize(5);doc.text(hrPlain(hrF(s.a,s.b)),sp.x+CW/2,by1-1.3,{align:"center"})})}
-  let x=M+TW;const specs=[];cols.forEach((c,i)=>{if(i&&c.d!==cols[i-1].d)x+=SEP;specs.push({d:c.d,v:c.v,x});x+=CW});
+      doc.text(ls,sp.x+CW/2,(by0+by1)/2-1.2-(ls.length-1)*1.5+.9,{align:"center",lineHeightFactor:1.15});doc.setFont("helvetica","normal");doc.setFontSize(5);doc.text((s.c?"C"+s.c+" | ":"")+hrPlain(hrF(s.a,s.b)),sp.x+CW/2,by1-1.3,{align:"center"})})}
+  let x=M+TW;const specs=[];cols.forEach((c,i)=>{if(i&&c.d!==cols[i-1].d)x+=SEP;specs.push({d:c.d,v:c.v,c:c.c,x});x+=CW});
   grid(specs,M,hrMin("18:30"),10);const sx=x+GAP;grid([{d:6,v:"FC Gaia",x:sx+TW}],sx,hrMin("08:30"),9);
   let lx=M;const ly=top+HD+HV+10*RH+10;doc.setFont("helvetica","bold");doc.setFontSize(7.5);
   HR_K.forEach(k=>{const T=HR_T[k],c=hrRgb(T.hex,T.b);doc.setFillColor(c[0],c[1],c[2]);doc.roundedRect(lx,ly-3,4,4,1,1,"F");doc.setTextColor(30,30,28);doc.text(hrPlain(T.n),lx+6,ly);lx+=6+doc.getTextWidth(hrPlain(T.n))+8});
@@ -1209,7 +1208,7 @@ function hrPdfTeam(J,k){const T=HR_T[k],rows=HR.filter(s=>s.t===k).sort(hrCmp),d
   doc.text("DIA",c1,y+6.6);doc.text("HORA",c2,y+6.6);doc.text("PAVILHÃO",c3,y+6.6);y+=10;
   rows.forEach(s=>{doc.setDrawColor(222,220,210);doc.setLineWidth(.2);doc.line(10,y+RH,W-10,y+RH);doc.setFont("helvetica","bold");doc.setFontSize(13);doc.setTextColor(20,20,18);
     doc.text(hrPlain(hrDay(s.d)),c1,y+9.6);doc.setFont("helvetica","normal");doc.text(hrPlain(hrF(s.a,s.b)),c2,y+9.6);doc.setFont("helvetica","bold");doc.setFontSize(11);
-    doc.text(doc.splitTextToSize(hrPlain(HR_V[s.v].nm),W-10-c3),c3,y+9.6);y+=RH});
+    doc.text(doc.splitTextToSize(hrPlain(HR_V[s.v].nm)+(s.c?" - Campo "+s.c:""),W-10-c3),c3,y+9.6);y+=RH});
   hrPdfFoot(doc,H);return {doc,name:"horarios-fcgaia-"+slug(T.n)+".pdf"}}
 function hrPdf(){const m=document.getElementById("hrmsg");if(m)m.textContent="A preparar o PDF…";
   hrLoadPdf().then(J=>{const r=S.ht?hrPdfTeam(J,S.ht):hrPdfAll(J);r.doc.save(r.name);if(m)m.textContent=""},()=>{if(m)m.textContent="Não foi possível gerar o PDF."})}
@@ -1221,7 +1220,7 @@ document.addEventListener("click",e=>{const b=e.target.closest&&e.target.closest
 function treinosBox(t){const id=t.id,keys=HR_K.filter(k=>HR_T[k].ids.includes(id));let rows=HR.filter(s=>keys.includes(s.t));
   if(id==="Baby")rows=[{d:6,v:"FC Gaia",a:"10:00",b:"11:00"}];
   if(!rows.length)return "";rows=rows.slice().sort(hrCmp);const nasc=(TREINOS[id.replace(/ Masc [AB]$/,"")]||{}).nasc;
-  return `<section class="box treinos"><h3>Treinos</h3>${nasc?`<p class="sub">Nascidos em ${esc(nasc)}</p>`:""}<ul class="tl">${rows.map(s=>`<li><b>${hrDay(s.d)}</b><span class="th">${hrF(s.a,s.b).replace(/:00/g,"h00").replace(/:30/g,"h30")}</span><a href="${hrMap(s.v)}" target="_blank" rel="noopener">${IC.pin}<span>${esc(HR_V[s.v].nm)}</span></a></li>`).join("")}</ul><button class="more" data-tab="hr">Ver todos os horários ›</button></section>`}
+  return `<section class="box treinos"><h3>Treinos</h3>${nasc?`<p class="sub">Nascidos em ${esc(nasc)}</p>`:""}<ul class="tl">${rows.map(s=>`<li><b>${hrDay(s.d)}</b><span class="th">${hrF(s.a,s.b).replace(/:00/g,"h00").replace(/:30/g,"h30")}</span><a href="${hrMap(s.v)}" target="_blank" rel="noopener">${IC.pin}<span>${esc(HR_V[s.v].nm)}${s.c?" · Campo "+s.c:""}</span></a></li>`).join("")}</ul><button class="more" data-tab="hr">Ver todos os horários ›</button></section>`}
 function teamOverview(t,cur,all){const gs=cur==="*"?all:all.filter(g=>g.phase===cur);const {fut,past}=splitGames(gs);
   const nx=fut[0],ls=past.find(g=>g.res)||past[0];const st=(STAND[t.id]||[]).find(p=>cur==="*"||p.phase===cur);
   const pl=PLANTEL[t.id]||[];const sf=staffOf(t.id);

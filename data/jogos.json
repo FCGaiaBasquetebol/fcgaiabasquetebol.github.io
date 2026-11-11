@@ -1,5 +1,5 @@
 {
-"updated": "2026-11-10",
+"updated": "2026-11-11",
 "games": [
 [
 "Esperanças",
@@ -1664,6 +1664,15 @@
 "name": "Esperanças · 1.ª Fase Série B",
 "rows": [
 [
+"Académica Coimbra",
+5,
+4,
+1,
+9,
+408,
+318
+],
+[
 "Olivais FC",
 4,
 3,
@@ -1682,13 +1691,13 @@
 268
 ],
 [
-"Académica Coimbra",
-4,
+"Sangalhos DC",
+5,
+2,
 3,
-1,
 7,
-320,
-240
+399,
+389
 ],
 [
 "SC Beira-Mar",
@@ -1698,24 +1707,6 @@
 6,
 244,
 187
-],
-[
-"ILLIABUM CLUBE/EXITCASA",
-4,
-2,
-2,
-6,
-314,
-295
-],
-[
-"Sangalhos DC",
-4,
-2,
-2,
-6,
-321,
-301
 ],
 [
 "CLIP Teams",
@@ -1734,6 +1725,15 @@
 6,
 258,
 233
+],
+[
+"ILLIABUM CLUBE/EXITCASA",
+4,
+2,
+2,
+6,
+314,
+295
 ],
 [
 "FIDES",
@@ -2857,8 +2857,8 @@
 [
 929,
 2,
-"2026-11-22",
-"16:15",
+"2026-11-21",
+"20:45",
 "Maia Basket B",
 "Académico B / Ribadouro",
 "",
@@ -4913,7 +4913,7 @@
 "21:45",
 "Sangalhos DC",
 "Académica Coimbra",
-"",
+"78-88",
 "Complexo Desportivo de Sangalhos"
 ],
 [

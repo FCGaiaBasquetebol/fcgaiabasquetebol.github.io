@@ -1,5 +1,5 @@
 {
-"updated": "2026-11-13",
+"updated": "2026-11-14",
 "games": [
 [
 "Esperanças",
@@ -1362,8 +1362,8 @@
 "FC Gaia A",
 "FC Porto 2",
 "Pavilhão Futebol Clube Gaia",
-"marcado",
-"",
+"realizado",
+"73-46",
 "2.ª Fase"
 ],
 [
@@ -1823,57 +1823,57 @@
 "rows": [
 [
 "FC Gaia A",
-3,
-3,
+4,
+4,
 0,
-6,
-240,
-127
+8,
+313,
+173
 ],
 [
 "Aroso A Realvitur Angola",
-3,
-3,
+4,
+4,
 0,
-6,
-222,
-137
+8,
+309,
+171
 ],
 [
 "FC Porto 2",
-3,
+4,
 2,
-1,
-5,
-203,
-155
+2,
+6,
+249,
+228
 ],
 [
 "CLIP Teams",
-3,
-1,
-2,
 4,
-170,
-203
-],
-[
-"ACR Vigorosa",
-3,
-0,
-3,
-3,
-134,
-229
+2,
+2,
+6,
+245,
+257
 ],
 [
 "CDJ Régio",
-3,
+4,
 0,
-3,
-3,
-121,
-239
+4,
+4,
+175,
+314
+],
+[
+"ACR Vigorosa",
+4,
+0,
+4,
+4,
+168,
+316
 ]
 ]
 }
@@ -3687,7 +3687,7 @@
 "22:00",
 "FC Gaia A",
 "FC Porto 2",
-"",
+"73-46",
 "Pavilhão Futebol Clube Gaia"
 ],
 [
@@ -3697,7 +3697,7 @@
 "22:00",
 "CLIP Teams",
 "CDJ Régio",
-"",
+"75-54",
 "Colégio Luso Internacional do Porto"
 ],
 [
@@ -3707,7 +3707,7 @@
 "21:15",
 "ACR Vigorosa",
 "Aroso A Realvitur Angola",
-"",
+"34-87",
 "Pavilhão Escola EB23 Prof. Napoleão de Sousa Marques"
 ],
 [

@@ -57,8 +57,8 @@
 "FC Gaia",
 "FIDES",
 "Pavilhão Municipal das Pedras - Nelson Cardoso",
-"marcado",
-"",
+"realizado",
+"72-49",
 "1.ª Fase"
 ],
 [
@@ -1047,8 +1047,8 @@
 "Académico A / Ribadouro",
 "FC Gaia A",
 "Pavilhão Mário Navega",
-"marcado",
-"",
+"realizado",
+"72-56",
 "2.ª Fase"
 ],
 [
@@ -1682,6 +1682,15 @@
 364
 ],
 [
+"SC Beira-Mar",
+4,
+4,
+0,
+8,
+344,
+219
+],
+[
 "Ovarense OLHO MARINHO",
 4,
 3,
@@ -1700,13 +1709,22 @@
 389
 ],
 [
-"SC Beira-Mar",
-3,
-3,
-0,
+"FC Gaia",
+4,
+2,
+2,
 6,
-244,
-187
+272,
+268
+],
+[
+"ILLIABUM CLUBE/EXITCASA",
+4,
+2,
+2,
+6,
+314,
+295
 ],
 [
 "CLIP Teams",
@@ -1727,13 +1745,13 @@
 233
 ],
 [
-"ILLIABUM CLUBE/EXITCASA",
+"FIDES",
+5,
+1,
 4,
-2,
-2,
 6,
-314,
-295
+339,
+377
 ],
 [
 "CAAS WISIFY",
@@ -1745,31 +1763,13 @@
 388
 ],
 [
-"FIDES",
-4,
-1,
-3,
-5,
-290,
-305
-],
-[
-"FC Gaia",
-3,
-1,
-2,
-4,
-200,
-219
-],
-[
 "ACA-Perfil Independente",
-4,
+5,
 0,
-4,
-4,
-191,
-385
+5,
+5,
+223,
+485
 ]
 ]
 }
@@ -2012,58 +2012,58 @@
 "name": "Distrital Sub-16 · Grupo H",
 "rows": [
 [
-"UAA Aroso A",
+"FC Porto A",
 3,
-2,
-1,
-5,
-204,
-156
+3,
+0,
+6,
+251,
+103
 ],
 [
 "Maia Basket A/Fisimaia",
-2,
-2,
+3,
+3,
 0,
-4,
-170,
-73
+6,
+236,
+125
 ],
 [
-"FC Porto A",
-2,
-2,
-0,
+"UAA Aroso A",
 4,
-155,
-78
+2,
+2,
+6,
+256,
+222
 ],
 [
 "Académico A / Ribadouro",
-3,
-1,
-2,
 4,
-175,
-240
+2,
+2,
+6,
+247,
+296
 ],
 [
 "Bolacesto A/Farm. Gândara",
-3,
-1,
-2,
 4,
-183,
-231
+1,
+3,
+5,
+208,
+327
 ],
 [
 "FC Gaia A",
-3,
+4,
 0,
-3,
-3,
-125,
-234
+4,
+4,
+181,
+306
 ]
 ]
 }
@@ -3143,7 +3143,7 @@
 "16:30",
 "Académico A / Ribadouro",
 "FC Gaia A",
-"",
+"72-56",
 "Pavilhão Mário Navega"
 ],
 [
@@ -3153,7 +3153,7 @@
 "16:30",
 "UAA Aroso A",
 "Maia Basket A/Fisimaia",
-"",
+"52-66",
 "Escola EB23 Manoel de Oliveira"
 ],
 [
@@ -3163,7 +3163,7 @@
 "14:30",
 "Bolacesto A/Farm. Gândara",
 "FC Porto A",
-"",
+"25-96",
 "Pavilhão Municipal Fernando Gomes"
 ],
 [
@@ -4893,7 +4893,7 @@
 "18:30",
 "FC Gaia",
 "FIDES",
-"",
+"72-49",
 "Pavilhão Municipal das Pedras - Nelson Cardoso"
 ],
 [
@@ -4933,7 +4933,7 @@
 "16:30",
 "SC Beira-Mar",
 "ACA-Perfil Independente",
-"",
+"100-32",
 "Pavilhão da Escola Básica 2,3 João Afonso"
 ],
 [

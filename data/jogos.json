@@ -1,5 +1,5 @@
 {
-"updated": "2026-11-14",
+"updated": "2026-11-15",
 "games": [
 [
 "Esperanças",
@@ -792,8 +792,8 @@
 "FC Gaia A",
 "UAA Aroso A",
 "Pavilhão Futebol Clube Gaia",
-"marcado",
-"",
+"realizado",
+"60-54",
 "2.ª Fase"
 ],
 [
@@ -882,8 +882,8 @@
 "FC Gaia B",
 "BC Marco",
 "Pavilhão Futebol Clube Gaia",
-"marcado",
-"",
+"realizado",
+"47-45",
 "2.ª Fase"
 ],
 [
@@ -1674,12 +1674,12 @@
 ],
 [
 "Olivais FC",
+5,
 4,
-3,
 1,
-7,
-289,
-316
+9,
+386,
+364
 ],
 [
 "Ovarense OLHO MARINHO",
@@ -1736,6 +1736,15 @@
 295
 ],
 [
+"CAAS WISIFY",
+5,
+1,
+4,
+6,
+246,
+388
+],
+[
 "FIDES",
 4,
 1,
@@ -1743,15 +1752,6 @@
 5,
 290,
 305
-],
-[
-"CAAS WISIFY",
-4,
-1,
-3,
-5,
-198,
-291
 ],
 [
 "FC Gaia",
@@ -2220,22 +2220,22 @@
 "name": "Distrital Sub-14 · Grupo F",
 "rows": [
 [
-"UAA Aroso A",
+"FC Gaia A",
+4,
 3,
-3,
-0,
-6,
-207,
-151
+1,
+7,
+247,
+206
 ],
 [
-"FC Gaia A",
+"UAA Aroso A",
+4,
 3,
-2,
 1,
-5,
-187,
-152
+7,
+261,
+211
 ],
 [
 "Maia Basket A",
@@ -2319,6 +2319,24 @@
 45
 ],
 [
+"FC Gaia B",
+1,
+1,
+0,
+2,
+47,
+45
+],
+[
+"BC Marco",
+1,
+0,
+1,
+1,
+45,
+47
+],
+[
 "NCRV B / Longuscar",
 1,
 0,
@@ -2344,24 +2362,6 @@
 0,
 0,
 0
-],
-[
-"BC Marco",
-0,
-0,
-0,
-0,
-0,
-0
-],
-[
-"FC Gaia B",
-0,
-0,
-0,
-0,
-0,
-0
 ]
 ]
 }
@@ -2381,6 +2381,24 @@
 73
 ],
 [
+"ACADÉMICO",
+1,
+1,
+0,
+2,
+73,
+41
+],
+[
+"GDB Leça",
+2,
+0,
+2,
+2,
+73,
+133
+],
+[
 "Guarda UP",
 1,
 0,
@@ -2388,24 +2406,6 @@
 1,
 41,
 49
-],
-[
-"GDB Leça",
-1,
-0,
-1,
-1,
-32,
-60
-],
-[
-"ACADÉMICO",
-0,
-0,
-0,
-0,
-0,
-0
 ]
 ]
 }
@@ -2709,7 +2709,7 @@
 "09:00",
 "FC Gaia A",
 "UAA Aroso A",
-"",
+"60-54",
 "Pavilhão Futebol Clube Gaia"
 ],
 [
@@ -2851,7 +2851,7 @@
 "11:00",
 "FC Gaia B",
 "BC Marco",
-"",
+"47-45",
 "Pavilhão Futebol Clube Gaia"
 ],
 [
@@ -4903,7 +4903,7 @@
 "21:00",
 "Olivais FC",
 "CAAS WISIFY",
-"",
+"97-48",
 "Pav. Engº Augusto Correia"
 ],
 [
@@ -6000,7 +6000,7 @@
 "21:00",
 "GDB Leça",
 "ACADÉMICO",
-"",
+"41-73",
 "Pav. Mun. Leça Palmeira"
 ],
 [

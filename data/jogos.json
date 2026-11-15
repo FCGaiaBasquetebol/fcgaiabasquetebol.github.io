@@ -2239,21 +2239,21 @@
 ],
 [
 "Maia Basket A",
-3,
-1,
-2,
 4,
-168,
-162
+2,
+2,
+6,
+226,
+203
 ],
 [
 "CD Póvoa A",
-3,
+4,
 0,
-3,
-3,
-126,
-223
+4,
+4,
+167,
+281
 ]
 ]
 }
@@ -2310,6 +2310,15 @@
 "name": "Distrital Sub-14 · Grupo L1",
 "rows": [
 [
+"Guifões SC B",
+1,
+1,
+0,
+2,
+62,
+40
+],
+[
 "Académico B / Ribadouro",
 1,
 1,
@@ -2347,21 +2356,12 @@
 ],
 [
 "Maia Basket B",
+1,
 0,
-0,
-0,
-0,
-0,
-0
-],
-[
-"Guifões SC B",
-0,
-0,
-0,
-0,
-0,
-0
+1,
+1,
+40,
+62
 ]
 ]
 }
@@ -2699,7 +2699,7 @@
 "16:30",
 "Maia Basket A",
 "CD Póvoa A",
-"",
+"58-41",
 "Pavilhão Municipal Nogueira da Maia"
 ],
 [
@@ -2831,7 +2831,7 @@
 "17:00",
 "Guifões SC B",
 "Maia Basket B",
-"",
+"62-40",
 "Pavilhão Engº António Maia (Guifões)"
 ],
 [

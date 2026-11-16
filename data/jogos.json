@@ -1,5 +1,5 @@
 {
-"updated": "2026-11-15",
+"updated": "2026-11-16",
 "games": [
 [
 "Esperanças",
@@ -883,7 +883,7 @@
 "BC Marco",
 "Pavilhão Futebol Clube Gaia",
 "realizado",
-"47-45",
+"20-0",
 "2.ª Fase"
 ],
 [
@@ -2319,6 +2319,15 @@
 40
 ],
 [
+"FC Gaia B",
+1,
+1,
+0,
+2,
+20,
+0
+],
+[
 "Académico B / Ribadouro",
 1,
 1,
@@ -2328,24 +2337,6 @@
 45
 ],
 [
-"FC Gaia B",
-1,
-1,
-0,
-2,
-47,
-45
-],
-[
-"BC Marco",
-1,
-0,
-1,
-1,
-45,
-47
-],
-[
 "NCRV B / Longuscar",
 1,
 0,
@@ -2353,6 +2344,15 @@
 1,
 45,
 57
+],
+[
+"BC Marco",
+1,
+0,
+1,
+1,
+0,
+20
 ],
 [
 "Maia Basket B",
@@ -2851,7 +2851,7 @@
 "11:00",
 "FC Gaia B",
 "BC Marco",
-"47-45",
+"20-0",
 "Pavilhão Futebol Clube Gaia"
 ],
 [
@@ -4919,8 +4919,8 @@
 [
 2709,
 5,
-"",
-"",
+"2026-11-18",
+"21:45",
 "UD Oliveirense",
 "CLIP Teams",
 "",

@@ -1,5 +1,5 @@
 {
-"updated": "2026-11-18",
+"updated": "2026-11-19",
 "games": [
 [
 "Esperanças",
@@ -1665,21 +1665,21 @@
 "rows": [
 [
 "Académica Coimbra",
+6,
 5,
-4,
 1,
-9,
-408,
-318
+11,
+491,
+385
 ],
 [
 "Olivais FC",
-5,
+6,
 4,
-1,
-9,
-386,
-364
+2,
+10,
+453,
+447
 ],
 [
 "SC Beira-Mar",
@@ -1692,12 +1692,39 @@
 ],
 [
 "Ovarense OLHO MARINHO",
-4,
+5,
 3,
-1,
+2,
+8,
+415,
+375
+],
+[
+"ILLIABUM CLUBE/EXITCASA",
+5,
+3,
+2,
+8,
+421,
+367
+],
+[
+"UD Oliveirense",
+5,
+3,
+2,
+8,
+320,
+292
+],
+[
+"CLIP Teams",
+5,
+2,
+3,
 7,
-343,
-268
+371,
+302
 ],
 [
 "Sangalhos DC",
@@ -1716,33 +1743,6 @@
 6,
 272,
 268
-],
-[
-"ILLIABUM CLUBE/EXITCASA",
-4,
-2,
-2,
-6,
-314,
-295
-],
-[
-"CLIP Teams",
-4,
-2,
-2,
-6,
-312,
-240
-],
-[
-"UD Oliveirense",
-4,
-2,
-2,
-6,
-258,
-233
 ],
 [
 "FIDES",
@@ -2012,22 +2012,22 @@
 "name": "Distrital Sub-16 · Grupo H",
 "rows": [
 [
-"FC Porto A",
-3,
-3,
+"Maia Basket A/Fisimaia",
+4,
+4,
 0,
-6,
-251,
-103
+8,
+304,
+182
 ],
 [
-"Maia Basket A/Fisimaia",
+"FC Porto A",
+4,
 3,
-3,
-0,
-6,
-236,
-125
+1,
+7,
+308,
+171
 ],
 [
 "UAA Aroso A",
@@ -3073,7 +3073,7 @@
 "22:00",
 "Maia Basket A/Fisimaia",
 "FC Porto A",
-"",
+"68-57",
 "Pavilhão Mun. Nortecoope"
 ],
 [
@@ -4883,7 +4883,7 @@
 "21:30",
 "ILLIABUM CLUBE/EXITCASA",
 "Ovarense OLHO MARINHO",
-"",
+"107-72",
 "Pavilhão Municipal de Vagos"
 ],
 [
@@ -4923,7 +4923,7 @@
 "21:45",
 "UD Oliveirense",
 "CLIP Teams",
-"",
+"62-59",
 "Simoldes Arena"
 ],
 [
@@ -4973,14 +4973,14 @@
 "21:30",
 "Académica Coimbra",
 "Olivais FC",
-"",
+"83-67",
 "Pavilhão Multidesportos Dr. Mário Mexia"
 ],
 [
 2715,
 6,
 "2026-11-22",
-"20:30",
+"18:30",
 "CLIP Teams",
 "Sangalhos DC",
 "",

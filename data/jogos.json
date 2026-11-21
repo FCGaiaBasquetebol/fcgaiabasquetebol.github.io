@@ -1,5 +1,5 @@
 {
-"updated": "2026-11-20",
+"updated": "2026-11-21",
 "games": [
 [
 "Esperanças",
@@ -1377,8 +1377,8 @@
 "Aroso A Realvitur Angola",
 "FC Gaia A",
 "Escola EB23 Manoel de Oliveira",
-"marcado",
-"",
+"realizado",
+"44-67",
 "2.ª Fase"
 ],
 [
@@ -1682,22 +1682,22 @@
 447
 ],
 [
-"SC Beira-Mar",
+"Ovarense OLHO MARINHO",
+6,
 4,
-4,
-0,
-8,
-344,
-219
+2,
+10,
+498,
+448
 ],
 [
-"Ovarense OLHO MARINHO",
+"SC Beira-Mar",
 5,
-3,
-2,
-8,
-415,
-375
+4,
+1,
+9,
+417,
+302
 ],
 [
 "ILLIABUM CLUBE/EXITCASA",
@@ -1823,21 +1823,21 @@
 "rows": [
 [
 "FC Gaia A",
-4,
-4,
+5,
+5,
 0,
-8,
-313,
-173
+10,
+380,
+217
 ],
 [
 "Aroso A Realvitur Angola",
+5,
 4,
-4,
-0,
-8,
-309,
-171
+1,
+9,
+353,
+238
 ],
 [
 "FC Porto 2",
@@ -3717,7 +3717,7 @@
 "21:30",
 "Aroso A Realvitur Angola",
 "FC Gaia A",
-"",
+"44-67",
 "Escola EB23 Manoel de Oliveira"
 ],
 [
@@ -4943,7 +4943,7 @@
 "21:45",
 "Ovarense OLHO MARINHO",
 "SC Beira-Mar",
-"",
+"83-73",
 "Arena de Ovar"
 ],
 [

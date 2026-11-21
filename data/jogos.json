@@ -522,8 +522,8 @@
 "FC Gaia",
 "Académico FC",
 "Pavilhão Futebol Clube Gaia",
-"marcado",
-"",
+"realizado",
+"78-65",
 "1.ª Fase"
 ],
 [
@@ -1542,8 +1542,8 @@
 "FC Gaia B",
 "USC Paredes",
 "Pavilhão Futebol Clube Gaia",
-"marcado",
-"",
+"realizado",
+"63-31",
 "2.ª Fase"
 ],
 [
@@ -1585,48 +1585,39 @@
 "rows": [
 [
 "Juvemaia Mecprec",
+6,
 5,
-4,
 1,
-9,
-367,
-364
+11,
+437,
+432
 ],
 [
 "SC Beira-Mar",
-5,
-3,
+6,
+4,
 2,
-8,
-371,
-347
+10,
+473,
+414
 ],
 [
 "FC Gaia",
-5,
-3,
+6,
+4,
 2,
-8,
-387,
-337
-],
-[
-"AD Sanjoanense",
-5,
-3,
-2,
-8,
-368,
-384
+10,
+465,
+402
 ],
 [
 "Académico FC",
-5,
+6,
 3,
-2,
-8,
-425,
-385
+3,
+9,
+490,
+463
 ],
 [
 "Olivais FC",
@@ -1638,22 +1629,31 @@
 379
 ],
 [
-"FIDES",
+"AD Sanjoanense",
 5,
-1,
-4,
+3,
+2,
+8,
+368,
+384
+],
+[
+"FIDES",
 6,
-384,
-461
+1,
+5,
+7,
+452,
+531
 ],
 [
 "Gafanha Rascunhos Urbano",
-5,
+6,
 0,
-5,
-5,
-355,
-421
+6,
+6,
+422,
+523
 ]
 ]
 }
@@ -1859,21 +1859,21 @@
 ],
 [
 "CDJ Régio",
+5,
+1,
 4,
-0,
-4,
-4,
-175,
-314
+6,
+246,
+379
 ],
 [
 "ACR Vigorosa",
-4,
+5,
 0,
-4,
-4,
-168,
-316
+5,
+5,
+233,
+387
 ]
 ]
 }
@@ -1936,12 +1936,12 @@
 "rows": [
 [
 "FC Gaia B",
-1,
-1,
-0,
 2,
-70,
-56
+2,
+0,
+4,
+133,
+87
 ],
 [
 "CPN B / Antarte",
@@ -1954,12 +1954,12 @@
 ],
 [
 "USC Paredes",
+1,
 0,
-0,
-0,
-0,
-0,
-0
+1,
+1,
+31,
+63
 ]
 ]
 }
@@ -3737,7 +3737,7 @@
 "15:00",
 "CDJ Régio",
 "ACR Vigorosa",
-"",
+"71-65",
 "Pavilhão Desportos de Vila do Conde"
 ],
 [
@@ -4019,7 +4019,7 @@
 "21:00",
 "FC Gaia B",
 "USC Paredes",
-"",
+"63-31",
 "Pavilhão Futebol Clube Gaia"
 ],
 [
@@ -4276,7 +4276,7 @@
 "18:30",
 "Juvemaia Mecprec",
 "FIDES",
-"",
+"70-68",
 "Pavilhão Municipal Nogueira da Maia"
 ],
 [
@@ -4286,7 +4286,7 @@
 "18:30",
 "SC Beira-Mar",
 "Gafanha Rascunhos Urbano",
-"",
+"102-67",
 "Pavilhão Aristides Hall - Universidade de Aveiro"
 ],
 [
@@ -4306,7 +4306,7 @@
 "18:00",
 "FC Gaia",
 "Académico FC",
-"",
+"78-65",
 "Pavilhão Futebol Clube Gaia"
 ],
 [

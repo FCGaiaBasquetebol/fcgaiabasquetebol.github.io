@@ -897,8 +897,8 @@
 "NCRV B / Longuscar",
 "FC Gaia B",
 "Pavilhão Municipal de Campo",
-"marcado",
-"",
+"realizado",
+"42-64",
 "2.ª Fase"
 ],
 [
@@ -2310,6 +2310,15 @@
 "name": "Distrital Sub-14 · Grupo L1",
 "rows": [
 [
+"FC Gaia B",
+2,
+2,
+0,
+4,
+84,
+42
+],
+[
 "Guifões SC B",
 1,
 1,
@@ -2317,15 +2326,6 @@
 2,
 62,
 40
-],
-[
-"FC Gaia B",
-1,
-1,
-0,
-2,
-20,
-0
 ],
 [
 "Académico B / Ribadouro",
@@ -2338,12 +2338,12 @@
 ],
 [
 "NCRV B / Longuscar",
-1,
+2,
 0,
-1,
-1,
-45,
-57
+2,
+2,
+87,
+121
 ],
 [
 "BC Marco",
@@ -2881,7 +2881,7 @@
 "14:30",
 "NCRV B / Longuscar",
 "FC Gaia B",
-"",
+"42-64",
 "Pavilhão Municipal de Campo"
 ],
 [

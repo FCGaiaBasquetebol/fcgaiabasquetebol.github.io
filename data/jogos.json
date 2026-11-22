@@ -72,8 +72,8 @@
 "CAAS WISIFY",
 "FC Gaia",
 "Pavilhão Salesianos do Porto",
-"marcado",
-"",
+"realizado",
+"58-92",
 "1.ª Fase"
 ],
 [
@@ -1718,6 +1718,15 @@
 302
 ],
 [
+"FC Gaia",
+5,
+3,
+2,
+8,
+364,
+326
+],
+[
 "CLIP Teams",
 5,
 2,
@@ -1745,22 +1754,13 @@
 458
 ],
 [
-"FC Gaia",
-4,
-2,
-2,
-6,
-272,
-268
-],
-[
 "CAAS WISIFY",
-5,
-1,
-4,
 6,
-246,
-388
+1,
+5,
+7,
+304,
+480
 ],
 [
 "ACA-Perfil Independente",
@@ -4963,7 +4963,7 @@
 "16:30",
 "CAAS WISIFY",
 "FC Gaia",
-"",
+"58-92",
 "Pavilhão Salesianos do Porto"
 ],
 [

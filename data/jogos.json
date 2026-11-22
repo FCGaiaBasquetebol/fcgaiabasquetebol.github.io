@@ -1062,8 +1062,8 @@
 "FC Gaia A",
 "UAA Aroso A",
 "Pavilhão Futebol Clube Gaia",
-"marcado",
-"",
+"realizado",
+"42-64",
 "2.ª Fase"
 ],
 [
@@ -2021,6 +2021,15 @@
 182
 ],
 [
+"UAA Aroso A",
+5,
+3,
+2,
+8,
+320,
+264
+],
+[
 "FC Porto A",
 4,
 3,
@@ -2028,15 +2037,6 @@
 7,
 308,
 171
-],
-[
-"UAA Aroso A",
-4,
-2,
-2,
-6,
-256,
-222
 ],
 [
 "Académico A / Ribadouro",
@@ -2058,12 +2058,12 @@
 ],
 [
 "FC Gaia A",
-4,
+5,
 0,
-4,
-4,
-181,
-306
+5,
+5,
+223,
+370
 ]
 ]
 }
@@ -3183,7 +3183,7 @@
 "11:00",
 "FC Gaia A",
 "UAA Aroso A",
-"",
+"42-64",
 "Pavilhão Futebol Clube Gaia"
 ],
 [

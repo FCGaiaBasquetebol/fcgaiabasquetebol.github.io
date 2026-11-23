@@ -1,5 +1,5 @@
 {
-"updated": "2026-11-22",
+"updated": "2026-11-23",
 "games": [
 [
 "Esperanças",
@@ -1718,6 +1718,15 @@
 302
 ],
 [
+"Sangalhos DC",
+6,
+3,
+3,
+9,
+475,
+445
+],
+[
 "FC Gaia",
 5,
 3,
@@ -1728,21 +1737,12 @@
 ],
 [
 "CLIP Teams",
-5,
+6,
 2,
-3,
-7,
-371,
-302
-],
-[
-"Sangalhos DC",
-5,
-2,
-3,
-7,
-399,
-389
+4,
+8,
+427,
+378
 ],
 [
 "FIDES",
@@ -2013,12 +2013,21 @@
 "rows": [
 [
 "Maia Basket A/Fisimaia",
-4,
-4,
+5,
+5,
 0,
-8,
-304,
-182
+10,
+393,
+219
+],
+[
+"FC Porto A",
+5,
+4,
+1,
+9,
+388,
+230
 ],
 [
 "UAA Aroso A",
@@ -2030,31 +2039,22 @@
 264
 ],
 [
-"FC Porto A",
-4,
-3,
-1,
-7,
-308,
-171
-],
-[
 "Académico A / Ribadouro",
-4,
+5,
 2,
-2,
-6,
-247,
-296
+3,
+7,
+306,
+376
 ],
 [
 "Bolacesto A/Farm. Gândara",
-4,
-1,
-3,
 5,
-208,
-327
+1,
+4,
+6,
+245,
+416
 ],
 [
 "FC Gaia A",
@@ -2230,21 +2230,21 @@
 ],
 [
 "UAA Aroso A",
+5,
 4,
-3,
 1,
-7,
-261,
-211
+9,
+328,
+260
 ],
 [
 "Maia Basket A",
-4,
+5,
 2,
-2,
-6,
-226,
-203
+3,
+7,
+275,
+270
 ],
 [
 "CD Póvoa A",
@@ -2719,7 +2719,7 @@
 "16:30",
 "UAA Aroso A",
 "Maia Basket A",
-"",
+"67-49",
 "Escola EB23 Manoel de Oliveira"
 ],
 [
@@ -3173,7 +3173,7 @@
 "15:00",
 "FC Porto A",
 "Académico A / Ribadouro",
-"",
+"80-59",
 "Escola EB 2.3 Nicolau Nasoni"
 ],
 [
@@ -3193,7 +3193,7 @@
 "18:15",
 "Maia Basket A/Fisimaia",
 "Bolacesto A/Farm. Gândara",
-"",
+"89-37",
 "Pavilhão Mun. Nortecoope"
 ],
 [
@@ -4983,7 +4983,7 @@
 "18:30",
 "CLIP Teams",
 "Sangalhos DC",
-"",
+"56-76",
 "Colégio Luso Internacional do Porto"
 ],
 [

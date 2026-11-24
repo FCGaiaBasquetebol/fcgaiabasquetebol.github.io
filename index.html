@@ -540,6 +540,31 @@ html[data-theme="light"] body{background-image:radial-gradient(rgba(0,0,0,.035) 
 html[data-theme="light"] :is(.mast,.ticker,.hero){--gold:#e2b812;--gold-hi:#f4d65a;--gold-lo:#9c7e08;--ink:#f2f2ee;--muted:#a8a8a0;--dim:#8a8a82;--line:#3a3a3a}
 html[data-theme="light"] :is(.daypanel,.tcard,.box,.card,.side,.coord,.pcard,.pop,.hchip,.hband){background:var(--panel)}
 html[data-theme="light"] .tcard{--card:var(--panel)}
+/* as nossas equipas (equipas técnicas) */
+.orgbtn{display:inline-flex;align-items:center;gap:10px;margin:14px 0 18px;background:var(--gold);color:#000;border:0;border-radius:999px;padding:11px 22px;font:inherit;font-weight:700;font-size:16px;letter-spacing:1px;text-transform:uppercase;cursor:pointer}
+.orgbtn:hover{background:var(--gold-hi)}.orgbtn svg{width:18px;height:18px;stroke:currentColor;fill:none;stroke-width:2.2}
+.orgf{display:flex;flex-wrap:wrap;gap:8px;margin:16px 0 6px}
+.orgf button{font:inherit;font-weight:700;font-size:15px;letter-spacing:1px;text-transform:uppercase;min-height:42px;padding:0 18px;border-radius:999px;border:1px solid var(--line);background:var(--panel);color:var(--ink);cursor:pointer}
+.orgf button[aria-pressed="true"]{background:var(--gold);border-color:var(--gold);color:#000}
+.orgs{margin-top:26px}.orgs .sec-h{display:flex;align-items:center;gap:14px}.orgs .sec-h::after{content:"";flex:1;height:1px;background:var(--line)}
+.orgs .sec-h small{order:2;font-family:var(--f-cond);font-size:14px;letter-spacing:1px;color:var(--muted)}
+.orgg{display:grid;grid-template-columns:repeat(auto-fill,minmax(290px,1fr));gap:14px}
+.ocard{position:relative;background:var(--card,#0b0b0b);border:1px solid var(--line);border-top:4px solid var(--tc,var(--gold));border-radius:6px;padding:16px 18px;display:flex;flex-direction:column;gap:10px}
+.ocard .ot{display:flex;align-items:center;justify-content:space-between;gap:10px}
+.ocard .on{font-family:var(--f-disp);font-size:32px;line-height:1;text-transform:uppercase;color:var(--ink);background:none;border:0;padding:0;cursor:pointer;text-align:left}
+.ocard .on:hover{color:var(--gold)}
+.ocard .chip{font-weight:700;font-size:12px;letter-spacing:1px;text-transform:uppercase;background:var(--gold);color:#000;border-radius:999px;padding:4px 10px;white-space:nowrap}
+.ocard .pv{margin:0;color:var(--muted);font-size:15px;line-height:1.3;min-height:20px}.ocard .pv b{color:var(--gold);font-weight:700}
+.ocard dl{margin:0;display:grid;gap:6px;border-top:1px solid var(--line);padding-top:10px}
+.ocard dl div{display:grid;grid-template-columns:96px minmax(0,1fr);gap:8px;align-items:baseline}
+.ocard dt{font-size:12px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--muted)}
+.ocard dd{margin:0;font-size:17px;font-weight:700;color:var(--ink);display:flex;flex-direction:column}
+.ocard dd .nb{color:var(--dim);font-weight:500}
+.ocard dd button{font:inherit;color:inherit;background:none;border:0;padding:0;text-align:left;cursor:pointer}.ocard dd button:hover{color:var(--gold);text-decoration:underline}
+.orgfoot{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:14px;margin:30px 0 10px;border-top:2px solid var(--gold);padding-top:18px}
+.orgfoot small{display:block;font-size:12px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--muted)}.orgfoot b{font-size:18px}
+html[data-theme="light"] .ocard{--card:var(--panel)}
+
 html[data-theme="light"] :is(.mc.emp){border-color:var(--line)}
 html[data-theme="light"] footer{border-top-color:var(--line)}
 html[data-theme="light"] .pop{box-shadow:0 10px 30px rgba(0,0,0,.15)}
@@ -916,6 +941,7 @@ syncMasters();
 try{const s=JSON.parse(localStorage.getItem("fcgaia-app")||"null");if(s){if(["month","week"].includes(s.view))S.view=s.view;if(Array.isArray(s.sel)&&s.sel.length)S.sel=new Set(s.sel.filter(x=>TM[x]))}}catch(e){}
 if(location.hash==="#calendario")S.tab="cal";
 if(location.hash==="#equipas")S.tab="eq";
+if(location.hash==="#equipas/tecnica"){S.tab="eq";S.org=true}
 if(location.hash==="#contactos")S.tab="ct";
 if(location.hash==="#horarios")S.tab="hr";
 function save(){try{localStorage.setItem("fcgaia-app",JSON.stringify({view:S.view,sel:[...S.sel]}))}catch(e){}}
@@ -1008,14 +1034,33 @@ function coachChip(n,role){const c=coach(n);return `<button class="cchip" data-c
 function staffOf(id){const s=STAFF[id]||[];return s.map((n,i)=>[n,i===0?"Treinador principal":"Treinador adjunto"])}
 function sortedPl(id){return (PLANTEL[id]||[]).slice().sort((a,b)=>(a.num??999)-(b.num??999)||a.name.localeCompare(b.name))}
 
+/* ===== As nossas equipas: equipas técnicas e direção ===== */
+const ORG_ESC={"Seniores Masc":"Sénior","Esperanças":"Sub 23","Masters":"Veteranos","Sub-18 Masc A":"Sub 18","Sub-18 Masc B":"Sub 18","Sub-16 Masc A":"Sub 16","Sub-16 Masc B":"Sub 16","Sub-14 Masc A":"Sub 14","Sub-14 Masc B":"Sub 14"};
+function orgProva(t){if(t.id==="Masters")return `<b>Liga 2 Masters</b> · ${esc(t.grp||"")}`;if(t.lv==="Minibasquete")return "Encontros de minibasquete";
+  const lg=G.filter(x=>x.team===t.id&&!/^Taça/.test(x.phase)&&x.comp).sort((x,y)=>(x.date||"").localeCompare(y.date||""));let c=lg.length?lg[lg.length-1].comp:"";
+  c=String(c).replace(/^Esperanças/,"Nacional de Esperanças").replace(/ · /,"</b> · ");const taca=G.some(x=>x.team===t.id&&/^Taça/.test(x.phase));
+  return c?`<b>${c.includes("</b>")?c:c+"</b>"}${taca?"<br>Taça de Portugal":""}`:""}
+function orgView(){const sel=S.orgSel||(S.orgSel=new Set()),all=!sel.size,nb='<span class="nb">—</span>';
+  const who=n=>`<button data-coach="${esc(ckey(n))}" data-role="">${esc(n)}</button>`;
+  const card=t=>{const st=STAFF[t.id]||[],tm=tmOf(t.id);
+    return `<div class="ocard ${t.cls}"><div class="ot"><button class="on" data-team="${esc(t.id)}">${esc(t.nm)}</button><span class="chip">${esc(ORG_ESC[t.id]||"Mini")}</span></div>
+     <p class="pv">${orgProva(t)}</p><dl><div><dt>Treinador</dt><dd>${st[0]?who(st[0]):nb}</dd></div>${t.lv==="Minibasquete"?"":`<div><dt>Adjunto${st.length>2?"s":""}</dt><dd>${st.length>1?st.slice(1).map(who).join(""):nb}</dd></div>`}
+     <div><dt>Diretor${tm.length>1?"es":""}</dt><dd>${tm.length?tm.map(n=>`<span>${esc(n)}</span>`).join(""):nb}</dd></div></dl></div>`};
+  const sub={Seniores:"Competições nacionais FPB",Formação:"Distritais AB Porto",Minibasquete:"AB Porto"};
+  const groups=TGROUPS.filter(([h])=>all||sel.has(h)).map(([h,ids])=>`<section class="orgs"><h3 class="sec-h">${h}<small>${sub[h]||""}</small></h3><div class="orgg">${ids.map(id=>card(TM[id])).join("")}</div></section>`).join("");
+  const foot=[...COORD.map(x=>[x.role,x.name]),...(typeof DIRS!=="undefined"?DIRS:[]).map(x=>[x.role,x.name])];
+  return `<button class="backbtn" id="org-back">‹ Voltar às equipas</button><p class="eyebrow">FC Gaia Basquetebol · Época 26/27</p><h2 class="huge">As nossas equipas</h2>
+  <div class="orgf" role="group" aria-label="Filtrar">${[["","Todas"],...TGROUPS.map(([h])=>[h,h])].map(([k,l])=>`<button data-orgf="${esc(k)}" aria-pressed="${k?sel.has(k):all}">${l}</button>`).join("")}</div>
+  ${groups}<div class="orgfoot">${foot.map(([r,n])=>`<div><small>${esc(r)}</small><b>${esc(n)}</b></div>`).join("")}</div>`}
 function renderTeams(){
+  if(!S.team&&S.org)return orgView();
   if(!S.team){
     const prova=t=>{const ph=STAND[t.id]||[],st=ph[ph.length-1];if(st)return st.name;const g=G.filter(x=>x.team===t.id&&!/^Taça/.test(x.phase)).pop()||G.find(x=>x.team===t.id);return g?g.comp:""};
     const nPl=t=>(PLANTEL[t.id]||[]).length;
     const card=t=>`<button class="tcard ${t.cls}" data-team="${esc(t.id)}"><span class="lv">${esc(t.lv)}</span><span class="nm">${esc(t.nm)}</span><span class="pv2">${esc(t.mini?(nPl(t)?nPl(t)+(nPl(t)===1?" atleta":" atletas"):(t.lv==="Minibasquete"?"Encontros de minibasquete":(t.grp?"Liga 2 Master · "+t.grp:"Plantel"))):prova(t))}</span><span class="c-go" aria-hidden="true">›</span></button>`;
     const coordOf=h=>{const c=COORD.find(x=>h==="Formação"?/forma/i.test(x.role):h==="Minibasquete"?/mini/i.test(x.role):false);const d=(typeof DIRS!=="undefined"?DIRS:[]).filter(x=>x.group===h);return (c||d.length)?`<div class="gcoord">${d.map(x=>tmChip(x.name,x.role)).join("")}${c?coachChip(c.name,c.role):""}</div>${apoioBox(h)}`:apoioBox(h)};
     const groups=TGROUPS.map(([h,ids])=>`<section class="tgroup"><h3 class="sec-h">${h}</h3>${coordOf(h)}<div class="tgrid">${ids.map(id=>card(TM[id])).join("")}</div></section>`).join("");
-    return `<p class="eyebrow">FC Gaia 26/27</p><h2 class="huge">Equipas</h2>${groups}`}
+    return `<p class="eyebrow">FC Gaia 26/27</p><h2 class="huge">Equipas</h2><button class="orgbtn" id="org-open"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="9" cy="8" r="3.2"/><circle cx="17" cy="9.5" r="2.5"/><path d="M3 20c.7-3.6 3-5.5 6-5.5s5.3 1.9 6 5.5M15 15.2c2.6-.3 4.9 1.3 5.6 4.8"/></svg>As nossas equipas</button>${groups}`}
   const t=TM[S.team],all=G.filter(g=>g.team===t.id);
   const phases=[];all.slice().sort((x,y)=>(x.date||"9").localeCompare(y.date||"9")).forEach(g=>{if(!phases.includes(g.phase))phases.push(g.phase)});
   (STAND[t.id]||[]).forEach(p=>{if(!phases.includes(p.phase))phases.push(p.phase)});
@@ -1464,7 +1509,7 @@ document.addEventListener("click",e=>{
   if(!e.target.closest(".subw"))closePop();
   const gg=e.target.closest(".gg.mine");if(gg){detail(G[+gg.dataset.g]);return}
   const b=e.target.closest("button");if(!b)return;
-  if(b.dataset.tab){S.tab=b.dataset.tab;S.team=null;try{history.replaceState(null,"",S.tab==="eq"?"#equipas":S.tab==="ct"?"#contactos":S.tab==="hr"?"#horarios":S.tab==="cal"?"#calendario":location.pathname+location.search)}catch(_){}render();window.scrollTo(0,0)}
+  if(b.dataset.tab){S.tab=b.dataset.tab;S.team=null;S.org=false;try{history.replaceState(null,"",S.tab==="eq"?"#equipas":S.tab==="ct"?"#contactos":S.tab==="hr"?"#horarios":S.tab==="cal"?"#calendario":location.pathname+location.search)}catch(_){}render();window.scrollTo(0,0)}
   else if(b.id==="calshare"){const open=document.getElementById("subpop");if(open){closePop()}else{b.insertAdjacentHTML("afterend",calShareMenu());b.setAttribute("aria-expanded","true")}}
   else if(b.id==="cs-print"){closePop();if(TOP)window.print()}
   else if(b.id==="cs-img"){sendPeriodImage(b)}
@@ -1499,6 +1544,9 @@ document.addEventListener("click",e=>{
   else if(b.dataset.goteam){S.tab="eq";S.team=b.dataset.goteam;S.ttab="ov";setHash(teamHash(S.team));render();window.scrollTo(0,0)}
   else if(b.dataset.team){const was=S.team;S.team=b.dataset.team;if(!was)S.ttab="ov";setHash(teamHash(S.team));render();window.scrollTo(0,0)}
   else if(b.id==="back"){S.team=null;setHash("#equipas");render();window.scrollTo(0,0)}
+  else if(b.id==="org-open"){S.org=true;setHash("#equipas/tecnica");render();window.scrollTo(0,0)}
+  else if(b.id==="org-back"){S.org=false;setHash("#equipas");render();window.scrollTo(0,0)}
+  else if(b.dataset.orgf!==undefined){const k=b.dataset.orgf,sl=S.orgSel||(S.orgSel=new Set());if(!k)sl.clear();else{sl.has(k)?sl.delete(k):sl.add(k);if(sl.size===TGROUPS.length)sl.clear()}const y=window.scrollY;render();window.scrollTo(0,y)}
   else if(b.id==="prev"||b.id==="next"){const s=b.id==="next"?1:-1;
     if(S.view==="month"){S.cur=new Date(S.cur.getFullYear(),S.cur.getMonth()+s,1,12);S.day=ks(S.cur)}else S.cur=add(S.cur,7*s);render()}
   else if(b.id==="today"){S.cur=pd(TODAY);S.day=TODAY;S.dayPicked=true;render();const t=document.querySelector(".mc.today,.col.today");if(t){t.classList.add("flash");t.addEventListener("animationend",()=>t.classList.remove("flash"),{once:true});const r=t.getBoundingClientRect();if(r.top<0||r.bottom>innerHeight)t.scrollIntoView({block:"center",behavior:"smooth"})}}});

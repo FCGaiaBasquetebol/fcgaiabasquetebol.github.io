@@ -74,15 +74,17 @@ jobs:
         run: |
           mkdir -p debug
           python scripts/atualizar.py --modo calendario 2>&1 | tee -a debug/atualizar.log
-      - name: Logótipos dos clubes (cópia local para as imagens das redes sociais)
-        if: steps.modo.outputs.modo == 'calendario' || steps.modo.outputs.modo == 'tudo'
-        continue-on-error: true
-        run: python scripts/logos_locais.py 2>&1 | tee -a debug/atualizar.log
       - name: Recolher planteis e treinadores
         if: steps.modo.outputs.modo == 'plantel' || steps.modo.outputs.modo == 'tudo'
         run: |
           mkdir -p debug
           python scripts/plantel.py 2>&1 | tee debug/plantel.log
+      - name: Logótipos e fotos (cópia local para as imagens das redes sociais)
+        if: steps.modo.outputs.modo == 'calendario' || steps.modo.outputs.modo == 'plantel' || steps.modo.outputs.modo == 'tudo'
+        continue-on-error: true
+        run: |
+          mkdir -p debug
+          python scripts/logos_locais.py 2>&1 | tee -a debug/atualizar.log
       - name: Guardar páginas lidas (para diagnóstico)
         if: always() && (steps.modo.outputs.modo == 'plantel' || steps.modo.outputs.modo == 'tudo')
         uses: actions/upload-artifact@v4

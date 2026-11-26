@@ -1,5 +1,5 @@
 {
-"updated": "2026-11-25",
+"updated": "2026-11-26",
 "games": [
 [
 "Esperanças",
@@ -1664,6 +1664,24 @@
 "name": "Esperanças · 1.ª Fase Série B",
 "rows": [
 [
+"ILLIABUM CLUBE/EXITCASA",
+7,
+5,
+2,
+12,
+603,
+463
+],
+[
+"SC Beira-Mar",
+6,
+5,
+1,
+11,
+489,
+363
+],
+[
 "Académica Coimbra",
 6,
 5,
@@ -1673,22 +1691,13 @@
 385
 ],
 [
-"ILLIABUM CLUBE/EXITCASA",
-6,
+"UD Oliveirense",
+7,
 4,
-2,
-10,
-502,
-425
-],
-[
-"Ovarense OLHO MARINHO",
-6,
-4,
-2,
-10,
-498,
-448
+3,
+11,
+464,
+417
 ],
 [
 "Olivais FC",
@@ -1700,22 +1709,13 @@
 447
 ],
 [
-"UD Oliveirense",
+"Ovarense OLHO MARINHO",
 6,
 4,
 2,
 10,
-403,
-345
-],
-[
-"SC Beira-Mar",
-5,
-4,
-1,
-9,
-417,
-302
+498,
+448
 ],
 [
 "Sangalhos DC",
@@ -1745,6 +1745,15 @@
 378
 ],
 [
+"CAAS WISIFY",
+7,
+1,
+6,
+8,
+342,
+581
+],
+[
 "FIDES",
 6,
 1,
@@ -1752,15 +1761,6 @@
 7,
 397,
 458
-],
-[
-"CAAS WISIFY",
-6,
-1,
-5,
-7,
-304,
-480
 ],
 [
 "ACA-Perfil Independente",
@@ -5013,7 +5013,7 @@
 "21:30",
 "ILLIABUM CLUBE/EXITCASA",
 "CAAS WISIFY",
-"",
+"101-38",
 "Pavilhão Municipal Capitão Adriano Nordeste"
 ],
 [
@@ -5053,7 +5053,7 @@
 "21:45",
 "SC Beira-Mar",
 "UD Oliveirense",
-"",
+"72-61",
 "Pavilhão da Escola Básica 2,3 João Afonso"
 ],
 [

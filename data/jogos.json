@@ -1,5 +1,5 @@
 {
-"updated": "2026-11-27",
+"updated": "2026-11-28",
 "games": [
 [
 "Esperanças",
@@ -1392,8 +1392,8 @@
 "FC Gaia A",
 "CLIP Teams",
 "Pavilhão Futebol Clube Gaia",
-"marcado",
-"",
+"realizado",
+"67-66",
 "2.ª Fase"
 ],
 [
@@ -1673,6 +1673,15 @@
 463
 ],
 [
+"Ovarense OLHO MARINHO",
+7,
+5,
+2,
+12,
+572,
+502
+],
+[
 "SC Beira-Mar",
 6,
 5,
@@ -1709,15 +1718,6 @@
 447
 ],
 [
-"Ovarense OLHO MARINHO",
-6,
-4,
-2,
-10,
-498,
-448
-],
-[
 "Sangalhos DC",
 6,
 3,
@@ -1745,6 +1745,15 @@
 378
 ],
 [
+"FIDES",
+7,
+1,
+6,
+8,
+451,
+532
+],
+[
 "CAAS WISIFY",
 7,
 1,
@@ -1752,15 +1761,6 @@
 8,
 342,
 581
-],
-[
-"FIDES",
-6,
-1,
-5,
-7,
-397,
-458
 ],
 [
 "ACA-Perfil Independente",
@@ -1823,57 +1823,57 @@
 "rows": [
 [
 "FC Gaia A",
-5,
-5,
+6,
+6,
 0,
-10,
-380,
-217
+12,
+447,
+283
 ],
 [
 "Aroso A Realvitur Angola",
+6,
 5,
-4,
 1,
-9,
-353,
-238
+11,
+411,
+279
 ],
 [
 "FC Porto 2",
-4,
+5,
+3,
 2,
-2,
-6,
-249,
-228
+8,
+317,
+270
 ],
 [
 "CLIP Teams",
-4,
+5,
 2,
-2,
-6,
-245,
-257
+3,
+7,
+311,
+324
 ],
 [
 "CDJ Régio",
-5,
-1,
-4,
 6,
-246,
-379
+1,
+5,
+7,
+287,
+437
 ],
 [
 "ACR Vigorosa",
-5,
+6,
 0,
-5,
-5,
-233,
-387
+6,
+6,
+275,
+455
 ]
 ]
 }
@@ -1944,22 +1944,22 @@
 87
 ],
 [
-"CPN B / Antarte",
+"USC Paredes",
+2,
 1,
-0,
 1,
-1,
-56,
-70
+3,
+71,
+95
 ],
 [
-"USC Paredes",
-1,
+"CPN B / Antarte",
+2,
 0,
-1,
-1,
-31,
-63
+2,
+2,
+88,
+110
 ]
 ]
 }
@@ -3747,7 +3747,7 @@
 "22:00",
 "FC Gaia A",
 "CLIP Teams",
-"",
+"67-66",
 "Pavilhão Futebol Clube Gaia"
 ],
 [
@@ -3757,7 +3757,7 @@
 "21:15",
 "FC Porto 2",
 "ACR Vigorosa",
-"",
+"68-42",
 "Pavilhão Escola EB23 Prof. Napoleão de Sousa Marques"
 ],
 [
@@ -3767,7 +3767,7 @@
 "21:30",
 "Aroso A Realvitur Angola",
 "CDJ Régio",
-"",
+"58-41",
 "Escola EB23 Manoel de Oliveira"
 ],
 [
@@ -4029,7 +4029,7 @@
 "21:45",
 "USC Paredes",
 "CPN B / Antarte",
-"",
+"40-32",
 "Multiusos Rota dos Móveis"
 ],
 [
@@ -5003,7 +5003,7 @@
 "21:45",
 "Ovarense OLHO MARINHO",
 "FIDES",
-"",
+"74-54",
 "Arena de Ovar"
 ],
 [
@@ -6006,8 +6006,8 @@
 [
 3110,
 3,
-"",
-"",
+"2026-12-20",
+"14:30",
 "Guarda UP",
 "GDB Leça",
 "",
